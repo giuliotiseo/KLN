@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "paths": {
+    "/auth": {
+      "name": "/auth",
+      "lambdaFunction": "KLNAuthProfile",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/refresh": {
+      "name": "/refresh",
+      "lambdaFunction": "KLNAuthProfile",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/logout": {
+      "name": "/logout",
+      "lambdaFunction": "KLNAuthProfile",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/update": {
+      "name": "/update",
+      "lambdaFunction": "KLNAuthProfile",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/restore": {
+      "name": "/restore",
+      "lambdaFunction": "KLNAuthProfile",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/profiles": {
+      "name": "/profiles",
+      "lambdaFunction": "KLNAuthProfile",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/register": {
+      "name": "/register",
+      "lambdaFunction": "KLNAuthProfile",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
