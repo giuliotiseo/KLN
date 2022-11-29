@@ -1,0 +1,14 @@
+{
+  "resourceName": "klnS3",
+  "policyUUID": "0b2d63c6",
+  "bucketName": "klnstorages3",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

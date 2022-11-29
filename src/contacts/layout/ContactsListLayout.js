@@ -20,7 +20,7 @@ const ContactsListLayout = ({
   
   return (
     <SafeCol id="ContactsListLayout" ref={scrollableRef}>
-      { contacts?.length > 0 && !isLoading && (
+      {!isLoading && (
         <ContactsListOptions
           inputSearchable={searchable}
           limit={limit}
