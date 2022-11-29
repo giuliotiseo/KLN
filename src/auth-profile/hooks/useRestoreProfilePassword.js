@@ -24,7 +24,7 @@ export default function useRestoreProfilePassword(inputProfile) {
         }
       }
 
-      const result = await API.post("AuthProfileREST", "/restore", requestInfo);
+      const result = await API.post("authProfileREST", "/restore", requestInfo);
       console.log("Result /restore", result);
       if(result?.success) {
         toast.success(`Abbiamo inviato la nuova password all'indirizzo ${inputProfile.email}`);
