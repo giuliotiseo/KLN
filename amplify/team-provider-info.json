@@ -31,5 +31,38 @@
         }
       }
     }
+  },
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kln-master-161510-authRole",
+      "UnauthRoleArn": "arn:aws:iam::005064665814:role/amplify-kln-master-161510-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::005064665814:role/amplify-kln-master-161510-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-kln-master-161510-deployment",
+      "UnauthRoleName": "amplify-kln-master-161510-unauthRole",
+      "StackName": "amplify-kln-master-161510",
+      "StackId": "arn:aws:cloudformation:eu-central-1:005064665814:stack/amplify-kln-master-161510/9e9aefc0-6ff8-11ed-896a-024f783999ac",
+      "AmplifyAppId": "d33msay9ozofva"
+    },
+    "categories": {
+      "auth": {
+        "kln3d8849b2": {}
+      },
+      "function": {
+        "kln3d8849b2PostConfirmation": {
+          "GROUP": "companies",
+          "deploymentBucketName": "amplify-kln-master-161510-deployment",
+          "s3Key": "amplify-builds/kln3d8849b2PostConfirmation-6c46534a53395958624a-build.zip"
+        },
+        "KLNAuthProfile": {
+          "deploymentBucketName": "amplify-kln-master-161510-deployment",
+          "s3Key": "amplify-builds/KLNAuthProfile-796b5054695249694c73-build.zip"
+        },
+        "multipleCorsIntegrationRequest": {
+          "deploymentBucketName": "amplify-kln-master-161510-deployment",
+          "s3Key": "amplify-builds/multipleCorsIntegrationRequest-4e664a33594b74797644-build.zip"
+        }
+      }
+    }
   }
 }
