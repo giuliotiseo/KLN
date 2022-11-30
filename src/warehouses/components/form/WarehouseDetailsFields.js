@@ -9,6 +9,9 @@ import WarehouseScopeConfig from '../../../subscribe/components/WarehouseScopeCo
 import WarehouseAssetConfig from '../../../subscribe/components/WarehouseAssetConfig';
 import WarehouseAutomationConfig from '../../../subscribe/components/WarehouseAutomationConfig';
 import TextEditor from '../../../globals/components/dataEntry_v2/TextEditor';
+import WarehouseTrades from './WarehouseTrades';
+import WarehouseCargoBay from './WarehouseCargoBay';
+import WarehouseContainerUnloading from './WarehouseContainerUnloading';
 
 const WarehouseDetailsFields = ({
   warehouse,
@@ -75,6 +78,22 @@ const WarehouseDetailsFields = ({
               <WarehouseAssetConfig
                 tools={warehouse.tools}
                 changeTools={(value) => updateForm({ name: "tools", value })}
+              />
+
+              <WarehouseTrades
+                selectedTrades={warehouse.trades}
+                setSelectedTrades={(trade) => updateForm({ name: "trades", value: warehouse.trades.includes(trade) ? warehouse.trades.filter(t => t !== trade) : warehouse.trades.concat(trade)})}
+                label="Ambiti di utilizzo"
+              />
+
+              <WarehouseCargoBay
+                cargoBay={warehouse.cargoBay}
+                changeCargoBay={(cargoBay) => updateForm({ name: "cargoBay", value: cargoBay })}
+              />
+
+              <WarehouseContainerUnloading
+                containerUnloading={warehouse.containerUnloading}
+                changeContainerUnloading={() => updateForm({ name: "containerUnloading", value: warehouse.containerUnloading ? false : true })}
               />
 
               <div className="my-4">

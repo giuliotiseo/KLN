@@ -248,11 +248,10 @@ export const extendedWarehousesApiSlice = graphqlApiSlice.injectEndpoints({
 
         return formattedResponse;
       },
-      providesTags: (result, err, arg) => {
-        if(!result?.data?.getWarehouse?.id) return [];
-        return [
-          { type: _TYPENAME, id: result.data.getWarehouse.id }
-        ]
+      providesTags: (result) => {
+        console.log("provide tags", result);
+        if(!result?.id) return [];
+        return [{ type: 'Warehouse', id: result.id }]
       }
     }),
     // Mutation -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -334,6 +333,7 @@ export const extendedWarehousesApiSlice = graphqlApiSlice.injectEndpoints({
             }
 
             // Imposto la creazione di un magazzino gestito da terzi (WarehouseLink)
+            console.log('Analisi linked company', warehouse);
             linkedDataToSend = {
               id: warehouseLinkId,
               warehouseId: warehouse.linkedWarehouse.id,
@@ -448,7 +448,6 @@ export const extendedWarehousesApiSlice = graphqlApiSlice.injectEndpoints({
             }
           }
 
-          console.log("vedo datatosend ora", dataToSend);
           const response = await updateWarehouseCaller(dataToSend);
           if(!response?.error) toast.success(`Il magazzino ${args.name} è stato aggiornato con successo`);
           return { data: response };
@@ -460,8 +459,8 @@ export const extendedWarehousesApiSlice = graphqlApiSlice.injectEndpoints({
         }
       },
       invalidatesTags: (result, error, { id }) => [
-        { type: "Warehouse", id: 'LIST_BY_COMPANY'},
-        { type: "Warehouse", id },
+        { type: _TYPENAME, id: 'LIST_BY_COMPANY'},
+        { type: _TYPENAME, id },
       ]
     }),
     deleteWarehouse: builder.mutation({

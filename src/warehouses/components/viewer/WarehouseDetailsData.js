@@ -75,7 +75,7 @@ function WarehouseDetailsData({
         </div>
 
         <div className="mt-2 bg-base-100 p-4 rounded-md">
-          <CargoBayDetails maxLength={warehouse.maxLength} />
+          <CargoBayDetails warehouse={warehouse} />
         </div>
 
         { warehouse?.windows && warehouse?.windows?.length > 0 && (

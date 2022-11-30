@@ -50,7 +50,7 @@ export default function useUpdateWarehouse(inputWarehouse) {
       status: inputWarehouse.status,
       // Modifiche e rielaborazioni
       ...warehouseEditorForm,
-      searchable: warehouseEditorForm?.name || warehouseEditorForm?.location
+      searchable: warehouseEditorForm?.name && warehouseEditorForm?.location
         ? `${warehouseEditorForm.name.toLowerCase()} ${warehouseEditorForm.location.address.toLowerCase()}`
         : inputWarehouse.searchable,
       isDeposit: warehouseEditorForm?.scope?.includes("DEPOSITO") ? 1 : 0 || inputWarehouse.isDeposit,

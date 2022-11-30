@@ -386,6 +386,9 @@ export const WAREHOUSE_BY_ID = /* GraphQL */ `
       isHub
       isLinked
       warehouseLinkId
+      cargoBay
+      trades
+      containerUnloading
       log {
         authorId
         author

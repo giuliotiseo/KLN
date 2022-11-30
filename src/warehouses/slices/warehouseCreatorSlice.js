@@ -29,6 +29,9 @@ const initialState = {
   linkedCompany: null,
   linkedWarehouses: [],
   linkedWarehouse: null,
+  trades: [],
+  cargoBay: 0,
+  containerUnloading: false,
   status: "ACTIVE"
 }
 
@@ -132,6 +135,7 @@ export const warehouseCreatorSlice = createSlice({
             name: payload.name,
             vatNumber: payload.company.vatNumber,
             city: payload.company.location.city,
+            owner: payload.company.owner,
             province: payload.company.location.province,
           };
         } else {

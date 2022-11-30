@@ -14,6 +14,9 @@ export const initialState = {
   automationLevel: "LOW",
   type: "FRIGO",
   warehouseLinkId: "",
+  trades: [],
+  cargoBay: 0,
+  containerUnloading: false,
   windows: reformattedWindows([{ ...starterWindow, type: "CARICO" }, { ...starterWindow, type: "SCARICO" }]),
 };
 
