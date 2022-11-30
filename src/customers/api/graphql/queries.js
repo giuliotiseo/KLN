@@ -48,7 +48,7 @@ export const CUSTOMER_BY_ID = /* GraphQL */ `
         location { region city address province place_id }
         warehouses {
           items { 
-            id extId name maxLength type specialization scope tools automationLevel note status
+            id extId name maxLength type specialization scope tools automationLevel note status trades cargoBay containerUnloading
             windows { start end days type }
             location { address city region province place_id coordinate }
             warehouseLink { companyOwner { id name vatNumber owner }}
@@ -72,6 +72,9 @@ export const CUSTOMER_BY_ID = /* GraphQL */ `
         thirdCompanyOwner
         thirdCompanyName
         thirdCompanyVat
+        trades
+        cargoBay
+        containerUnloading
         location { place_id region province city address coordinate }
         contacts { contactId name email phone job }
         windows { start end days type }
@@ -202,7 +205,7 @@ export const COMPANIES_BY_VATNUMBER = /* GraphQL */ `
         location { city address province region place_id }
         warehouses {
           items { 
-            id name maxLength type specialization scope tools automationLevel note status
+            id name maxLength type specialization scope tools automationLevel note status trades cargoBay containerUnloading
             windows { start end days type }
             location { address city region province place_id coordinate }
           } 
@@ -254,7 +257,7 @@ export const CUSTOMER_BY_COMPANYID = /* GraphQL */ `
           location { region city address province place_id }
           warehouses {
             items { 
-              id extId name maxLength type specialization scope tools automationLevel note status
+              id extId name maxLength type specialization scope tools automationLevel note status trades cargoBay containerUnloading
               windows { start end days type }
               location { address city region province place_id coordinate }
               warehouseLink { companyOwner { id name vatNumber owner }}
@@ -278,6 +281,9 @@ export const CUSTOMER_BY_COMPANYID = /* GraphQL */ `
           thirdCompanyOwner
           thirdCompanyName
           thirdCompanyVat
+          trades
+          cargoBay
+          containerUnloading
           location { place_id region province city address coordinate }
           contacts { contactId name email phone job }
           windows { start end days type }

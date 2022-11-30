@@ -16,11 +16,7 @@ export default function ContactsPicker({
   isLoading,
   pagination
 }) {
-
-  console.log("storekeepers", storekeepers);
-  
   const { goBack, goNext, page, nextToken, previousTokens } = pagination;
-
   return (
     <div className={`w-full ${className}`}>
       { title && <header>

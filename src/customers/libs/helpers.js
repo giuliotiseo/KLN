@@ -195,7 +195,7 @@ export const formatCustomCheckpointsBeforeSave = (customer) => {
         let checkpointToPush = { ...checkpoint };
         checkpointToPush.companyId = thirdCompany.company.id;
         checkpointToPush.companyOwner = thirdCompany.company.owner;
-        checkpointToPush.companyName = thirdCompany.name;
+        checkpointToPush.companyName = thirdCompany.company.name;
         checkpointToPush.companyVatNumber = thirdCompany.company.vatNumber;
         delete checkpointToPush.thirdCompany;
         customCheckpoints.push(checkpointToPush);

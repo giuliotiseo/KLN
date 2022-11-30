@@ -1,11 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import useListCustomers from '../../../hooks/useListCustomers';
 import InputCheckbox from '../../../../globals/components/dataEntry_v2/InputCheckbox'
 import InputText from '../../../../globals/components/dataEntry_v2/InputText';
 import CustomerPicker from '../../../../globals/components/pickers/CustomerPicker';
 import { changeCustomersListSearchable, resetCustomersList } from '../../../slices/customersListSlice';
 import ReactTooltip from 'react-tooltip';
+import { selectCurrentCompany } from '../../../../company/slices/companySlice';
 
 function CheckpointThirdCompanySelector({
   checkpoint,
@@ -13,6 +14,7 @@ function CheckpointThirdCompanySelector({
 }) {
   const [ thirdCompany, setThirdCompany ] = useState(checkpoint?.thirdCompany?.id ? true : false);
   const [ searchable, setSearchable ] = useState("");
+  const currentCompany = useSelector(selectCurrentCompany);
   const [{ items: customers, isLoading, isFetching, refetch }, pagination ] = useListCustomers("ALL");
   const dispatchCustomersList = useDispatch();
 
@@ -35,9 +37,14 @@ function CheckpointThirdCompanySelector({
   }, [checkpoint.thirdCompany]);
 
   useEffect(() => {
-    // dispatchCustomersList(changeCustomersListLimit(5));
     return () => dispatchCustomersList(resetCustomersList());
   }, []);
+
+  const currentCompanyForThirdParty = {
+    ...currentCompany,
+    label: 'La tua azienda',
+    company: currentCompany
+  }
 
   return (
     <section className='my-4 py-4 border-b border-t border-light-50 dark:border-dark-50'>
@@ -66,7 +73,7 @@ function CheckpointThirdCompanySelector({
           />
 
           <CustomerPicker
-            customers={customers.filter(customer => customer?.company?.owner !== "NOT_OWNED")}
+            customers={[currentCompanyForThirdParty].concat(customers.filter(customer => customer?.company?.owner !== "NOT_OWNED"))}
             listType={"ALL"}
             title=""
             loading={isLoading || isFetching}
@@ -77,7 +84,7 @@ function CheckpointThirdCompanySelector({
           />
 
           <p className="text-right text-sm text-secondary-200 dark:text-secondary-300">
-            <span data-tip="Possono essere selezionate dalla piattaforma solo le aziende gestite">
+            <span data-tip="Possono essere selezionate dalla piattaforma solo le aziende gestite o la tua azienda">
               Non trovi il cliente?
             </span>
           </p>

@@ -1,11 +1,11 @@
+import { useEffect } from "react";
+import { useState } from "react";
+import { FiCheckSquare, FiSquare } from "react-icons/fi";
 import Button from "../../../globals/components/buttons_v2/Button";
-import TextEditor from "../../../globals/components/dataEntry_v2/TextEditor";
-import CheckpointAccessForm from "./form/CheckpointAccessForm";
-import CheckpointAssetsForm from "./form/CheckpointAssetsForm";
-import CheckpointAvailabilityForm from "./form/CheckpointAvailabilityForm";
-import CheckpointBasicInfo from "./form/CheckpointBasicInfo";
-import CheckpointContactsForm from "./form/CheckpointContactsForm";
+import InputText from "../../../globals/components/dataEntry_v2/InputText";
+import CheckpointManualCompiler from "./form/CheckpointManualCompiler";
 import CheckpointThirdCompanySelector from "./form/CheckpointThirdCompanySelector";
+import CheckpointThirdCompanyWarehouseSelector from "./form/CheckpointThirdCompanyWarehouseSelector";
 
 export default function CheckpointCompilerForm ({
   checkpoint,
@@ -14,11 +14,27 @@ export default function CheckpointCompilerForm ({
   reset,
   className = ""
 }) {
+  const [ thirdCompanyForm, setThirdCompanyForm ] = useState(checkpoint?.thirdCompany?.id ? true : false);
+
+  useEffect(() => {
+    if(!checkpoint?.thirdCompany?.id) {
+      setThirdCompanyForm(false);
+    } else {
+      setThirdCompanyForm(true);
+    }
+  }, [checkpoint?.thirdCompany]);
+
   return (
     <div className={className}>
-      <CheckpointBasicInfo
-        checkpoint={checkpoint}
-        dispatch={dispatch}
+      <h4 className="title-4">Imposta nome</h4>
+      <InputText
+        label="Nome punto di interesse"
+        value={checkpoint?.name || ""}
+        className="w-full flex-col"
+        contentClassName="w-full"
+        inputClassName="text-left"
+        placeholder="Es. Hub principale"
+        callback={({ value }) => dispatch({ type: "change_checkpoint", name: "name", value })}
       />
 
       <CheckpointThirdCompanySelector
@@ -26,43 +42,23 @@ export default function CheckpointCompilerForm ({
         dispatch={dispatch}
       />
       
-      <CheckpointAccessForm
-        checkpoint={checkpoint}
-        dispatch={dispatch}
-        className="flex flex-col mt-6"
-      />
-
-      <CheckpointAvailabilityForm
-        checkpoint={checkpoint}
-        dispatch={dispatch}
-        className="mt-4"
-      />
-
-      <CheckpointAssetsForm
-        checkpoint={checkpoint}
-        dispatch={dispatch}
-        className="mt-6"
-      />
-
-
-      <CheckpointContactsForm
-        checkpoint={checkpoint}
-        dispatch={dispatch}
-        className="mt-6"
-      />
-
-      
-      <div className="mt-6 pb-4">
-        <TextEditor
-          title="Annotazioni contatto"
-          titleClassName="title-4 block"
-          content={checkpoint?.note}
-          onSaveTextEditor={(content) => dispatch({ type: "change_checkpoint", name: "note",  value: content })}
-          label="Note punto di interesse"
-          actionButtonPosition="INTERNAL"
-          showList={true}
+      { checkpoint?.thirdCompany?.id && <>
+          <h4 className="title-4">Cambia metodo di compilazione</h4>
+          <Button
+          icon={!thirdCompanyForm ? <FiCheckSquare className='mr-2 opacity-100 text-primary-200 dark:text-primary-300' /> : <FiSquare className='mr-2' />}
+          text={<div className='flex items-center text-left'>Compilazione manuale</div>}
+          className={`
+            text-lg flex items-center pl-0 py-0
+            ${ !thirdCompanyForm ? 'opacity-100' : 'opacity-70 hover:opacity-100 transition-opacity duration-200'}
+          `}
+          onClick={() => setThirdCompanyForm(prev => !prev)}
         />
-      </div>
+      </>}
+
+      { thirdCompanyForm && checkpoint?.thirdCompany?.id
+        ? <CheckpointThirdCompanyWarehouseSelector checkpoint={checkpoint} dispatch={dispatch} />
+        : <CheckpointManualCompiler checkpoint={checkpoint} dispatch={dispatch} />
+      }
 
       <div className="flex items-center gap-2">
         <Button

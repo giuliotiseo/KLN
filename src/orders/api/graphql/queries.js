@@ -3041,6 +3041,9 @@ export const ORDER_BY_ID = /* GraphQL */ `
         thirdCompanyName
         thirdCompanyVat
         name
+        trades
+        cargoBay
+        containerUnloading
         location {
           place_id
           region
@@ -3075,6 +3078,9 @@ export const ORDER_BY_ID = /* GraphQL */ `
         thirdCompanyName
         thirdCompanyVat
         name
+        trades
+        cargoBay
+        containerUnloading
         location {
           place_id
           region
@@ -3114,6 +3120,9 @@ export const ORDER_BY_ID = /* GraphQL */ `
         thirdCompanyName
         thirdCompanyVat
         name
+        trades
+        cargoBay
+        containerUnloading
         location {
           place_id
           region
@@ -3375,6 +3384,9 @@ export const ORDER_BY_CARRIER_STATUS_CREATEDAT = /* GraphQL */ `
           maxLength
           tools
           note
+          trades
+          cargoBay
+          containerUnloading
           location { address city region province coordinate place_id }
         }
         pickupDateStart
@@ -3390,6 +3402,9 @@ export const ORDER_BY_CARRIER_STATUS_CREATEDAT = /* GraphQL */ `
           maxLength
           tools
           note
+          trades
+          cargoBay
+          containerUnloading
           location { address city region province coordinate place_id }
         }
         depotDateStart
@@ -3405,6 +3420,9 @@ export const ORDER_BY_CARRIER_STATUS_CREATEDAT = /* GraphQL */ `
           maxLength
           tools
           note
+          trades
+          cargoBay
+          containerUnloading
           location { address city region province coordinate place_id }
         }
         deliveryDateStart

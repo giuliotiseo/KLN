@@ -6,6 +6,7 @@ import CheckpointCompilerForm from "./CheckpointCompilerForm";
 import { FiX, FiCheck, FiPlus, FiMapPin } from "react-icons/fi";
 import { starterCheckpoint } from "../../libs/constants";
 import { checkpointReducer } from "./reducer";
+import { toast } from "react-toastify";
 
 // Functions ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 async function handleCheckpoint({ action, prevCheckpoints, checkpoint, updateForm, index }) {
@@ -67,6 +68,11 @@ export default function CustomerCheckpointCompiler({
   }, [form]);
 
   const confirmNewCheckpoint = async () => {
+    if(!newCheckpoint?.name || !newCheckpoint.location.address) {
+      toast.error('Devi attribuire un nome al magazzino e selezionare un indirizzo prima di procedere');
+      return null;
+    }
+
     handleCheckpoint({
       action: "add",
       prevCheckpoints: checkpoints,
@@ -78,6 +84,11 @@ export default function CustomerCheckpointCompiler({
   }
 
   const confirmEditCheckpoint = async () => {
+    if(!editCheckpoint?.name || !editCheckpoint.location.address) {
+      toast.error('Devi attribuire un nome al magazzino e selezionare un indirizzo prima di procedere');
+      return null;
+    }
+
     handleCheckpoint({
       action: "edit",
       prevCheckpoints: checkpoints,

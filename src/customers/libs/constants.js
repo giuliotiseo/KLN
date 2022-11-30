@@ -62,6 +62,9 @@ export const starterCheckpoint = {
   windows: reformattedWindows([{ ...starterWindow, type: "CARICO" }, { ...starterWindow, type: "SCARICO" }]),
   maxLength: 22,
   tools: [],
+  trades: [],
+  cargoBay: 0,
+  containerUnloading: false,
   note: ""
 }
 
