@@ -41,5 +41,11 @@ export type AmplifyDependentResourcesAttributes = {
             "ApiName": "string",
             "ApiId": "string"
         }
+    },
+    "storage": {
+        "klnS3": {
+            "BucketName": "string",
+            "Region": "string"
+        }
     }
 }
