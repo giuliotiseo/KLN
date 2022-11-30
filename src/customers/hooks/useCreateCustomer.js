@@ -75,8 +75,8 @@ export default function useCreateCustomer() {
     }
 
     customerId = selectedCustomer?.id
-      ? await digestMessage(`${selectedCustomer.id}-${auth.attributes.sub}::${auth.username}`)
-      : await digestMessage(`${companyId}-${auth.attributes.sub}::${auth.username}`)
+      ? await digestMessage(`${selectedCustomer.id}-${auth.attributes.sub}`)
+      : await digestMessage(`${companyId}-${auth.attributes.sub}`)
 
     // Run fields validation
     const validation_results = validateCreateCustomer({
@@ -100,8 +100,8 @@ export default function useCreateCustomer() {
           customer,
           customerId,
           selectedCustomer,
-          owner: `${auth.attributes.sub}::${auth.username}`,
-          tenant: `${auth.attributes.sub}::${auth.username}`,
+          owner: `${auth.attributes.sub}`,
+          tenant: `${auth.attributes.sub}`,
           ownerCompanyId: currentCompanyId,
           // nel caso in cui creo azienda + contatto mi occorrono queste informazioni
           currentCompanyName,

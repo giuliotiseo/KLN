@@ -77,7 +77,7 @@ export default function useCreatePreOrder() {
           preOrder: {...preOrder, stamp },
           preOrderId,
           companyType: id === preOrder?.carrier?.id ? "CARRIER" : "SENDER",
-          owner: `${auth.attributes.sub}::${auth.username}`,
+          owner: `${auth.attributes.sub}`,
           isLinked: false
         });
 
