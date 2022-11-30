@@ -7,8 +7,6 @@ import ContactAvatar from "./ContactAvatar";
 
 export default function ContactsPicker({ initialContactIds = [], title, subtitle, storekeepers, styles, handleSelectedContacts }) {
   const storekeepersList =  Object.keys(storekeepers).map(sk_id => storekeepers[sk_id]);
-  // console.log("storekeepers", storekeepers);
-  // console.log("initialContactIds", initialContactIds);
   return (
     <div className={`${styles}`}>
       <header className="pt-4 pb-2">

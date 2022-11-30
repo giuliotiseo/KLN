@@ -30,6 +30,9 @@ export const WAREHOUSE_BY_COMPANY = /* GraphQL */ `
         isInter
         isHub
         isLinked
+        trades
+        cargoBay
+        containerUnloading
         windows { start end days type }
         automationLevel
         tools
@@ -44,6 +47,9 @@ export const WAREHOUSE_BY_COMPANY = /* GraphQL */ `
             windows { start end days type }
             maxLength
             contacts { contactId name email phone job }
+            trades
+            cargoBay
+            containerUnloading
             note
           }
         }
@@ -63,7 +69,7 @@ export const WAREHOUSE_BY_CLIENT = /* GraphQL */ `
     $nextToken: String
   ) {
     warehouseByCompany(
-      company: $companyId
+      companyId: $companyId
       statusSearchable: $statusSearchable
       sortDirection: $sortDirection
       filter: $filter
@@ -91,6 +97,9 @@ export const WAREHOUSE_BY_CLIENT = /* GraphQL */ `
         tools
         note
         contactIds
+        trades
+        cargoBay
+        containerUnloading
         contacts { contactId name email phone job }
       }
       nextToken
@@ -140,11 +149,14 @@ export const DEPOSIT_BY_COMPANY = /* GraphQL */ `
         tools
         note
         contactIds
+        trades
+        cargoBay
+        containerUnloading
         contacts { contactId name email phone job }
         warehouseLinkId
         warehouseLink {
           warehouse {
-            id extId name status scope isDeposit isInter isHub
+            id extId name status scope isDeposit isInter isHub trades cargoBay containerUnloading
             location { place_id address city province region coordinate }
           }
         }
@@ -196,11 +208,14 @@ export const INTER_BY_COMPANY = /* GraphQL */ `
         tools
         note
         contactIds
+        trades
+        cargoBay
+        containerUnloading
         contacts { contactId name email phone job }
         warehouseLinkId
         warehouseLink {
           warehouse {
-            id extId name status scope isDeposit isInter isHub
+            id extId name status scope isDeposit isInter isHub trades cargoBay containerUnloading
             location { place_id address city province region coordinate }
           }
         }
@@ -252,11 +267,14 @@ export const HUB_BY_COMPANY = /* GraphQL */ `
         tools
         note
         contactIds
+        trades
+        cargoBay
+        containerUnloading
         contacts { contactId name email phone job }
         warehouseLinkId
         warehouseLink {
           warehouse {
-            id extId name status scope isDeposit isInter isHub
+            id extId name status scope isDeposit isInter isHub trades cargoBay containerUnloading
             location { place_id address city province region coordinate }
           }
         }
@@ -309,9 +327,12 @@ export const LINKED_WAREHOUSES_BY_COMPANY = /* GraphQL */ `
         contactIds
         contacts { contactId name email phone job }
         warehouseLinkId
+        trades
+        cargoBay
+        containerUnloading
         warehouseLink {
           warehouse {
-            id extId name status scope isDeposit isInter isHub
+            id extId name status scope isDeposit isInter isHub trades cargoBay containerUnloading
             location { place_id address city province region coordinate }
           }
         }
@@ -365,6 +386,9 @@ export const WAREHOUSE_BY_ID = /* GraphQL */ `
       isHub
       isLinked
       warehouseLinkId
+      cargoBay
+      trades
+      containerUnloading
       log {
         authorId
         author
@@ -458,6 +482,9 @@ export const WAREHOUSE_BY_ID = /* GraphQL */ `
           contacts { contactId name email phone job }
           location { place_id region province city address coordinate }
           windows { start end days type }
+          trades
+          cargoBay
+          containerUnloading
           note
           createdAt
           updatedAt
@@ -499,6 +526,9 @@ query WarehouseByCompany(
       maxLength
       tools
       automationLevel
+      trades
+      cargoBay
+      containerUnloading
       note
     }
   }

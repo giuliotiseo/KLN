@@ -46,7 +46,7 @@ export default function CheckpointsSummaryList ({
                 hideMap={hideMap}
               />
 
-              { checkpoint?.thirdCompany?.id || checkpoint?.thirdCompanyId && (
+              {(checkpoint?.thirdCompany?.id || checkpoint?.thirdCompanyId ) && (
                 <CheckpointThirdCompany
                   checkpoint={checkpoint}
                   className="mt-4"

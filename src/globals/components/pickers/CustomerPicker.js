@@ -21,7 +21,18 @@ const CustomerPickerItem = ({
             `}
             onClick={() => onClick(customer)}
           />
-          <p className='ml-8 text-sm font-bold text-gray-400 dark:text-gray-500 tracking-wider'>{customer.company.location.city} ({customer.company.location.province})</p>
+          { customer?.company?.location?.city && customer?.company?.location?.province && ( 
+            <p className='ml-8 text-sm font-bold text-gray-400 dark:text-gray-500 tracking-wider'>
+            {customer.company.location.city} ({customer.company.location.province})
+            </p>
+          )}
+
+          { customer?.label && (
+            <p className='ml-8 text-sm font-bold text-gray-400 dark:text-gray-500 tracking-wider'>
+              {customer.label}
+            </p>
+          )}
+          
         </div>
         : <div>
           <p>{customer.name}</p>

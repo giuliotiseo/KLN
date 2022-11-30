@@ -1,5 +1,4 @@
 import { useState } from "react";
-import InputText from "../../../../globals/components/dataEntry_v2/InputText";
 import SearchPlaces from "../../../../globals/components/dataEntry_v2/SearchPlaces";
 import SimpleMap from "../../../../globals/components/layout/SimpleMap";
 import Button from "../../../../globals/components/buttons_v2/Button";
@@ -11,17 +10,6 @@ const CheckpoinBasicInfo = ({ checkpoint, dispatch }) => {
   const standard_coordinate = getStandardCoordinatesByCheckpoint(checkpoint);
   return (
     <section>
-
-      <InputText
-        label="Nome punto di interesse"
-        value={checkpoint?.name || ""}
-        className="w-full flex-col"
-        contentClassName="w-full"
-        inputClassName="text-left"
-        placeholder="Es. Hub principale"
-        callback={({ value }) => dispatch({ type: "change_checkpoint", name: "name", value })}
-      />
-
       <div className="flex flex-col mt-2">
         { checkpoint?.location?.address
           ? <div className="text-base mt-2 chip-neutral">

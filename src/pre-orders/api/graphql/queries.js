@@ -766,7 +766,10 @@ export const PREORDER_BY_ID = /* GraphQL */ `
         thirdCompanyId 
         thirdCompanyOwner 
         thirdCompanyName 
-        thirdCompanyVat 
+        thirdCompanyVat
+        trades
+        cargoBay
+        containerUnloading
         location { place_id region province city address coordinate }
         contacts { contactId name email phone job }
         windows { start end days type }
@@ -834,6 +837,9 @@ export const PREORDER_BY_CARRIER_FROM_ORDER = /* GraphQL */ `
           thirdCompanyOwner 
           thirdCompanyName 
           thirdCompanyVat 
+          trades
+          cargoBay
+          containerUnloading
           location { place_id region province city address coordinate }
           contacts { contactId name email phone job }
           windows { start end days type }
@@ -905,7 +911,10 @@ export const PREORDER_BY_SENDER_FROM_ORDER = /* GraphQL */ `
           thirdCompanyId 
           thirdCompanyOwner 
           thirdCompanyName 
-          thirdCompanyVat 
+          thirdCompanyVat
+          trades
+          cargoBay
+          containerUnloading
           location { place_id region province city address coordinate }
           contacts { contactId name email phone job }
           windows { start end days type }

@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { starterCheckpoint, windowOppositeTypes } from "../../libs/constants";
+import { reformattedWindows } from "../../libs/helpers";
 
 export function checkpointReducer (state, action) {
   switch(action.type) {
@@ -58,6 +59,30 @@ export function checkpointReducer (state, action) {
             },
             ...state.windows[action.windowType].slice(action.index + 1),
           ]
+        }
+      }
+    case "import_warehouse":
+      if(action?.value?.id) {
+        return {
+          ...state,
+          warehouseId: action.value.id,
+          location: action.value.location,
+          contacts: action.value.contacts,
+          windows: reformattedWindows(action.value.windows),
+          maxLength: action.value.maxLength,
+          tools: action.value.tools,
+          trades: action.value.trades,
+          cargoBay: action.value.cargoBay,
+          containerUnloading: action.value.containerUnloading,
+          note: action.value.note
+        }
+      } else {
+        const name = state.name;
+        const thirdCompany = state.thirdCompany;
+        return {
+          ...starterCheckpoint,
+          name,
+          thirdCompany
         }
       }
     case "copy_paste":
