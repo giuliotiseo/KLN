@@ -151,7 +151,7 @@ export default function useCreateOrder() {
           order: {...order, stamp },
           orderId,
           companyType: id === order?.carrier?.id ? "CARRIER" : "SENDER",
-          owner: `${auth.attributes.sub}::${auth.username}`,
+          owner: `${auth.attributes.sub}`,
         });
 
         if (result && (order?.docs && order?.docs?.length !== 0)) {

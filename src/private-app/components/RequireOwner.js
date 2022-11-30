@@ -6,7 +6,7 @@ const RequireOwner = ({ allowedOwners = [] }) => {
   const location = useLocation();
   if(!auth?.attributes?.sub) return null;
   return  (
-    allowedOwners.includes(`${auth.attributes.sub}::${auth.username}`,)
+    allowedOwners.includes(`${auth.attributes.sub}`,)
       ? <Outlet />
       : <Navigate to="/unauthorized" state={{ from: location }} replace />
   )

@@ -30,7 +30,7 @@ export function useCreateCheck() {
         check: {...check, stamp },
         checkId,
         companyType: id === check.order?.carrierId ? "carrier" : "receiver",
-        owner: `${auth.attributes.sub}::${auth.username}`,
+        owner: `${auth.attributes.sub}`,
       });
 
       if (result) {

@@ -64,7 +64,7 @@ export default function useCreateVehicle() {
         await createVehicle({
           vehicle,
           vehicleId,
-          owner: `${auth.attributes.sub}::${auth.username}`,
+          owner: `${auth.attributes.sub}`,
           companyId,
         });
   

@@ -71,8 +71,8 @@ export default function useCreateWarehouse() {
           warehouse,
           warehouseId,
           warehouseLinkId,
-          owner: `${auth.attributes.sub}::${auth.username}`,
-          tenant: `${auth.attributes.sub}::${auth.username}`,
+          owner: `${auth.attributes.sub}`,
+          tenant: `${auth.attributes.sub}`,
           companyId,
           isLinked: false
         });

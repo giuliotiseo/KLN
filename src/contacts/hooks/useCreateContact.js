@@ -58,7 +58,7 @@ export default function useCreateContact() {
           contact,
           contactId,
           companyId,
-          tenant: `${auth.attributes.sub}::${auth.username}`,
+          tenant: `${auth.attributes.sub}`,
         });
   
         navigate('/contacts');
