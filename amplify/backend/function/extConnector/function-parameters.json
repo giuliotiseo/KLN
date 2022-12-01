@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "api": {
+      "KLNGraphQL": [
+        "Query"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
