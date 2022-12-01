@@ -244,15 +244,6 @@ export const getStandardCoordinatesByCheckpoint = (checkpoint) => {
 
 // Remap windows payload from db with checkpoints
 export function normalizeWindows(windows) {
-  // This below is the clean version without the compatibility code for the introduction of type field
-  // return windows?.length > 0
-  //   ? windows.reduce((acc, val) => ({
-  //     ...acc,
-  //     [val?.type || "CARICO"]: [...acc[val.type], val]
-  //   }), { CARICO: [], SCARICO: []})
-  //   : { CARICO: [], SCARICO: []}
-
-
   // Need to add ?.type || "CARICO" for compatibility with previous versions
   return windows?.length > 0
     ? windows.reduce((acc, val) => ({

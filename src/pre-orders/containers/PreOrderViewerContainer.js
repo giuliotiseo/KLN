@@ -15,6 +15,7 @@ import { BiReset } from 'react-icons/bi';
 // Actions
 import { selectCurrentCompany } from '../../company/slices/companySlice';
 import { toast } from 'react-toastify';
+import { isAllowedToDeletePreOrder, isAllowedToEditPreOrder } from '../libs/helpers';
 
 function PreOrderViewerContainer() {
   const [ deleteDialog, setDeleteDialog ] = useState(false);
@@ -24,13 +25,8 @@ function PreOrderViewerContainer() {
   const [ deletePreOrder, { isLoading: isDeleting }] = useDeletePreOrder();
   const currentCompany = useSelector(selectCurrentCompany);
   const currentRole = currentCompany.id === preOrder?.carrierId ? 'CARRIER' : 'SENDER';
-  const isAllowedToDelete = currentRole === "CARRIER"
-    ? preOrder?.status !== "ACCEPTED"
-      ? true
-      : false
-    : preOrder?.status !== "ACCEPTED" && preOrder?.tenantCarrier === "NOT_OWNED"
-      ? true
-      : false;
+  const isAllowedToDelete = isAllowedToDeletePreOrder(preOrder, currentCompany);
+  const isAllowedToEdit = isAllowedToEditPreOrder(preOrder, currentCompany);
 
   /*
     * Callbacks 
@@ -45,7 +41,7 @@ function PreOrderViewerContainer() {
     } else {
       toast.error(`Non puoi eliminare un pre-ordine accettato. Richiedi la modifica dello stato a ${preOrder.carrierName}`);
     }
-  }, [currentRole, preOrder]); 
+  }, [isAllowedToDelete, preOrder]); 
 
   const dialogDeleteButtons = [{ text: "Conferma", disabled: isDeleting, onClick: handleDeletePreOrder }];
   if(!preOrder || isLoading || isFetching) return <PageSpinner message="Ricerca pre-ordine in corso" />
@@ -87,12 +83,14 @@ function PreOrderViewerContainer() {
             />
           )}
 
-          <LinkButton
-            className="btn-primary ml-auto"
-            icon={<FiCheck />}
-            text="Modifica"
-            to={`/pre-orders/edit?id=${id}`}
-          />
+          { isAllowedToEdit && (
+            <LinkButton
+              className="btn-primary ml-auto"
+              icon={<FiCheck />}
+              text="Modifica"
+              to={`/pre-orders/edit?id=${id}`}
+            />
+          )}
         </div>
       </footer>
 
