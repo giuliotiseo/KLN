@@ -67,6 +67,10 @@
         "multipleCorsIntegrationRequest": {
           "deploymentBucketName": "amplify-kln-master-161510-deployment",
           "s3Key": "amplify-builds/multipleCorsIntegrationRequest-4e664a33594b74797644-build.zip"
+        },
+        "extConnector": {
+          "deploymentBucketName": "amplify-kln-master-161510-deployment",
+          "s3Key": "amplify-builds/extConnector-77544c477a3956506761-build.zip"
         }
       }
     }
