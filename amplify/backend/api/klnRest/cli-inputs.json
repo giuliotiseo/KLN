@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "paths": {
+    "/connect": {
+      "name": "/connect",
+      "lambdaFunction": "extConnector",
+      "permissions": {
+        "setting": "protected",
+        "auth": [
+          "create",
+          "read"
+        ],
+        "guest": [
+          "create",
+          "read"
+        ]
+      }
+    }
+  }
+}

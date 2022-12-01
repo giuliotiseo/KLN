@@ -3024,4509 +3024,6 @@ export const deletePreOrder = /* GraphQL */ `
     }
   }
 `;
-export const createOrder = /* GraphQL */ `
-  mutation CreateOrder(
-    $input: CreateOrderInput!
-    $condition: ModelOrderConditionInput
-  ) {
-    createOrder(input: $input, condition: $condition) {
-      id
-      extId
-      stamp
-      name
-      preOrderId
-      carrierId
-      senderId
-      receiverId
-      pickupStorageId
-      deliveryStorageId
-      tenantCarrier
-      tenantSender
-      tenantReceiver
-      tenantPickupStorage
-      tenantDeliveryStorage
-      carrierName
-      senderName
-      receiverName
-      pickupStorageName
-      deliveryStorageName
-      carrierVat
-      senderVat
-      receiverVat
-      pickupStorageVat
-      deliveryStorageVat
-      createdAt
-      updatedAt
-      completedAt
-      paymentCondition
-      shipmentType
-      pickupCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      pickupDateStart
-      pickupDateEnd
-      pickupSlots {
-        from
-        to
-      }
-      depotCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      depotDateStart
-      depotDateEnd
-      depotSlots {
-        from
-        to
-      }
-      deliveryCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      deliveryDateStart
-      deliveryDateEnd
-      deliverySlots {
-        from
-        to
-      }
-      pickupAddress
-      deliveryAddress
-      depotAddress
-      availability {
-        from
-        to
-      }
-      status
-      orderNumber
-      trades
-      docs {
-        date
-        number
-        files {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        type
-      }
-      support
-      warnings
-      quantity
-      size
-      temperature
-      loadingMeter
-      grossWeight
-      netWeight
-      packages
-      perishable
-      stackable
-      palletInfo {
-        value
-        size
-        type
-        system
-      }
-      customer {
-        id
-        name
-        vatNumber
-        uniqueCode
-        pec
-      }
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      collectChecks
-      checksAmount
-      checks {
-        items {
-          id
-          orderCreationDate
-          stamp
-          orderId
-          orderStamp
-          entryTravelId
-          exitTravelId
-          keyDocNum
-          receiverId
-          tenantReceiver
-          receiverName
-          senderId
-          senderName
-          tenantSender
-          carrierId
-          tenantCarrier
-          carrierName
-          beneficiary
-          createdAt
-          updatedAt
-          issuingDate
-          pickupDate
-          checkInDate
-          checkOutDate
-          deliveryDate
-          expiration
-          checkNum
-          amount
-          iban
-          status
-          note
-        }
-        nextToken
-      }
-      travels {
-        items {
-          id
-          departureDate
-          arrivalDate
-          carrierId
-          tenantCarrier
-          customerId
-          tenantCustomer
-          orderId
-          travelId
-          operation
-          operationValue
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      billingType
-      note
-      sender {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      carrier {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      receiver {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      pickupStorage {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      deliveryStorage {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-    }
-  }
-`;
-export const updateOrder = /* GraphQL */ `
-  mutation UpdateOrder(
-    $input: UpdateOrderInput!
-    $condition: ModelOrderConditionInput
-  ) {
-    updateOrder(input: $input, condition: $condition) {
-      id
-      extId
-      stamp
-      name
-      preOrderId
-      carrierId
-      senderId
-      receiverId
-      pickupStorageId
-      deliveryStorageId
-      tenantCarrier
-      tenantSender
-      tenantReceiver
-      tenantPickupStorage
-      tenantDeliveryStorage
-      carrierName
-      senderName
-      receiverName
-      pickupStorageName
-      deliveryStorageName
-      carrierVat
-      senderVat
-      receiverVat
-      pickupStorageVat
-      deliveryStorageVat
-      createdAt
-      updatedAt
-      completedAt
-      paymentCondition
-      shipmentType
-      pickupCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      pickupDateStart
-      pickupDateEnd
-      pickupSlots {
-        from
-        to
-      }
-      depotCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      depotDateStart
-      depotDateEnd
-      depotSlots {
-        from
-        to
-      }
-      deliveryCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      deliveryDateStart
-      deliveryDateEnd
-      deliverySlots {
-        from
-        to
-      }
-      pickupAddress
-      deliveryAddress
-      depotAddress
-      availability {
-        from
-        to
-      }
-      status
-      orderNumber
-      trades
-      docs {
-        date
-        number
-        files {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        type
-      }
-      support
-      warnings
-      quantity
-      size
-      temperature
-      loadingMeter
-      grossWeight
-      netWeight
-      packages
-      perishable
-      stackable
-      palletInfo {
-        value
-        size
-        type
-        system
-      }
-      customer {
-        id
-        name
-        vatNumber
-        uniqueCode
-        pec
-      }
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      collectChecks
-      checksAmount
-      checks {
-        items {
-          id
-          orderCreationDate
-          stamp
-          orderId
-          orderStamp
-          entryTravelId
-          exitTravelId
-          keyDocNum
-          receiverId
-          tenantReceiver
-          receiverName
-          senderId
-          senderName
-          tenantSender
-          carrierId
-          tenantCarrier
-          carrierName
-          beneficiary
-          createdAt
-          updatedAt
-          issuingDate
-          pickupDate
-          checkInDate
-          checkOutDate
-          deliveryDate
-          expiration
-          checkNum
-          amount
-          iban
-          status
-          note
-        }
-        nextToken
-      }
-      travels {
-        items {
-          id
-          departureDate
-          arrivalDate
-          carrierId
-          tenantCarrier
-          customerId
-          tenantCustomer
-          orderId
-          travelId
-          operation
-          operationValue
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      billingType
-      note
-      sender {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      carrier {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      receiver {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      pickupStorage {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      deliveryStorage {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-    }
-  }
-`;
-export const deleteOrder = /* GraphQL */ `
-  mutation DeleteOrder(
-    $input: DeleteOrderInput!
-    $condition: ModelOrderConditionInput
-  ) {
-    deleteOrder(input: $input, condition: $condition) {
-      id
-      extId
-      stamp
-      name
-      preOrderId
-      carrierId
-      senderId
-      receiverId
-      pickupStorageId
-      deliveryStorageId
-      tenantCarrier
-      tenantSender
-      tenantReceiver
-      tenantPickupStorage
-      tenantDeliveryStorage
-      carrierName
-      senderName
-      receiverName
-      pickupStorageName
-      deliveryStorageName
-      carrierVat
-      senderVat
-      receiverVat
-      pickupStorageVat
-      deliveryStorageVat
-      createdAt
-      updatedAt
-      completedAt
-      paymentCondition
-      shipmentType
-      pickupCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      pickupDateStart
-      pickupDateEnd
-      pickupSlots {
-        from
-        to
-      }
-      depotCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      depotDateStart
-      depotDateEnd
-      depotSlots {
-        from
-        to
-      }
-      deliveryCheckpoint {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      deliveryDateStart
-      deliveryDateEnd
-      deliverySlots {
-        from
-        to
-      }
-      pickupAddress
-      deliveryAddress
-      depotAddress
-      availability {
-        from
-        to
-      }
-      status
-      orderNumber
-      trades
-      docs {
-        date
-        number
-        files {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        type
-      }
-      support
-      warnings
-      quantity
-      size
-      temperature
-      loadingMeter
-      grossWeight
-      netWeight
-      packages
-      perishable
-      stackable
-      palletInfo {
-        value
-        size
-        type
-        system
-      }
-      customer {
-        id
-        name
-        vatNumber
-        uniqueCode
-        pec
-      }
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      collectChecks
-      checksAmount
-      checks {
-        items {
-          id
-          orderCreationDate
-          stamp
-          orderId
-          orderStamp
-          entryTravelId
-          exitTravelId
-          keyDocNum
-          receiverId
-          tenantReceiver
-          receiverName
-          senderId
-          senderName
-          tenantSender
-          carrierId
-          tenantCarrier
-          carrierName
-          beneficiary
-          createdAt
-          updatedAt
-          issuingDate
-          pickupDate
-          checkInDate
-          checkOutDate
-          deliveryDate
-          expiration
-          checkNum
-          amount
-          iban
-          status
-          note
-        }
-        nextToken
-      }
-      travels {
-        items {
-          id
-          departureDate
-          arrivalDate
-          carrierId
-          tenantCarrier
-          customerId
-          tenantCustomer
-          orderId
-          travelId
-          operation
-          operationValue
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      billingType
-      note
-      sender {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      carrier {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      receiver {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      pickupStorage {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      deliveryStorage {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-    }
-  }
-`;
-export const createCheck = /* GraphQL */ `
-  mutation CreateCheck(
-    $input: CreateCheckInput!
-    $condition: ModelCheckConditionInput
-  ) {
-    createCheck(input: $input, condition: $condition) {
-      id
-      orderCreationDate
-      stamp
-      orderId
-      order {
-        id
-        extId
-        stamp
-        name
-        preOrderId
-        carrierId
-        senderId
-        receiverId
-        pickupStorageId
-        deliveryStorageId
-        tenantCarrier
-        tenantSender
-        tenantReceiver
-        tenantPickupStorage
-        tenantDeliveryStorage
-        carrierName
-        senderName
-        receiverName
-        pickupStorageName
-        deliveryStorageName
-        carrierVat
-        senderVat
-        receiverVat
-        pickupStorageVat
-        deliveryStorageVat
-        createdAt
-        updatedAt
-        completedAt
-        paymentCondition
-        shipmentType
-        pickupCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        pickupDateStart
-        pickupDateEnd
-        pickupSlots {
-          from
-          to
-        }
-        depotCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        depotDateStart
-        depotDateEnd
-        depotSlots {
-          from
-          to
-        }
-        deliveryCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        deliveryDateStart
-        deliveryDateEnd
-        deliverySlots {
-          from
-          to
-        }
-        pickupAddress
-        deliveryAddress
-        depotAddress
-        availability {
-          from
-          to
-        }
-        status
-        orderNumber
-        trades
-        docs {
-          date
-          number
-          type
-        }
-        support
-        warnings
-        quantity
-        size
-        temperature
-        loadingMeter
-        grossWeight
-        netWeight
-        packages
-        perishable
-        stackable
-        palletInfo {
-          value
-          size
-          type
-          system
-        }
-        customer {
-          id
-          name
-          vatNumber
-          uniqueCode
-          pec
-        }
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        collectChecks
-        checksAmount
-        checks {
-          nextToken
-        }
-        travels {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        billingType
-        note
-        sender {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        carrier {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        receiver {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        pickupStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        deliveryStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-      }
-      orderStamp
-      entryTravelId
-      exitTravelId
-      keyDocNum
-      docsRef {
-        date
-        number
-        files {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        type
-      }
-      receiverId
-      tenantReceiver
-      receiverName
-      senderId
-      senderName
-      tenantSender
-      carrierId
-      tenantCarrier
-      carrierName
-      beneficiary
-      createdAt
-      updatedAt
-      issuingDate
-      pickupDate
-      checkInDate
-      checkOutDate
-      deliveryDate
-      expiration
-      checkNum
-      amount
-      iban
-      status
-      image {
-        filename
-        identityId
-        bucket
-        region
-        key
-        extension
-        timestamp
-      }
-      files {
-        filename
-        identityId
-        bucket
-        region
-        key
-        extension
-        timestamp
-      }
-      note
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-    }
-  }
-`;
-export const updateCheck = /* GraphQL */ `
-  mutation UpdateCheck(
-    $input: UpdateCheckInput!
-    $condition: ModelCheckConditionInput
-  ) {
-    updateCheck(input: $input, condition: $condition) {
-      id
-      orderCreationDate
-      stamp
-      orderId
-      order {
-        id
-        extId
-        stamp
-        name
-        preOrderId
-        carrierId
-        senderId
-        receiverId
-        pickupStorageId
-        deliveryStorageId
-        tenantCarrier
-        tenantSender
-        tenantReceiver
-        tenantPickupStorage
-        tenantDeliveryStorage
-        carrierName
-        senderName
-        receiverName
-        pickupStorageName
-        deliveryStorageName
-        carrierVat
-        senderVat
-        receiverVat
-        pickupStorageVat
-        deliveryStorageVat
-        createdAt
-        updatedAt
-        completedAt
-        paymentCondition
-        shipmentType
-        pickupCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        pickupDateStart
-        pickupDateEnd
-        pickupSlots {
-          from
-          to
-        }
-        depotCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        depotDateStart
-        depotDateEnd
-        depotSlots {
-          from
-          to
-        }
-        deliveryCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        deliveryDateStart
-        deliveryDateEnd
-        deliverySlots {
-          from
-          to
-        }
-        pickupAddress
-        deliveryAddress
-        depotAddress
-        availability {
-          from
-          to
-        }
-        status
-        orderNumber
-        trades
-        docs {
-          date
-          number
-          type
-        }
-        support
-        warnings
-        quantity
-        size
-        temperature
-        loadingMeter
-        grossWeight
-        netWeight
-        packages
-        perishable
-        stackable
-        palletInfo {
-          value
-          size
-          type
-          system
-        }
-        customer {
-          id
-          name
-          vatNumber
-          uniqueCode
-          pec
-        }
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        collectChecks
-        checksAmount
-        checks {
-          nextToken
-        }
-        travels {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        billingType
-        note
-        sender {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        carrier {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        receiver {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        pickupStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        deliveryStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-      }
-      orderStamp
-      entryTravelId
-      exitTravelId
-      keyDocNum
-      docsRef {
-        date
-        number
-        files {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        type
-      }
-      receiverId
-      tenantReceiver
-      receiverName
-      senderId
-      senderName
-      tenantSender
-      carrierId
-      tenantCarrier
-      carrierName
-      beneficiary
-      createdAt
-      updatedAt
-      issuingDate
-      pickupDate
-      checkInDate
-      checkOutDate
-      deliveryDate
-      expiration
-      checkNum
-      amount
-      iban
-      status
-      image {
-        filename
-        identityId
-        bucket
-        region
-        key
-        extension
-        timestamp
-      }
-      files {
-        filename
-        identityId
-        bucket
-        region
-        key
-        extension
-        timestamp
-      }
-      note
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-    }
-  }
-`;
-export const deleteCheck = /* GraphQL */ `
-  mutation DeleteCheck(
-    $input: DeleteCheckInput!
-    $condition: ModelCheckConditionInput
-  ) {
-    deleteCheck(input: $input, condition: $condition) {
-      id
-      orderCreationDate
-      stamp
-      orderId
-      order {
-        id
-        extId
-        stamp
-        name
-        preOrderId
-        carrierId
-        senderId
-        receiverId
-        pickupStorageId
-        deliveryStorageId
-        tenantCarrier
-        tenantSender
-        tenantReceiver
-        tenantPickupStorage
-        tenantDeliveryStorage
-        carrierName
-        senderName
-        receiverName
-        pickupStorageName
-        deliveryStorageName
-        carrierVat
-        senderVat
-        receiverVat
-        pickupStorageVat
-        deliveryStorageVat
-        createdAt
-        updatedAt
-        completedAt
-        paymentCondition
-        shipmentType
-        pickupCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        pickupDateStart
-        pickupDateEnd
-        pickupSlots {
-          from
-          to
-        }
-        depotCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        depotDateStart
-        depotDateEnd
-        depotSlots {
-          from
-          to
-        }
-        deliveryCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        deliveryDateStart
-        deliveryDateEnd
-        deliverySlots {
-          from
-          to
-        }
-        pickupAddress
-        deliveryAddress
-        depotAddress
-        availability {
-          from
-          to
-        }
-        status
-        orderNumber
-        trades
-        docs {
-          date
-          number
-          type
-        }
-        support
-        warnings
-        quantity
-        size
-        temperature
-        loadingMeter
-        grossWeight
-        netWeight
-        packages
-        perishable
-        stackable
-        palletInfo {
-          value
-          size
-          type
-          system
-        }
-        customer {
-          id
-          name
-          vatNumber
-          uniqueCode
-          pec
-        }
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        collectChecks
-        checksAmount
-        checks {
-          nextToken
-        }
-        travels {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        billingType
-        note
-        sender {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        carrier {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        receiver {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        pickupStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        deliveryStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-      }
-      orderStamp
-      entryTravelId
-      exitTravelId
-      keyDocNum
-      docsRef {
-        date
-        number
-        files {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        type
-      }
-      receiverId
-      tenantReceiver
-      receiverName
-      senderId
-      senderName
-      tenantSender
-      carrierId
-      tenantCarrier
-      carrierName
-      beneficiary
-      createdAt
-      updatedAt
-      issuingDate
-      pickupDate
-      checkInDate
-      checkOutDate
-      deliveryDate
-      expiration
-      checkNum
-      amount
-      iban
-      status
-      image {
-        filename
-        identityId
-        bucket
-        region
-        key
-        extension
-        timestamp
-      }
-      files {
-        filename
-        identityId
-        bucket
-        region
-        key
-        extension
-        timestamp
-      }
-      note
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-    }
-  }
-`;
-export const createTravel = /* GraphQL */ `
-  mutation CreateTravel(
-    $input: CreateTravelInput!
-    $condition: ModelTravelConditionInput
-  ) {
-    createTravel(input: $input, condition: $condition) {
-      id
-      stamp
-      carrierId
-      tenant
-      status
-      createdAt
-      departureDate
-      updatedAt
-      licensePlate
-      vehicleName
-      driverName
-      driver {
-        username
-        companyId
-        name
-        email
-        phone
-        job
-        task
-        tenant
-      }
-      estimatedTravelTime
-      estimatedTravelLength
-      estimatedTransportCosts
-      orders {
-        items {
-          id
-          departureDate
-          arrivalDate
-          carrierId
-          tenantCarrier
-          customerId
-          tenantCustomer
-          orderId
-          travelId
-          operation
-          operationValue
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      palletHandlings {
-        items {
-          id
-          stamp
-          carrierId
-          tenantCarrier
-          carrierName
-          customerId
-          tenantCustomer
-          customerName
-          reversalId
-          tenantReversal
-          reversalName
-          createdAt
-          operationDate
-          updatedAt
-          loadQuantity
-          loadNote
-          disposableLoad
-          disposableLoadNote
-          unloadQuantity
-          unloadNote
-          disposableUnload
-          disposableUnloadNote
-          reversalQuantity
-          reversalNote
-          palletHandlingRefId
-          travelId
-          travelStamp
-          carrierOperatorName
-          vehicleLicensePlate
-          type
-          status
-          carrierValidation
-          carrierValidatorName
-          carrierValidationMessage
-          customerValidation
-          customerValidatorName
-          customerValidationMessage
-          isVoucher
-        }
-        nextToken
-      }
-      start {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      waypoints {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      end {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      plannedOrderIds
-      travelType
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      note
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-    }
-  }
-`;
-export const updateTravel = /* GraphQL */ `
-  mutation UpdateTravel(
-    $input: UpdateTravelInput!
-    $condition: ModelTravelConditionInput
-  ) {
-    updateTravel(input: $input, condition: $condition) {
-      id
-      stamp
-      carrierId
-      tenant
-      status
-      createdAt
-      departureDate
-      updatedAt
-      licensePlate
-      vehicleName
-      driverName
-      driver {
-        username
-        companyId
-        name
-        email
-        phone
-        job
-        task
-        tenant
-      }
-      estimatedTravelTime
-      estimatedTravelLength
-      estimatedTransportCosts
-      orders {
-        items {
-          id
-          departureDate
-          arrivalDate
-          carrierId
-          tenantCarrier
-          customerId
-          tenantCustomer
-          orderId
-          travelId
-          operation
-          operationValue
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      palletHandlings {
-        items {
-          id
-          stamp
-          carrierId
-          tenantCarrier
-          carrierName
-          customerId
-          tenantCustomer
-          customerName
-          reversalId
-          tenantReversal
-          reversalName
-          createdAt
-          operationDate
-          updatedAt
-          loadQuantity
-          loadNote
-          disposableLoad
-          disposableLoadNote
-          unloadQuantity
-          unloadNote
-          disposableUnload
-          disposableUnloadNote
-          reversalQuantity
-          reversalNote
-          palletHandlingRefId
-          travelId
-          travelStamp
-          carrierOperatorName
-          vehicleLicensePlate
-          type
-          status
-          carrierValidation
-          carrierValidatorName
-          carrierValidationMessage
-          customerValidation
-          customerValidatorName
-          customerValidationMessage
-          isVoucher
-        }
-        nextToken
-      }
-      start {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      waypoints {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      end {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      plannedOrderIds
-      travelType
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      note
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-    }
-  }
-`;
-export const deleteTravel = /* GraphQL */ `
-  mutation DeleteTravel(
-    $input: DeleteTravelInput!
-    $condition: ModelTravelConditionInput
-  ) {
-    deleteTravel(input: $input, condition: $condition) {
-      id
-      stamp
-      carrierId
-      tenant
-      status
-      createdAt
-      departureDate
-      updatedAt
-      licensePlate
-      vehicleName
-      driverName
-      driver {
-        username
-        companyId
-        name
-        email
-        phone
-        job
-        task
-        tenant
-      }
-      estimatedTravelTime
-      estimatedTravelLength
-      estimatedTransportCosts
-      orders {
-        items {
-          id
-          departureDate
-          arrivalDate
-          carrierId
-          tenantCarrier
-          customerId
-          tenantCustomer
-          orderId
-          travelId
-          operation
-          operationValue
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      palletHandlings {
-        items {
-          id
-          stamp
-          carrierId
-          tenantCarrier
-          carrierName
-          customerId
-          tenantCustomer
-          customerName
-          reversalId
-          tenantReversal
-          reversalName
-          createdAt
-          operationDate
-          updatedAt
-          loadQuantity
-          loadNote
-          disposableLoad
-          disposableLoadNote
-          unloadQuantity
-          unloadNote
-          disposableUnload
-          disposableUnloadNote
-          reversalQuantity
-          reversalNote
-          palletHandlingRefId
-          travelId
-          travelStamp
-          carrierOperatorName
-          vehicleLicensePlate
-          type
-          status
-          carrierValidation
-          carrierValidatorName
-          carrierValidationMessage
-          customerValidation
-          customerValidatorName
-          customerValidationMessage
-          isVoucher
-        }
-        nextToken
-      }
-      start {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      waypoints {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      end {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      plannedOrderIds
-      travelType
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      note
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-    }
-  }
-`;
-export const createTravelsOrders = /* GraphQL */ `
-  mutation CreateTravelsOrders(
-    $input: CreateTravelsOrdersInput!
-    $condition: ModelTravelsOrdersConditionInput
-  ) {
-    createTravelsOrders(input: $input, condition: $condition) {
-      id
-      departureDate
-      arrivalDate
-      carrierId
-      tenantCarrier
-      customerId
-      tenantCustomer
-      orderId
-      travelId
-      order {
-        id
-        extId
-        stamp
-        name
-        preOrderId
-        carrierId
-        senderId
-        receiverId
-        pickupStorageId
-        deliveryStorageId
-        tenantCarrier
-        tenantSender
-        tenantReceiver
-        tenantPickupStorage
-        tenantDeliveryStorage
-        carrierName
-        senderName
-        receiverName
-        pickupStorageName
-        deliveryStorageName
-        carrierVat
-        senderVat
-        receiverVat
-        pickupStorageVat
-        deliveryStorageVat
-        createdAt
-        updatedAt
-        completedAt
-        paymentCondition
-        shipmentType
-        pickupCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        pickupDateStart
-        pickupDateEnd
-        pickupSlots {
-          from
-          to
-        }
-        depotCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        depotDateStart
-        depotDateEnd
-        depotSlots {
-          from
-          to
-        }
-        deliveryCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        deliveryDateStart
-        deliveryDateEnd
-        deliverySlots {
-          from
-          to
-        }
-        pickupAddress
-        deliveryAddress
-        depotAddress
-        availability {
-          from
-          to
-        }
-        status
-        orderNumber
-        trades
-        docs {
-          date
-          number
-          type
-        }
-        support
-        warnings
-        quantity
-        size
-        temperature
-        loadingMeter
-        grossWeight
-        netWeight
-        packages
-        perishable
-        stackable
-        palletInfo {
-          value
-          size
-          type
-          system
-        }
-        customer {
-          id
-          name
-          vatNumber
-          uniqueCode
-          pec
-        }
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        collectChecks
-        checksAmount
-        checks {
-          nextToken
-        }
-        travels {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        billingType
-        note
-        sender {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        carrier {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        receiver {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        pickupStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        deliveryStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-      }
-      travel {
-        id
-        stamp
-        carrierId
-        tenant
-        status
-        createdAt
-        departureDate
-        updatedAt
-        licensePlate
-        vehicleName
-        driverName
-        driver {
-          username
-          companyId
-          name
-          email
-          phone
-          job
-          task
-          tenant
-        }
-        estimatedTravelTime
-        estimatedTravelLength
-        estimatedTransportCosts
-        orders {
-          nextToken
-        }
-        palletHandlings {
-          nextToken
-        }
-        start {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        waypoints {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        end {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        plannedOrderIds
-        travelType
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        note
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-      }
-      waypoint {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      operation
-      operationValue
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateTravelsOrders = /* GraphQL */ `
-  mutation UpdateTravelsOrders(
-    $input: UpdateTravelsOrdersInput!
-    $condition: ModelTravelsOrdersConditionInput
-  ) {
-    updateTravelsOrders(input: $input, condition: $condition) {
-      id
-      departureDate
-      arrivalDate
-      carrierId
-      tenantCarrier
-      customerId
-      tenantCustomer
-      orderId
-      travelId
-      order {
-        id
-        extId
-        stamp
-        name
-        preOrderId
-        carrierId
-        senderId
-        receiverId
-        pickupStorageId
-        deliveryStorageId
-        tenantCarrier
-        tenantSender
-        tenantReceiver
-        tenantPickupStorage
-        tenantDeliveryStorage
-        carrierName
-        senderName
-        receiverName
-        pickupStorageName
-        deliveryStorageName
-        carrierVat
-        senderVat
-        receiverVat
-        pickupStorageVat
-        deliveryStorageVat
-        createdAt
-        updatedAt
-        completedAt
-        paymentCondition
-        shipmentType
-        pickupCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        pickupDateStart
-        pickupDateEnd
-        pickupSlots {
-          from
-          to
-        }
-        depotCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        depotDateStart
-        depotDateEnd
-        depotSlots {
-          from
-          to
-        }
-        deliveryCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        deliveryDateStart
-        deliveryDateEnd
-        deliverySlots {
-          from
-          to
-        }
-        pickupAddress
-        deliveryAddress
-        depotAddress
-        availability {
-          from
-          to
-        }
-        status
-        orderNumber
-        trades
-        docs {
-          date
-          number
-          type
-        }
-        support
-        warnings
-        quantity
-        size
-        temperature
-        loadingMeter
-        grossWeight
-        netWeight
-        packages
-        perishable
-        stackable
-        palletInfo {
-          value
-          size
-          type
-          system
-        }
-        customer {
-          id
-          name
-          vatNumber
-          uniqueCode
-          pec
-        }
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        collectChecks
-        checksAmount
-        checks {
-          nextToken
-        }
-        travels {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        billingType
-        note
-        sender {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        carrier {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        receiver {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        pickupStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        deliveryStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-      }
-      travel {
-        id
-        stamp
-        carrierId
-        tenant
-        status
-        createdAt
-        departureDate
-        updatedAt
-        licensePlate
-        vehicleName
-        driverName
-        driver {
-          username
-          companyId
-          name
-          email
-          phone
-          job
-          task
-          tenant
-        }
-        estimatedTravelTime
-        estimatedTravelLength
-        estimatedTransportCosts
-        orders {
-          nextToken
-        }
-        palletHandlings {
-          nextToken
-        }
-        start {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        waypoints {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        end {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        plannedOrderIds
-        travelType
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        note
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-      }
-      waypoint {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      operation
-      operationValue
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteTravelsOrders = /* GraphQL */ `
-  mutation DeleteTravelsOrders(
-    $input: DeleteTravelsOrdersInput!
-    $condition: ModelTravelsOrdersConditionInput
-  ) {
-    deleteTravelsOrders(input: $input, condition: $condition) {
-      id
-      departureDate
-      arrivalDate
-      carrierId
-      tenantCarrier
-      customerId
-      tenantCustomer
-      orderId
-      travelId
-      order {
-        id
-        extId
-        stamp
-        name
-        preOrderId
-        carrierId
-        senderId
-        receiverId
-        pickupStorageId
-        deliveryStorageId
-        tenantCarrier
-        tenantSender
-        tenantReceiver
-        tenantPickupStorage
-        tenantDeliveryStorage
-        carrierName
-        senderName
-        receiverName
-        pickupStorageName
-        deliveryStorageName
-        carrierVat
-        senderVat
-        receiverVat
-        pickupStorageVat
-        deliveryStorageVat
-        createdAt
-        updatedAt
-        completedAt
-        paymentCondition
-        shipmentType
-        pickupCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        pickupDateStart
-        pickupDateEnd
-        pickupSlots {
-          from
-          to
-        }
-        depotCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        depotDateStart
-        depotDateEnd
-        depotSlots {
-          from
-          to
-        }
-        deliveryCheckpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        deliveryDateStart
-        deliveryDateEnd
-        deliverySlots {
-          from
-          to
-        }
-        pickupAddress
-        deliveryAddress
-        depotAddress
-        availability {
-          from
-          to
-        }
-        status
-        orderNumber
-        trades
-        docs {
-          date
-          number
-          type
-        }
-        support
-        warnings
-        quantity
-        size
-        temperature
-        loadingMeter
-        grossWeight
-        netWeight
-        packages
-        perishable
-        stackable
-        palletInfo {
-          value
-          size
-          type
-          system
-        }
-        customer {
-          id
-          name
-          vatNumber
-          uniqueCode
-          pec
-        }
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        collectChecks
-        checksAmount
-        checks {
-          nextToken
-        }
-        travels {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        billingType
-        note
-        sender {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        carrier {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        receiver {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        pickupStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-        deliveryStorage {
-          id
-          city
-          address
-          uniqueCode
-          pec
-          trades
-          type
-          authorCustomersRaw
-          createdAt
-          updatedAt
-          companyCode
-          vatNumber
-          name
-          fiscalCode
-          owner
-        }
-      }
-      travel {
-        id
-        stamp
-        carrierId
-        tenant
-        status
-        createdAt
-        departureDate
-        updatedAt
-        licensePlate
-        vehicleName
-        driverName
-        driver {
-          username
-          companyId
-          name
-          email
-          phone
-          job
-          task
-          tenant
-        }
-        estimatedTravelTime
-        estimatedTravelLength
-        estimatedTransportCosts
-        orders {
-          nextToken
-        }
-        palletHandlings {
-          nextToken
-        }
-        start {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        waypoints {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        end {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        plannedOrderIds
-        travelType
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        note
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-      }
-      waypoint {
-        id
-        orders {
-          orderId
-          plannedId
-          orderStamp
-          orderStatus
-          operation
-          operationValue
-        }
-        companyName
-        companyId
-        tenantCompany
-        checkpoint {
-          warehouseId
-          extId
-          thirdCompanyId
-          thirdCompanyOwner
-          thirdCompanyName
-          thirdCompanyVat
-          name
-          maxLength
-          tools
-          cargoBay
-          trades
-          containerUnloading
-          note
-        }
-        estimatedLength
-        estimatedTime
-        completed
-      }
-      operation
-      operationValue
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createPalletHandling = /* GraphQL */ `
   mutation CreatePalletHandling(
     $input: CreatePalletHandlingInput!
@@ -7560,82 +3057,6 @@ export const createPalletHandling = /* GraphQL */ `
       palletHandlingRefId
       travelId
       travelStamp
-      travel {
-        id
-        stamp
-        carrierId
-        tenant
-        status
-        createdAt
-        departureDate
-        updatedAt
-        licensePlate
-        vehicleName
-        driverName
-        driver {
-          username
-          companyId
-          name
-          email
-          phone
-          job
-          task
-          tenant
-        }
-        estimatedTravelTime
-        estimatedTravelLength
-        estimatedTransportCosts
-        orders {
-          nextToken
-        }
-        palletHandlings {
-          nextToken
-        }
-        start {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        waypoints {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        end {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        plannedOrderIds
-        travelType
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        note
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-      }
       waypoint {
         id
         orders {
@@ -7736,6 +3157,82 @@ export const createPalletHandling = /* GraphQL */ `
         author
         description
         timestamp
+      }
+      travel {
+        id
+        stamp
+        carrierId
+        tenant
+        status
+        createdAt
+        departureDate
+        updatedAt
+        licensePlate
+        vehicleName
+        driverName
+        driver {
+          username
+          companyId
+          name
+          email
+          phone
+          job
+          task
+          tenant
+        }
+        estimatedTravelTime
+        estimatedTravelLength
+        estimatedTransportCosts
+        palletHandlings {
+          nextToken
+        }
+        start {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        waypoints {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        end {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        plannedOrderIds
+        travelType
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        note
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        orders {
+          nextToken
+        }
       }
     }
   }
@@ -7773,82 +3270,6 @@ export const updatePalletHandling = /* GraphQL */ `
       palletHandlingRefId
       travelId
       travelStamp
-      travel {
-        id
-        stamp
-        carrierId
-        tenant
-        status
-        createdAt
-        departureDate
-        updatedAt
-        licensePlate
-        vehicleName
-        driverName
-        driver {
-          username
-          companyId
-          name
-          email
-          phone
-          job
-          task
-          tenant
-        }
-        estimatedTravelTime
-        estimatedTravelLength
-        estimatedTransportCosts
-        orders {
-          nextToken
-        }
-        palletHandlings {
-          nextToken
-        }
-        start {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        waypoints {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        end {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        plannedOrderIds
-        travelType
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        note
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-      }
       waypoint {
         id
         orders {
@@ -7949,6 +3370,82 @@ export const updatePalletHandling = /* GraphQL */ `
         author
         description
         timestamp
+      }
+      travel {
+        id
+        stamp
+        carrierId
+        tenant
+        status
+        createdAt
+        departureDate
+        updatedAt
+        licensePlate
+        vehicleName
+        driverName
+        driver {
+          username
+          companyId
+          name
+          email
+          phone
+          job
+          task
+          tenant
+        }
+        estimatedTravelTime
+        estimatedTravelLength
+        estimatedTransportCosts
+        palletHandlings {
+          nextToken
+        }
+        start {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        waypoints {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        end {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        plannedOrderIds
+        travelType
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        note
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        orders {
+          nextToken
+        }
       }
     }
   }
@@ -7986,82 +3483,6 @@ export const deletePalletHandling = /* GraphQL */ `
       palletHandlingRefId
       travelId
       travelStamp
-      travel {
-        id
-        stamp
-        carrierId
-        tenant
-        status
-        createdAt
-        departureDate
-        updatedAt
-        licensePlate
-        vehicleName
-        driverName
-        driver {
-          username
-          companyId
-          name
-          email
-          phone
-          job
-          task
-          tenant
-        }
-        estimatedTravelTime
-        estimatedTravelLength
-        estimatedTransportCosts
-        orders {
-          nextToken
-        }
-        palletHandlings {
-          nextToken
-        }
-        start {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        waypoints {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        end {
-          id
-          companyName
-          companyId
-          tenantCompany
-          estimatedLength
-          estimatedTime
-          completed
-        }
-        plannedOrderIds
-        travelType
-        lastPosition {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        note
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-      }
       waypoint {
         id
         orders {
@@ -8162,6 +3583,82 @@ export const deletePalletHandling = /* GraphQL */ `
         author
         description
         timestamp
+      }
+      travel {
+        id
+        stamp
+        carrierId
+        tenant
+        status
+        createdAt
+        departureDate
+        updatedAt
+        licensePlate
+        vehicleName
+        driverName
+        driver {
+          username
+          companyId
+          name
+          email
+          phone
+          job
+          task
+          tenant
+        }
+        estimatedTravelTime
+        estimatedTravelLength
+        estimatedTransportCosts
+        palletHandlings {
+          nextToken
+        }
+        start {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        waypoints {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        end {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        plannedOrderIds
+        travelType
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        note
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        orders {
+          nextToken
+        }
       }
     }
   }
@@ -8497,6 +3994,4509 @@ export const createWarehouse = /* GraphQL */ `
       note
       createdAt
       updatedAt
+    }
+  }
+`;
+export const createOrder = /* GraphQL */ `
+  mutation CreateOrder(
+    $input: CreateOrderInput!
+    $condition: ModelOrderConditionInput
+  ) {
+    createOrder(input: $input, condition: $condition) {
+      id
+      extId
+      stamp
+      name
+      preOrderId
+      carrierId
+      senderId
+      receiverId
+      pickupStorageId
+      deliveryStorageId
+      tenantCarrier
+      tenantSender
+      tenantReceiver
+      tenantPickupStorage
+      tenantDeliveryStorage
+      carrierName
+      senderName
+      receiverName
+      pickupStorageName
+      deliveryStorageName
+      carrierVat
+      senderVat
+      receiverVat
+      pickupStorageVat
+      deliveryStorageVat
+      createdAt
+      updatedAt
+      completedAt
+      paymentCondition
+      shipmentType
+      pickupCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      pickupDateStart
+      pickupDateEnd
+      pickupSlots {
+        from
+        to
+      }
+      depotCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      depotDateStart
+      depotDateEnd
+      depotSlots {
+        from
+        to
+      }
+      deliveryCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      deliveryDateStart
+      deliveryDateEnd
+      deliverySlots {
+        from
+        to
+      }
+      pickupAddress
+      deliveryAddress
+      depotAddress
+      availability {
+        from
+        to
+      }
+      status
+      orderNumber
+      trades
+      docs {
+        date
+        number
+        files {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        type
+      }
+      support
+      warnings
+      quantity
+      size
+      temperature
+      loadingMeter
+      grossWeight
+      netWeight
+      packages
+      perishable
+      stackable
+      palletInfo {
+        value
+        size
+        type
+        system
+      }
+      customer {
+        id
+        name
+        vatNumber
+        uniqueCode
+        pec
+      }
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      collectChecks
+      checksAmount
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      billingType
+      note
+      sender {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      carrier {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      receiver {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      pickupStorage {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      deliveryStorage {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      checks {
+        items {
+          id
+          orderCreationDate
+          stamp
+          orderId
+          orderStamp
+          entryTravelId
+          exitTravelId
+          keyDocNum
+          receiverId
+          tenantReceiver
+          receiverName
+          senderId
+          senderName
+          tenantSender
+          carrierId
+          tenantCarrier
+          carrierName
+          beneficiary
+          createdAt
+          updatedAt
+          issuingDate
+          pickupDate
+          checkInDate
+          checkOutDate
+          deliveryDate
+          expiration
+          checkNum
+          amount
+          iban
+          status
+          note
+        }
+        nextToken
+      }
+      travels {
+        items {
+          id
+          departureDate
+          arrivalDate
+          carrierId
+          tenantCarrier
+          customerId
+          tenantCustomer
+          orderId
+          travelId
+          operation
+          operationValue
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const updateOrder = /* GraphQL */ `
+  mutation UpdateOrder(
+    $input: UpdateOrderInput!
+    $condition: ModelOrderConditionInput
+  ) {
+    updateOrder(input: $input, condition: $condition) {
+      id
+      extId
+      stamp
+      name
+      preOrderId
+      carrierId
+      senderId
+      receiverId
+      pickupStorageId
+      deliveryStorageId
+      tenantCarrier
+      tenantSender
+      tenantReceiver
+      tenantPickupStorage
+      tenantDeliveryStorage
+      carrierName
+      senderName
+      receiverName
+      pickupStorageName
+      deliveryStorageName
+      carrierVat
+      senderVat
+      receiverVat
+      pickupStorageVat
+      deliveryStorageVat
+      createdAt
+      updatedAt
+      completedAt
+      paymentCondition
+      shipmentType
+      pickupCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      pickupDateStart
+      pickupDateEnd
+      pickupSlots {
+        from
+        to
+      }
+      depotCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      depotDateStart
+      depotDateEnd
+      depotSlots {
+        from
+        to
+      }
+      deliveryCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      deliveryDateStart
+      deliveryDateEnd
+      deliverySlots {
+        from
+        to
+      }
+      pickupAddress
+      deliveryAddress
+      depotAddress
+      availability {
+        from
+        to
+      }
+      status
+      orderNumber
+      trades
+      docs {
+        date
+        number
+        files {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        type
+      }
+      support
+      warnings
+      quantity
+      size
+      temperature
+      loadingMeter
+      grossWeight
+      netWeight
+      packages
+      perishable
+      stackable
+      palletInfo {
+        value
+        size
+        type
+        system
+      }
+      customer {
+        id
+        name
+        vatNumber
+        uniqueCode
+        pec
+      }
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      collectChecks
+      checksAmount
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      billingType
+      note
+      sender {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      carrier {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      receiver {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      pickupStorage {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      deliveryStorage {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      checks {
+        items {
+          id
+          orderCreationDate
+          stamp
+          orderId
+          orderStamp
+          entryTravelId
+          exitTravelId
+          keyDocNum
+          receiverId
+          tenantReceiver
+          receiverName
+          senderId
+          senderName
+          tenantSender
+          carrierId
+          tenantCarrier
+          carrierName
+          beneficiary
+          createdAt
+          updatedAt
+          issuingDate
+          pickupDate
+          checkInDate
+          checkOutDate
+          deliveryDate
+          expiration
+          checkNum
+          amount
+          iban
+          status
+          note
+        }
+        nextToken
+      }
+      travels {
+        items {
+          id
+          departureDate
+          arrivalDate
+          carrierId
+          tenantCarrier
+          customerId
+          tenantCustomer
+          orderId
+          travelId
+          operation
+          operationValue
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const deleteOrder = /* GraphQL */ `
+  mutation DeleteOrder(
+    $input: DeleteOrderInput!
+    $condition: ModelOrderConditionInput
+  ) {
+    deleteOrder(input: $input, condition: $condition) {
+      id
+      extId
+      stamp
+      name
+      preOrderId
+      carrierId
+      senderId
+      receiverId
+      pickupStorageId
+      deliveryStorageId
+      tenantCarrier
+      tenantSender
+      tenantReceiver
+      tenantPickupStorage
+      tenantDeliveryStorage
+      carrierName
+      senderName
+      receiverName
+      pickupStorageName
+      deliveryStorageName
+      carrierVat
+      senderVat
+      receiverVat
+      pickupStorageVat
+      deliveryStorageVat
+      createdAt
+      updatedAt
+      completedAt
+      paymentCondition
+      shipmentType
+      pickupCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      pickupDateStart
+      pickupDateEnd
+      pickupSlots {
+        from
+        to
+      }
+      depotCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      depotDateStart
+      depotDateEnd
+      depotSlots {
+        from
+        to
+      }
+      deliveryCheckpoint {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      deliveryDateStart
+      deliveryDateEnd
+      deliverySlots {
+        from
+        to
+      }
+      pickupAddress
+      deliveryAddress
+      depotAddress
+      availability {
+        from
+        to
+      }
+      status
+      orderNumber
+      trades
+      docs {
+        date
+        number
+        files {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        type
+      }
+      support
+      warnings
+      quantity
+      size
+      temperature
+      loadingMeter
+      grossWeight
+      netWeight
+      packages
+      perishable
+      stackable
+      palletInfo {
+        value
+        size
+        type
+        system
+      }
+      customer {
+        id
+        name
+        vatNumber
+        uniqueCode
+        pec
+      }
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      collectChecks
+      checksAmount
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      billingType
+      note
+      sender {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      carrier {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      receiver {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      pickupStorage {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      deliveryStorage {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        customers {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+      }
+      checks {
+        items {
+          id
+          orderCreationDate
+          stamp
+          orderId
+          orderStamp
+          entryTravelId
+          exitTravelId
+          keyDocNum
+          receiverId
+          tenantReceiver
+          receiverName
+          senderId
+          senderName
+          tenantSender
+          carrierId
+          tenantCarrier
+          carrierName
+          beneficiary
+          createdAt
+          updatedAt
+          issuingDate
+          pickupDate
+          checkInDate
+          checkOutDate
+          deliveryDate
+          expiration
+          checkNum
+          amount
+          iban
+          status
+          note
+        }
+        nextToken
+      }
+      travels {
+        items {
+          id
+          departureDate
+          arrivalDate
+          carrierId
+          tenantCarrier
+          customerId
+          tenantCustomer
+          orderId
+          travelId
+          operation
+          operationValue
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const createCheck = /* GraphQL */ `
+  mutation CreateCheck(
+    $input: CreateCheckInput!
+    $condition: ModelCheckConditionInput
+  ) {
+    createCheck(input: $input, condition: $condition) {
+      id
+      orderCreationDate
+      stamp
+      orderId
+      orderStamp
+      entryTravelId
+      exitTravelId
+      keyDocNum
+      docsRef {
+        date
+        number
+        files {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        type
+      }
+      receiverId
+      tenantReceiver
+      receiverName
+      senderId
+      senderName
+      tenantSender
+      carrierId
+      tenantCarrier
+      carrierName
+      beneficiary
+      createdAt
+      updatedAt
+      issuingDate
+      pickupDate
+      checkInDate
+      checkOutDate
+      deliveryDate
+      expiration
+      checkNum
+      amount
+      iban
+      status
+      image {
+        filename
+        identityId
+        bucket
+        region
+        key
+        extension
+        timestamp
+      }
+      files {
+        filename
+        identityId
+        bucket
+        region
+        key
+        extension
+        timestamp
+      }
+      note
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      order {
+        id
+        extId
+        stamp
+        name
+        preOrderId
+        carrierId
+        senderId
+        receiverId
+        pickupStorageId
+        deliveryStorageId
+        tenantCarrier
+        tenantSender
+        tenantReceiver
+        tenantPickupStorage
+        tenantDeliveryStorage
+        carrierName
+        senderName
+        receiverName
+        pickupStorageName
+        deliveryStorageName
+        carrierVat
+        senderVat
+        receiverVat
+        pickupStorageVat
+        deliveryStorageVat
+        createdAt
+        updatedAt
+        completedAt
+        paymentCondition
+        shipmentType
+        pickupCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        pickupDateStart
+        pickupDateEnd
+        pickupSlots {
+          from
+          to
+        }
+        depotCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        depotDateStart
+        depotDateEnd
+        depotSlots {
+          from
+          to
+        }
+        deliveryCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        deliveryDateStart
+        deliveryDateEnd
+        deliverySlots {
+          from
+          to
+        }
+        pickupAddress
+        deliveryAddress
+        depotAddress
+        availability {
+          from
+          to
+        }
+        status
+        orderNumber
+        trades
+        docs {
+          date
+          number
+          type
+        }
+        support
+        warnings
+        quantity
+        size
+        temperature
+        loadingMeter
+        grossWeight
+        netWeight
+        packages
+        perishable
+        stackable
+        palletInfo {
+          value
+          size
+          type
+          system
+        }
+        customer {
+          id
+          name
+          vatNumber
+          uniqueCode
+          pec
+        }
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        collectChecks
+        checksAmount
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        billingType
+        note
+        sender {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        carrier {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        receiver {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        pickupStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        deliveryStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        checks {
+          nextToken
+        }
+        travels {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const updateCheck = /* GraphQL */ `
+  mutation UpdateCheck(
+    $input: UpdateCheckInput!
+    $condition: ModelCheckConditionInput
+  ) {
+    updateCheck(input: $input, condition: $condition) {
+      id
+      orderCreationDate
+      stamp
+      orderId
+      orderStamp
+      entryTravelId
+      exitTravelId
+      keyDocNum
+      docsRef {
+        date
+        number
+        files {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        type
+      }
+      receiverId
+      tenantReceiver
+      receiverName
+      senderId
+      senderName
+      tenantSender
+      carrierId
+      tenantCarrier
+      carrierName
+      beneficiary
+      createdAt
+      updatedAt
+      issuingDate
+      pickupDate
+      checkInDate
+      checkOutDate
+      deliveryDate
+      expiration
+      checkNum
+      amount
+      iban
+      status
+      image {
+        filename
+        identityId
+        bucket
+        region
+        key
+        extension
+        timestamp
+      }
+      files {
+        filename
+        identityId
+        bucket
+        region
+        key
+        extension
+        timestamp
+      }
+      note
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      order {
+        id
+        extId
+        stamp
+        name
+        preOrderId
+        carrierId
+        senderId
+        receiverId
+        pickupStorageId
+        deliveryStorageId
+        tenantCarrier
+        tenantSender
+        tenantReceiver
+        tenantPickupStorage
+        tenantDeliveryStorage
+        carrierName
+        senderName
+        receiverName
+        pickupStorageName
+        deliveryStorageName
+        carrierVat
+        senderVat
+        receiverVat
+        pickupStorageVat
+        deliveryStorageVat
+        createdAt
+        updatedAt
+        completedAt
+        paymentCondition
+        shipmentType
+        pickupCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        pickupDateStart
+        pickupDateEnd
+        pickupSlots {
+          from
+          to
+        }
+        depotCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        depotDateStart
+        depotDateEnd
+        depotSlots {
+          from
+          to
+        }
+        deliveryCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        deliveryDateStart
+        deliveryDateEnd
+        deliverySlots {
+          from
+          to
+        }
+        pickupAddress
+        deliveryAddress
+        depotAddress
+        availability {
+          from
+          to
+        }
+        status
+        orderNumber
+        trades
+        docs {
+          date
+          number
+          type
+        }
+        support
+        warnings
+        quantity
+        size
+        temperature
+        loadingMeter
+        grossWeight
+        netWeight
+        packages
+        perishable
+        stackable
+        palletInfo {
+          value
+          size
+          type
+          system
+        }
+        customer {
+          id
+          name
+          vatNumber
+          uniqueCode
+          pec
+        }
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        collectChecks
+        checksAmount
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        billingType
+        note
+        sender {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        carrier {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        receiver {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        pickupStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        deliveryStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        checks {
+          nextToken
+        }
+        travels {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const deleteCheck = /* GraphQL */ `
+  mutation DeleteCheck(
+    $input: DeleteCheckInput!
+    $condition: ModelCheckConditionInput
+  ) {
+    deleteCheck(input: $input, condition: $condition) {
+      id
+      orderCreationDate
+      stamp
+      orderId
+      orderStamp
+      entryTravelId
+      exitTravelId
+      keyDocNum
+      docsRef {
+        date
+        number
+        files {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        type
+      }
+      receiverId
+      tenantReceiver
+      receiverName
+      senderId
+      senderName
+      tenantSender
+      carrierId
+      tenantCarrier
+      carrierName
+      beneficiary
+      createdAt
+      updatedAt
+      issuingDate
+      pickupDate
+      checkInDate
+      checkOutDate
+      deliveryDate
+      expiration
+      checkNum
+      amount
+      iban
+      status
+      image {
+        filename
+        identityId
+        bucket
+        region
+        key
+        extension
+        timestamp
+      }
+      files {
+        filename
+        identityId
+        bucket
+        region
+        key
+        extension
+        timestamp
+      }
+      note
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      order {
+        id
+        extId
+        stamp
+        name
+        preOrderId
+        carrierId
+        senderId
+        receiverId
+        pickupStorageId
+        deliveryStorageId
+        tenantCarrier
+        tenantSender
+        tenantReceiver
+        tenantPickupStorage
+        tenantDeliveryStorage
+        carrierName
+        senderName
+        receiverName
+        pickupStorageName
+        deliveryStorageName
+        carrierVat
+        senderVat
+        receiverVat
+        pickupStorageVat
+        deliveryStorageVat
+        createdAt
+        updatedAt
+        completedAt
+        paymentCondition
+        shipmentType
+        pickupCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        pickupDateStart
+        pickupDateEnd
+        pickupSlots {
+          from
+          to
+        }
+        depotCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        depotDateStart
+        depotDateEnd
+        depotSlots {
+          from
+          to
+        }
+        deliveryCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        deliveryDateStart
+        deliveryDateEnd
+        deliverySlots {
+          from
+          to
+        }
+        pickupAddress
+        deliveryAddress
+        depotAddress
+        availability {
+          from
+          to
+        }
+        status
+        orderNumber
+        trades
+        docs {
+          date
+          number
+          type
+        }
+        support
+        warnings
+        quantity
+        size
+        temperature
+        loadingMeter
+        grossWeight
+        netWeight
+        packages
+        perishable
+        stackable
+        palletInfo {
+          value
+          size
+          type
+          system
+        }
+        customer {
+          id
+          name
+          vatNumber
+          uniqueCode
+          pec
+        }
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        collectChecks
+        checksAmount
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        billingType
+        note
+        sender {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        carrier {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        receiver {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        pickupStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        deliveryStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        checks {
+          nextToken
+        }
+        travels {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const createTravel = /* GraphQL */ `
+  mutation CreateTravel(
+    $input: CreateTravelInput!
+    $condition: ModelTravelConditionInput
+  ) {
+    createTravel(input: $input, condition: $condition) {
+      id
+      stamp
+      carrierId
+      tenant
+      status
+      createdAt
+      departureDate
+      updatedAt
+      licensePlate
+      vehicleName
+      driverName
+      driver {
+        username
+        companyId
+        name
+        email
+        phone
+        job
+        task
+        tenant
+      }
+      estimatedTravelTime
+      estimatedTravelLength
+      estimatedTransportCosts
+      palletHandlings {
+        items {
+          id
+          stamp
+          carrierId
+          tenantCarrier
+          carrierName
+          customerId
+          tenantCustomer
+          customerName
+          reversalId
+          tenantReversal
+          reversalName
+          createdAt
+          operationDate
+          updatedAt
+          loadQuantity
+          loadNote
+          disposableLoad
+          disposableLoadNote
+          unloadQuantity
+          unloadNote
+          disposableUnload
+          disposableUnloadNote
+          reversalQuantity
+          reversalNote
+          palletHandlingRefId
+          travelId
+          travelStamp
+          carrierOperatorName
+          vehicleLicensePlate
+          type
+          status
+          carrierValidation
+          carrierValidatorName
+          carrierValidationMessage
+          customerValidation
+          customerValidatorName
+          customerValidationMessage
+          isVoucher
+        }
+        nextToken
+      }
+      start {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      waypoints {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      end {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      plannedOrderIds
+      travelType
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      note
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      orders {
+        items {
+          id
+          departureDate
+          arrivalDate
+          carrierId
+          tenantCarrier
+          customerId
+          tenantCustomer
+          orderId
+          travelId
+          operation
+          operationValue
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const updateTravel = /* GraphQL */ `
+  mutation UpdateTravel(
+    $input: UpdateTravelInput!
+    $condition: ModelTravelConditionInput
+  ) {
+    updateTravel(input: $input, condition: $condition) {
+      id
+      stamp
+      carrierId
+      tenant
+      status
+      createdAt
+      departureDate
+      updatedAt
+      licensePlate
+      vehicleName
+      driverName
+      driver {
+        username
+        companyId
+        name
+        email
+        phone
+        job
+        task
+        tenant
+      }
+      estimatedTravelTime
+      estimatedTravelLength
+      estimatedTransportCosts
+      palletHandlings {
+        items {
+          id
+          stamp
+          carrierId
+          tenantCarrier
+          carrierName
+          customerId
+          tenantCustomer
+          customerName
+          reversalId
+          tenantReversal
+          reversalName
+          createdAt
+          operationDate
+          updatedAt
+          loadQuantity
+          loadNote
+          disposableLoad
+          disposableLoadNote
+          unloadQuantity
+          unloadNote
+          disposableUnload
+          disposableUnloadNote
+          reversalQuantity
+          reversalNote
+          palletHandlingRefId
+          travelId
+          travelStamp
+          carrierOperatorName
+          vehicleLicensePlate
+          type
+          status
+          carrierValidation
+          carrierValidatorName
+          carrierValidationMessage
+          customerValidation
+          customerValidatorName
+          customerValidationMessage
+          isVoucher
+        }
+        nextToken
+      }
+      start {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      waypoints {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      end {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      plannedOrderIds
+      travelType
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      note
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      orders {
+        items {
+          id
+          departureDate
+          arrivalDate
+          carrierId
+          tenantCarrier
+          customerId
+          tenantCustomer
+          orderId
+          travelId
+          operation
+          operationValue
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const deleteTravel = /* GraphQL */ `
+  mutation DeleteTravel(
+    $input: DeleteTravelInput!
+    $condition: ModelTravelConditionInput
+  ) {
+    deleteTravel(input: $input, condition: $condition) {
+      id
+      stamp
+      carrierId
+      tenant
+      status
+      createdAt
+      departureDate
+      updatedAt
+      licensePlate
+      vehicleName
+      driverName
+      driver {
+        username
+        companyId
+        name
+        email
+        phone
+        job
+        task
+        tenant
+      }
+      estimatedTravelTime
+      estimatedTravelLength
+      estimatedTransportCosts
+      palletHandlings {
+        items {
+          id
+          stamp
+          carrierId
+          tenantCarrier
+          carrierName
+          customerId
+          tenantCustomer
+          customerName
+          reversalId
+          tenantReversal
+          reversalName
+          createdAt
+          operationDate
+          updatedAt
+          loadQuantity
+          loadNote
+          disposableLoad
+          disposableLoadNote
+          unloadQuantity
+          unloadNote
+          disposableUnload
+          disposableUnloadNote
+          reversalQuantity
+          reversalNote
+          palletHandlingRefId
+          travelId
+          travelStamp
+          carrierOperatorName
+          vehicleLicensePlate
+          type
+          status
+          carrierValidation
+          carrierValidatorName
+          carrierValidationMessage
+          customerValidation
+          customerValidatorName
+          customerValidationMessage
+          isVoucher
+        }
+        nextToken
+      }
+      start {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      waypoints {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      end {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      plannedOrderIds
+      travelType
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      note
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      orders {
+        items {
+          id
+          departureDate
+          arrivalDate
+          carrierId
+          tenantCarrier
+          customerId
+          tenantCustomer
+          orderId
+          travelId
+          operation
+          operationValue
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const createTravelsOrders = /* GraphQL */ `
+  mutation CreateTravelsOrders(
+    $input: CreateTravelsOrdersInput!
+    $condition: ModelTravelsOrdersConditionInput
+  ) {
+    createTravelsOrders(input: $input, condition: $condition) {
+      id
+      departureDate
+      arrivalDate
+      carrierId
+      tenantCarrier
+      customerId
+      tenantCustomer
+      orderId
+      travelId
+      waypoint {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      operation
+      operationValue
+      createdAt
+      updatedAt
+      order {
+        id
+        extId
+        stamp
+        name
+        preOrderId
+        carrierId
+        senderId
+        receiverId
+        pickupStorageId
+        deliveryStorageId
+        tenantCarrier
+        tenantSender
+        tenantReceiver
+        tenantPickupStorage
+        tenantDeliveryStorage
+        carrierName
+        senderName
+        receiverName
+        pickupStorageName
+        deliveryStorageName
+        carrierVat
+        senderVat
+        receiverVat
+        pickupStorageVat
+        deliveryStorageVat
+        createdAt
+        updatedAt
+        completedAt
+        paymentCondition
+        shipmentType
+        pickupCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        pickupDateStart
+        pickupDateEnd
+        pickupSlots {
+          from
+          to
+        }
+        depotCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        depotDateStart
+        depotDateEnd
+        depotSlots {
+          from
+          to
+        }
+        deliveryCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        deliveryDateStart
+        deliveryDateEnd
+        deliverySlots {
+          from
+          to
+        }
+        pickupAddress
+        deliveryAddress
+        depotAddress
+        availability {
+          from
+          to
+        }
+        status
+        orderNumber
+        trades
+        docs {
+          date
+          number
+          type
+        }
+        support
+        warnings
+        quantity
+        size
+        temperature
+        loadingMeter
+        grossWeight
+        netWeight
+        packages
+        perishable
+        stackable
+        palletInfo {
+          value
+          size
+          type
+          system
+        }
+        customer {
+          id
+          name
+          vatNumber
+          uniqueCode
+          pec
+        }
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        collectChecks
+        checksAmount
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        billingType
+        note
+        sender {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        carrier {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        receiver {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        pickupStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        deliveryStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        checks {
+          nextToken
+        }
+        travels {
+          nextToken
+        }
+      }
+      travel {
+        id
+        stamp
+        carrierId
+        tenant
+        status
+        createdAt
+        departureDate
+        updatedAt
+        licensePlate
+        vehicleName
+        driverName
+        driver {
+          username
+          companyId
+          name
+          email
+          phone
+          job
+          task
+          tenant
+        }
+        estimatedTravelTime
+        estimatedTravelLength
+        estimatedTransportCosts
+        palletHandlings {
+          nextToken
+        }
+        start {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        waypoints {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        end {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        plannedOrderIds
+        travelType
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        note
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        orders {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const updateTravelsOrders = /* GraphQL */ `
+  mutation UpdateTravelsOrders(
+    $input: UpdateTravelsOrdersInput!
+    $condition: ModelTravelsOrdersConditionInput
+  ) {
+    updateTravelsOrders(input: $input, condition: $condition) {
+      id
+      departureDate
+      arrivalDate
+      carrierId
+      tenantCarrier
+      customerId
+      tenantCustomer
+      orderId
+      travelId
+      waypoint {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      operation
+      operationValue
+      createdAt
+      updatedAt
+      order {
+        id
+        extId
+        stamp
+        name
+        preOrderId
+        carrierId
+        senderId
+        receiverId
+        pickupStorageId
+        deliveryStorageId
+        tenantCarrier
+        tenantSender
+        tenantReceiver
+        tenantPickupStorage
+        tenantDeliveryStorage
+        carrierName
+        senderName
+        receiverName
+        pickupStorageName
+        deliveryStorageName
+        carrierVat
+        senderVat
+        receiverVat
+        pickupStorageVat
+        deliveryStorageVat
+        createdAt
+        updatedAt
+        completedAt
+        paymentCondition
+        shipmentType
+        pickupCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        pickupDateStart
+        pickupDateEnd
+        pickupSlots {
+          from
+          to
+        }
+        depotCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        depotDateStart
+        depotDateEnd
+        depotSlots {
+          from
+          to
+        }
+        deliveryCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        deliveryDateStart
+        deliveryDateEnd
+        deliverySlots {
+          from
+          to
+        }
+        pickupAddress
+        deliveryAddress
+        depotAddress
+        availability {
+          from
+          to
+        }
+        status
+        orderNumber
+        trades
+        docs {
+          date
+          number
+          type
+        }
+        support
+        warnings
+        quantity
+        size
+        temperature
+        loadingMeter
+        grossWeight
+        netWeight
+        packages
+        perishable
+        stackable
+        palletInfo {
+          value
+          size
+          type
+          system
+        }
+        customer {
+          id
+          name
+          vatNumber
+          uniqueCode
+          pec
+        }
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        collectChecks
+        checksAmount
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        billingType
+        note
+        sender {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        carrier {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        receiver {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        pickupStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        deliveryStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        checks {
+          nextToken
+        }
+        travels {
+          nextToken
+        }
+      }
+      travel {
+        id
+        stamp
+        carrierId
+        tenant
+        status
+        createdAt
+        departureDate
+        updatedAt
+        licensePlate
+        vehicleName
+        driverName
+        driver {
+          username
+          companyId
+          name
+          email
+          phone
+          job
+          task
+          tenant
+        }
+        estimatedTravelTime
+        estimatedTravelLength
+        estimatedTransportCosts
+        palletHandlings {
+          nextToken
+        }
+        start {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        waypoints {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        end {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        plannedOrderIds
+        travelType
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        note
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        orders {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const deleteTravelsOrders = /* GraphQL */ `
+  mutation DeleteTravelsOrders(
+    $input: DeleteTravelsOrdersInput!
+    $condition: ModelTravelsOrdersConditionInput
+  ) {
+    deleteTravelsOrders(input: $input, condition: $condition) {
+      id
+      departureDate
+      arrivalDate
+      carrierId
+      tenantCarrier
+      customerId
+      tenantCustomer
+      orderId
+      travelId
+      waypoint {
+        id
+        orders {
+          orderId
+          plannedId
+          orderStamp
+          orderStatus
+          operation
+          operationValue
+        }
+        companyName
+        companyId
+        tenantCompany
+        checkpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        estimatedLength
+        estimatedTime
+        completed
+      }
+      operation
+      operationValue
+      createdAt
+      updatedAt
+      order {
+        id
+        extId
+        stamp
+        name
+        preOrderId
+        carrierId
+        senderId
+        receiverId
+        pickupStorageId
+        deliveryStorageId
+        tenantCarrier
+        tenantSender
+        tenantReceiver
+        tenantPickupStorage
+        tenantDeliveryStorage
+        carrierName
+        senderName
+        receiverName
+        pickupStorageName
+        deliveryStorageName
+        carrierVat
+        senderVat
+        receiverVat
+        pickupStorageVat
+        deliveryStorageVat
+        createdAt
+        updatedAt
+        completedAt
+        paymentCondition
+        shipmentType
+        pickupCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        pickupDateStart
+        pickupDateEnd
+        pickupSlots {
+          from
+          to
+        }
+        depotCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        depotDateStart
+        depotDateEnd
+        depotSlots {
+          from
+          to
+        }
+        deliveryCheckpoint {
+          warehouseId
+          extId
+          thirdCompanyId
+          thirdCompanyOwner
+          thirdCompanyName
+          thirdCompanyVat
+          name
+          maxLength
+          tools
+          cargoBay
+          trades
+          containerUnloading
+          note
+        }
+        deliveryDateStart
+        deliveryDateEnd
+        deliverySlots {
+          from
+          to
+        }
+        pickupAddress
+        deliveryAddress
+        depotAddress
+        availability {
+          from
+          to
+        }
+        status
+        orderNumber
+        trades
+        docs {
+          date
+          number
+          type
+        }
+        support
+        warnings
+        quantity
+        size
+        temperature
+        loadingMeter
+        grossWeight
+        netWeight
+        packages
+        perishable
+        stackable
+        palletInfo {
+          value
+          size
+          type
+          system
+        }
+        customer {
+          id
+          name
+          vatNumber
+          uniqueCode
+          pec
+        }
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        collectChecks
+        checksAmount
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        billingType
+        note
+        sender {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        carrier {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        receiver {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        pickupStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        deliveryStorage {
+          id
+          city
+          address
+          uniqueCode
+          pec
+          trades
+          type
+          authorCustomersRaw
+          createdAt
+          updatedAt
+          companyCode
+          vatNumber
+          name
+          fiscalCode
+          owner
+        }
+        checks {
+          nextToken
+        }
+        travels {
+          nextToken
+        }
+      }
+      travel {
+        id
+        stamp
+        carrierId
+        tenant
+        status
+        createdAt
+        departureDate
+        updatedAt
+        licensePlate
+        vehicleName
+        driverName
+        driver {
+          username
+          companyId
+          name
+          email
+          phone
+          job
+          task
+          tenant
+        }
+        estimatedTravelTime
+        estimatedTravelLength
+        estimatedTransportCosts
+        palletHandlings {
+          nextToken
+        }
+        start {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        waypoints {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        end {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        plannedOrderIds
+        travelType
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        note
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        orders {
+          nextToken
+        }
+      }
     }
   }
 `;

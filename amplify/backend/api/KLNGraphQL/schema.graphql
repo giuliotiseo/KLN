@@ -360,6 +360,7 @@ type Order @model (subscriptions: null)
   { allow: owner, ownerField: "tenantReceiver", operations: [ read ]},
   { allow: owner, ownerField: "tenantPickupStorage", operations: [ read ]},
   { allow: owner, ownerField: "tenantDeliveryStorage", operations: [ read ]},
+  { allow: private, provider: iam }
 ]){
   id: ID!
   extId: ID # link usato per relazionarci con software di pianificazione (36 char) 
@@ -474,6 +475,7 @@ type Check @model (subscriptions: null)
   { allow: owner, ownerField: "tenantCarrier", operations: [ create, read, update, delete ]},
   { allow: owner, ownerField: "tenantReceiver", operations: [ create, read, update, delete ]},
   { allow: owner, ownerField: "tenantSender", operations: [read, update]}
+  { allow: private, provider: iam }
 ]){
   id: ID! # (encoded: CHK_[GENERATED_NUM]_ORDERID(SENZA PREFISSO ORD_)_CHECKTIMESTAMP)
   orderCreationDate: AWSDateTime! # data di creazione ordine
@@ -527,6 +529,7 @@ type Travel  @model(subscriptions: null)
 @auth(rules: [
   { allow: owner, operations: [ create, read, update, delete ]}
   { allow: owner, groupsField: "ownerField", operations:  [ create, read, update, delete ]}
+  { allow: private, provider: iam }
 ]){
   id: ID! # hash del seguente codice: TRV_{STAMP}_{vatNumber}+{tenant}_{licensePlate}_{departureDate}_{timestamp}
   stamp: ID!
@@ -567,6 +570,7 @@ type TravelsOrders @model(subscriptions: null, queries: null)
 @auth(rules: [
   { allow: owner, ownerField: "tenantCarrier", operations:  [ create, read, update, delete ]}
   { allow: owner, ownerField: "tenantCustomer", operations:  [ read ]}
+  { allow: private, provider: iam }
 ]){
   id: ID! # plannedId = `${order.indexOp}_${order.status}_${order[targetCheckpoint].location.place_id}_${order.id}`
   departureDate: AWSDateTime!

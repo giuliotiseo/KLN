@@ -9,11 +9,13 @@
       "UnauthRoleName": "amplify-kln-dev-151332-unauthRole",
       "StackName": "amplify-kln-dev-151332",
       "StackId": "arn:aws:cloudformation:eu-central-1:005064665814:stack/amplify-kln-dev-151332/02b78850-6ff0-11ed-ae09-02ea3c611334",
-      "AmplifyAppId": "d33msay9ozofva"
+      "AmplifyAppId": "d33msay9ozofva",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-kln-dev-151332-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
-        "kln3d8849b2": {}
+        "kln3d8849b2": {},
+        "true": {}
       },
       "function": {
         "kln3d8849b2PostConfirmation": {
@@ -28,6 +30,10 @@
         "KLNAuthProfile": {
           "deploymentBucketName": "amplify-kln-dev-151332-deployment",
           "s3Key": "amplify-builds/KLNAuthProfile-796b5054695249694c73-build.zip"
+        },
+        "extConnector": {
+          "deploymentBucketName": "amplify-kln-dev-151332-deployment",
+          "s3Key": "amplify-builds/extConnector-7848366f564247565741-build.zip"
         }
       }
     }
