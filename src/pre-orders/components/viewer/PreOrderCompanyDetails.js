@@ -1,35 +1,22 @@
 import React from 'react'
-import { useCustomerByCompanyIdQuery } from '../../../customers/api/customers-api-slice'
-import { Link } from 'react-router-dom'
 import { formatDistanceDate } from '../../../globals/libs/helpers'
 
-const PreOrderCompanyLink = ({ label, response, companyName }) => {
-  if(!response?.data?.id){
-    return (
-      <div>{label} <span className='font-bold'>{companyName}</span></div>
-    )
-  }
-
+const PreOrderCompanyLink = ({ label, companyName }) => {
   return (
-    <div>{label} <Link className='font-bold text-primary-200 dark:text-primary-300' to={`/customers/view?id=${response.data.id}`}>{companyName}</Link></div>
-  )
+    <div>{label} <span className='font-bold'>{companyName}</span></div>
+    )
 }
 
 const PreOrderCompanyDetails = ({
   preOrder,
   currentRole
 }) => {
-  const oppositeRoles = { SENDER: "carrierId", CARRIER: "senderId"}
-  const response = useCustomerByCompanyIdQuery({
-    companyId: preOrder[oppositeRoles[currentRole]]
-  });
-
   return (
     <div className="w-full text-base">
       <div className='text-lg'>
         { currentRole === "CARRIER"
-          ? <PreOrderCompanyLink label="Inviato da: " response={response} companyName={preOrder.senderName} />
-          : <PreOrderCompanyLink label="Inviato a: " response={response} companyName={preOrder.carrierName} />
+          ? <PreOrderCompanyLink label="Inviato da: " companyName={preOrder.senderName} />
+          : <PreOrderCompanyLink label="Inviato a: " companyName={preOrder.carrierName} />
         }
       </div>
 

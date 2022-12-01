@@ -49,13 +49,15 @@ export const ORDER_BY_CARRIER = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -127,13 +129,15 @@ export const ORDER_BY_CARRIER_PENDING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -205,13 +209,15 @@ export const ORDER_BY_CARRIER_PICKEDUP = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -283,13 +289,15 @@ export const ORDER_BY_CARRIER_STOCKED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -361,13 +369,15 @@ export const ORDER_BY_CARRIER_DELIVERING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -439,13 +449,15 @@ export const ORDER_BY_CARRIER_DELIVERED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -517,13 +529,15 @@ export const ORDER_BY_CARRIER_ARCHIVED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -595,13 +609,15 @@ export const ORDER_BY_CARRIER_COLLECTCHECKS = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -670,13 +686,15 @@ export const ORDER_BY_SENDER = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -748,13 +766,15 @@ export const ORDER_BY_SENDER_PENDING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -826,13 +846,15 @@ export const ORDER_BY_SENDER_PICKEDUP = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -904,13 +926,15 @@ export const ORDER_BY_SENDER_STOCKED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -982,13 +1006,15 @@ export const ORDER_BY_SENDER_DELIVERING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1060,13 +1086,15 @@ export const ORDER_BY_SENDER_DELIVERED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1138,13 +1166,15 @@ export const ORDER_BY_SENDER_ARCHIVED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1211,13 +1241,15 @@ export const ORDER_BY_RECEIVER = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1289,13 +1321,15 @@ export const ORDER_BY_RECEIVER_PENDING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1367,13 +1401,15 @@ export const ORDER_BY_RECEIVER_PICKEDUP = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1445,13 +1481,15 @@ export const ORDER_BY_RECEIVER_STOCKED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1523,13 +1561,15 @@ export const ORDER_BY_RECEIVER_DELIVERING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1601,13 +1641,15 @@ export const ORDER_BY_RECEIVER_DELIVERED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1679,13 +1721,15 @@ export const ORDER_BY_RECEIVER_ARCHIVED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1757,13 +1801,15 @@ export const ORDER_BY_RECEIVER_COLLECTCHECKS = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -1965,13 +2011,15 @@ export const ORDER_BY_PICKUP_STORAGE = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2043,13 +2091,15 @@ export const ORDER_BY_PICKUP_STORAGE_PENDING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2121,13 +2171,15 @@ export const ORDER_BY_PICKUP_STORAGE_PICKEDUP = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2199,13 +2251,15 @@ export const ORDER_BY_PICKUP_STORAGE_STOCKED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2277,13 +2331,15 @@ export const ORDER_BY_PICKUP_STORAGE_DELIVERING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2355,13 +2411,15 @@ export const ORDER_BY_PICKUP_STORAGE_DELIVERED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2434,13 +2492,15 @@ export const ORDER_BY_PICKUP_STORAGE_ARCHIVED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2508,13 +2568,15 @@ export const ORDER_BY_DELIVERY_STORAGE = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2586,13 +2648,15 @@ export const ORDER_BY_DELIVERY_STORAGE_PENDING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2664,13 +2728,15 @@ export const ORDER_BY_DELIVERY_STORAGE_PICKEDUP = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2742,13 +2808,15 @@ export const ORDER_BY_DELIVERY_STORAGE_STOCKED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2820,13 +2888,15 @@ export const ORDER_BY_DELIVERY_STORAGE_DELIVERING = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2898,13 +2968,15 @@ export const ORDER_BY_DELIVERY_STORAGE_DELIVERED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -2976,13 +3048,15 @@ export const ORDER_BY_DELIVERY_STORAGE_ARCHIVED = /* GraphQL */ `
         updatedAt
         completedAt
         shipmentType
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress
@@ -3311,13 +3385,15 @@ export const ORDER_BY_PREORDERID = /* GraphQL */ `
         completedAt
         shipmentType
         loadingMeter
-        pickupCheckpoint { location { address region city province }}
+        loadingMeter
+        netWeight
+        pickupCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         pickupDateStart
         pickupDateEnd
-        depotCheckpoint { location { address region city province }}
+        depotCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         depotDateStart
         depotDateEnd
-        deliveryCheckpoint { location { address region city province }}
+        deliveryCheckpoint { extId name windows { start end days type } location { address region city province coordinate }}
         deliveryDateStart
         deliveryDateEnd
         pickupAddress

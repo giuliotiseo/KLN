@@ -3,10 +3,12 @@ import RefreshListButton from '../../../globals/components/lists/RefreshListButt
 import Pagination from '../../../globals/components/lists_v2/Pagination';
 import LimitSelector from '../../../globals/components/lists_v2/LimitSelector'
 import RangeMonthsPicker from '../../../globals/components/lists_v2/RangeMonthsPicker';
-import { changeOrdersListDateRange, changeOrdersListLimit, changeOrdersListSortDirection, DEFAULT_ORDER_LIMIT } from '../../slices/ordersListSlice';
 import SortDirection from '../../../globals/components/lists_v2/SortDirection';
+import OrdersOptionsDropdown from './OrdersOptionsDropdown';
+import { changeOrdersListDateRange, changeOrdersListLimit, changeOrdersListSortDirection, DEFAULT_ORDER_LIMIT } from '../../slices/ordersListSlice';
 
 function OrdersListOptions({
+  orders,
   dateFrom,
   dateTo,
   pagination,
@@ -59,6 +61,11 @@ function OrdersListOptions({
         nextToken={nextToken}
         previousTokens={previousTokens}
         className="mr-4 bg-base-100 border bg-base-100 rounded-full"
+      />
+
+      {/* Orders */}
+      <OrdersOptionsDropdown
+        orders={orders}
       />
     </section>
   )

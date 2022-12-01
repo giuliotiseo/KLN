@@ -24,6 +24,7 @@ const OrdersListLayout = ({
     <SafeCol id="OrdersListLayout" ref={scrollableRef}>
       <div className={`${isLoading && 'pointer-events-none'}`}>
         <OrdersListOptions
+          orders={orders}
           dateFrom={dateFrom}
           dateTo={dateTo}
           limit={limit}

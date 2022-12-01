@@ -52,6 +52,7 @@ export const preOrderEditorSlice = createSlice({
         state.carrier= null;
       } else {
         state.carrier = payload;
+        state.status = "PENDING";
       }
     },
     changePreOrderEditorCheckpoint(state, { payload }) {

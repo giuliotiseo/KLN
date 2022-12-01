@@ -15,15 +15,19 @@ import { BiReset } from 'react-icons/bi';
 import { changePreOrderEditorCarrier, changePreOrderEditorCheckpoint, changePreOrderEditorForm, changePreOrderEditorSender, removePreOrderEditorFile, resetPreOrderEditor, restorePreOrderEditorFile } from '../slices/preOrderEditorSlice';
 import { selectCurrentCompany } from '../../company/slices/companySlice';
 import { addFileToPreOrderEditorThunk } from '../api/pre-orders-thunks';
+import { isAllowedToEditPreOrder } from '../libs/helpers';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 function PreOrderEditorContainer({ preOrder, oppositeCompanyRole, currentCompanyRole, }) {
   const currentCompany = useSelector(selectCurrentCompany);
   const customersList = useListCustomers(oppositeCompanyRole.toUpperCase());
   const warehousesList = useListWarehouses("ALL");
+  const navigate = useNavigate();
   const customerQuery = useCustomerByCompanyIdQuery(
     preOrder?.[oppositeCompanyRole]?.companyId || preOrder?.[oppositeCompanyRole]?.id 
-    ? { companyId: preOrder?.[oppositeCompanyRole]?.companyId || preOrder.sender.id } 
+    ? { ownerCompanyId: preOrder?.[oppositeCompanyRole]?.companyId || preOrder.sender.id } 
     : null
   );
 
@@ -90,10 +94,21 @@ function PreOrderEditorContainer({ preOrder, oppositeCompanyRole, currentCompany
   const reset = useCallback(() => {
     dispatch(resetPreOrderEditor());
   }, [preOrder]);
+  
 
   /*
     * Reset effect 
   */
+  useEffect(() => {
+    if(preOrder && currentCompany) {
+      const isAllowedToEdit = isAllowedToEditPreOrder(preOrder, currentCompany);
+      if(!isAllowedToEdit) {
+        toast.error('Siamo spiacenti ma non hai il permesso di accedere al pre-ordine');
+        navigate('/pre-orders');
+      }
+    }
+  }, [preOrder, currentCompany]);
+
 
   useEffect(() => {
     return () => reset();
