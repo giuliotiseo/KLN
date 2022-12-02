@@ -26,7 +26,10 @@ const warehouseInitialState = {
   maxLength: "20",
   tools: [],
   automationLevel: "LOW",
-  note: ""
+  note: "",
+  trades: [],
+  cargoBay: 0,
+  containerUnloading: false,
 }
 
 const initialState = {
