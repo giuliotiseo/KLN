@@ -79,6 +79,12 @@ const PTVSchema = [
     value: (val) => Number(val.loadingMeter)
   },
   {
+    column: 'Quantity1',
+    type: Number,
+    format: doubleFormat,
+    value: (val) => Number(getQuantityFromLDM(val.loadingMeter))
+  },
+  {
     column: 'EarliestDateTime',
     type: Date,
     format: dateFormat,
@@ -133,22 +139,22 @@ const PTVSchema = [
   {
     column: 'PickupLocationName',
     type: String,
-    value: () => ""
+    value: (val) => targetizedCheckpoint(val).pickup.companyName
   },
   {
     column: 'PickupPostCode',
     type: String,
-    value: () => ""
+    value: (val) => targetizedCheckpoint(val).pickup.postCode.toString()
   },
   {
-    column: 'PickupPostCity',
+    column: 'PickupCity',
     type: String,
-    value: () => ""
+    value: (val) => targetizedCheckpoint(val).pickup?.location?.city || ""
   },
   {
     column: 'PickupStreet',
     type: String,
-    value: () => ""
+    value: (val) => targetizedCheckpoint(val).pickup?.location?.address || ""
   },
   {
     column: 'PickupCoordFormat',
@@ -234,22 +240,22 @@ const PTVSchema = [
   {
     column: 'DeliveryLocationName',
     type: String,
-    value: () => "",
+    value: (val) => targetizedCheckpoint(val).delivery.companyName,
   },
   {
     column: 'DeliveryPostCode',
     type: String,
-    value: () => "",
+    value: (val) => targetizedCheckpoint(val).delivery.postCode.toString(),
   },
   {
     column: 'DeliveryCity',
     type: String,
-    value: () => "",
+    value: (val) => targetizedCheckpoint(val).delivery?.location?.city || ""
   },
   {
     column: 'DeliveryStreet',
     type: String,
-    value: () => "",
+    value: (val) => targetizedCheckpoint(val).delivery?.location?.address || ""
   },
   {
     column: 'DeliveryCoordFormat',
@@ -360,16 +366,30 @@ const PTVSchema = [
 ]
 
 // Functions -----------------------------------------------------------------------------------------------
+const getCAPFromAddress = (address) => {
+  let result = address
+    .split(',')
+    .map(addressWithSpaces => addressWithSpaces.replace(/ /g, ""))
+    .filter(addressItem => addressItem.length === 5 && typeof Number(addressItem) === "number" && !isNaN(Number(addressItem)))
+  
+    return result ? String(result) : '';
+}
+
+
 const targetizedCheckpoint = (val) => {
   if(val.orderAction === "Pickup") {
     return {
       pickup: {
         ...val.pickupCheckpoint,
-        windows: val.pickupCheckpoint.windows?.filter(wind => wind.type === "CARICO") || []
+        windows: val.pickupCheckpoint.windows?.filter(wind => wind.type === "CARICO") || [],
+        companyName: val.pickupStorageName,
+        postCode: val?.pickupCheckpoint?.location?.address ? getCAPFromAddress(val.pickupCheckpoint.location.address) : "",
       },
       delivery: {
         ...val.depotCheckpoint,
-        windows: val.depotCheckpoint.windows?.filter(wind => wind.type === "SCARICO") || []
+        windows: val.depotCheckpoint.windows?.filter(wind => wind.type === "SCARICO") || [],
+        companyName: val.carrierName,
+        postCode: val?.depotCheckpoint?.location?.address ? getCAPFromAddress(val.depotCheckpoint.location.address) : "",
       },
       pickupIsDepot: 0,
       deliveryIsDepot: 1,
@@ -380,11 +400,15 @@ const targetizedCheckpoint = (val) => {
     return { 
       pickup: {
         ...val.depotCheckpoint,
-        windows: val.depotCheckpoint.windows?.filter(wind => wind.type === "CARICO") || []
+        windows: val.depotCheckpoint.windows?.filter(wind => wind.type === "CARICO") || [],
+        companyName: val.carrierName,
+        postCode: val?.depotCheckpoint?.location?.address ? getCAPFromAddress(val.depotCheckpoint.location.address) : "",
       },
       delivery: {
         ...val.deliveryCheckpoint,
-        windows: val.deliveryCheckpoint.windows?.filter(wind => wind.type === "SCARICO") || []
+        windows: val.deliveryCheckpoint.windows?.filter(wind => wind.type === "SCARICO") || [],
+        companyName: val.deliveryStorageName,
+        postCode: val?.deliveryCheckpoint?.location?.address ? getCAPFromAddress(val.deliveryCheckpoint.location.address) : "",
       },
       pickupIsDepot: 1,
       deliveryIsDepot: 0,
@@ -395,11 +419,16 @@ const targetizedCheckpoint = (val) => {
     return { 
       pickup: { 
         ...val.pickupCheckpoint,
-        windows: val.pickupCheckpoint.windows?.filter(wind => wind.type === "CARICO") || []
+        windows: val.pickupCheckpoint.windows?.filter(wind => wind.type === "CARICO") || [],
+        companyName: val.pickupStorageName,
+        postCode: val?.pickupCheckpoint?.location?.address ? getCAPFromAddress(val.pickupCheckpoint.location.address) : "",
+
       },
       delivery: {
         ...val.deliveryCheckpoint,
-        windows: val.deliveryCheckpoint.windows?.filter(wind => wind.type === "SCARICO") || []
+        windows: val.deliveryCheckpoint.windows?.filter(wind => wind.type === "SCARICO") || [],
+        companyName: val.deliveryStorageName,
+        postCode: val?.deliveryCheckpoint?.location?.address ? getCAPFromAddress(val.deliveryCheckpoint.location.address) : "",
       },
       pickupIsDepot: 0,
       deliveryIsDepot: 0,
@@ -407,13 +436,20 @@ const targetizedCheckpoint = (val) => {
   }
 }
 
+const getQuantityFromLDM = (loadingMeter, size = [80, 120]) => {
+  const calculateLoadingMeter = parseFloat((loadingMeter / size.reduce((acc, val) => ((acc / 100) * (val / 100))/2.4)).toFixed(2));
+  return calculateLoadingMeter;
+}
+
 // Generator -----------------------------------------------------------------------------------------------
-export async function generateOrdersForPTVExport(orders) {
-  console.log("esporto questo elenco", orders);
+export async function generateOrdersForPTVExport(inputOrders) {
+  console.log("esporto questo elenco", inputOrders);
 
   let error = false;
-  for (const order of orders) {
-    if(error) return;
+  let orders = [];
+
+  for (const order of inputOrders) {
+    if(error) break;
     if(!order?.depotCheckpoint?.name && order.shipmentType !== "DIRETTO") {
       error = true;
       toast.error(`Nell'ordine ${order.stamp} mancano le informazioni relative al luogo di deposito`);
@@ -421,10 +457,11 @@ export async function generateOrdersForPTVExport(orders) {
     }
 
     if(!getOrderAction?.[`${order.status}#${order.shipmentType}`]) {
-      error = true;
-      toast.error(`Esportazione per gulliver non disponibile per l'elenco selezionato ${order.status}`);
-      console.error("Non vi sono metodi di esportazioni disponibili per ordini nello status di:", order?.status, order);
+      console.log("Non vi sono metodi di esportazioni disponibili per ordini nello status di:", order?.status, order);
+      continue;
     }
+
+    orders.push(order);
   }
 
   if(error) {
@@ -449,7 +486,7 @@ export async function generateOrdersForPTVExport(orders) {
 
   await writeXlsxFile(formattedData, {
     schema: PTVSchema,
-    fileName: 'export-delivery.xlsx',
+    fileName: `ROSTExport-${Date.now()}.xlsx`,
     sheet: 'OrderImport'
   })
 }

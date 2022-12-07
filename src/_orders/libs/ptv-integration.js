@@ -399,10 +399,16 @@ const targetizedCheckpoint = (val) => {
 }
 
 // Generator -----------------------------------------------------------------------------------------------
-export async function generateOrdersForPTVExport(orders) {
+export async function generateOrdersForPTVExport(inputOrders) {
   let error = false;
-  for (const order of orders) {
-    if(error) return;
+  let orders = [];
+  console.log("Orders", { inputOrders });
+
+  for (const order of inputOrders) {
+    if(error) {
+      break;
+    };
+
     if(!order?.depotCheckpoint?.name && order.shipmentType !== "DIRETTO") {
       error = true;
       toast.error(`Nell'ordine ${order.stamp} mancano le informazioni relative al luogo di deposito`);
@@ -410,10 +416,13 @@ export async function generateOrdersForPTVExport(orders) {
     }
 
     if(!getOrderAction?.[`${order.status}#${order.shipmentType}`]) {
-      error = true;
-      toast.error(`Esportazione per gulliver non disponibile per l'elenco selezionato ${order.status}`);
-      console.error("Non vi sono metodi di esportazioni disponibili per ordini nello status di:", order?.status, order);
+      // error = true;
+      // toast.error(`Esportazione per gulliver non disponibile per l'elenco selezionato ${order.status}`);
+      console.log("Non vi sono metodi di esportazioni disponibili per ordini nello status di:", order?.status, order);
+      continue;
     }
+
+    orders.push(order);
   }
 
   if(error) {
