@@ -24,6 +24,7 @@ export const TRAVEL_BY_CARRIER = /* GraphQL */ `
       carrierId
       estimatedTravelLength
       estimatedTravelTime
+      driverFiscalCode
       waypoints {
         id
         companyName
@@ -84,6 +85,7 @@ query TravelByCarrierStatusDepartureDate(
       carrierId
       estimatedTravelLength
       estimatedTravelTime
+      driverFiscalCode
       start {
         id
         companyName
@@ -138,6 +140,7 @@ query TravelByCarrierStatusDepartureDate(
       carrierId
       estimatedTravelLength
       estimatedTravelTime
+      driverFiscalCode
       start {
         id
         companyName
@@ -193,6 +196,7 @@ query TravelByCarrierStatusDepartureDate(
       carrierId
       estimatedTravelLength
       estimatedTravelTime
+      driverFiscalCode
       start {
         id
         companyName
@@ -247,6 +251,7 @@ query TravelByCarrierStatusDepartureDate(
       carrierId
       estimatedTravelLength
       estimatedTravelTime
+      driverFiscalCode
       start {
         id
         companyName
@@ -301,6 +306,7 @@ query TravelByCarrierStatusDepartureDate(
       carrierId
       estimatedTravelLength
       estimatedTravelTime
+      driverFiscalCode
       start {
         id
         companyName
@@ -355,6 +361,7 @@ query TravelByCarrierStatusDepartureDate(
       carrierId
       estimatedTravelLength
       estimatedTravelTime
+      driverFiscalCode
       start {
         id
         companyName
@@ -388,6 +395,7 @@ export const TRAVEL_BY_ID = /* GraphQL */ `
       licensePlate
       vehicleName
       driverName
+      driverFiscalCode
       driver { username name email phone task job tenant }
       estimatedTravelTime
       estimatedTravelLength
@@ -532,6 +540,7 @@ export const TRAVEL_BY_STAMP = /* GraphQL */ `
         departureDate
         estimatedTravelLength
         estimatedTravelTime
+        driverFiscalCode
         start {
           id
           companyName
@@ -591,6 +600,7 @@ export const travelsByTenantStatusDepartureDate = /* GraphQL */ `
         departureDate
         estimatedTravelLength
         estimatedTravelTime
+        driverFiscalCode
         start {
           id
           companyName
@@ -640,6 +650,7 @@ export const TRAVELS_BY_TENANT_STATUS_DEPARTUREDATE = /* GraphQL */ `
         licensePlate
         vehicleName
         driverName
+        driverFiscalCode
         driver { username name email phone task job jobId tenant }
         estimatedTravelTime
         estimatedTravelLength
@@ -696,6 +707,7 @@ export const TRAVEL_ORDERS_BY_STATUS_COMPANY_CREATEDAT = /* GraphQL */ `
         deliveryStorageName
         createdAt
         shipmentType
+        driverFiscalCode
         pickupCheckpoint { name location { place_id region province city address coordinate } contacts { contactId name email phone }  windows { start end days type }  maxLength tools note }
         depotCheckpoint { name location { place_id region province city address coordinate } contacts { contactId name email phone }  windows { start end days type }  maxLength tools note }
         deliveryCheckpoint { name location { place_id region province city address coordinate } contacts { contactId name email phone }  windows { start end days type }  maxLength tools note }

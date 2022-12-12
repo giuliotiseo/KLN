@@ -526,6 +526,7 @@ type Travel  @model(subscriptions: null)
 @key(name:"travelByCarrierStatusDepartureDate", fields: ["carrierId", "status", "departureDate"], queryField: "travelByCarrierStatusDepartureDate")
 @key(name:"travelByCarrierStatusDriverDeparture", fields: ["carrierId", "status", "driverName", "departureDate"], queryField: "travelByCarrierStatusDriverDeparture")
 @key(name:"travelByCarrierStatusLicenseDeparture", fields: ["carrierId", "status", "licensePlate", "departureDate"], queryField: "travelByCarrierStatusLicenseDeparture")
+@key(name:"travelByCarrierDriverDepartureDate", fields: ["carrierId", "driverFiscalCode", "departureDate"], queryField: "travelByCarrierDriverDepartureDate")
 @auth(rules: [
   { allow: owner, operations: [ create, read, update, delete ]}
   { allow: owner, groupsField: "ownerField", operations:  [ create, read, update, delete ]}
@@ -542,7 +543,8 @@ type Travel  @model(subscriptions: null)
   # Global info
   licensePlate: String!
   vehicleName: String!
-  driverName: String! # Da richiedere esportazione pianificatore
+  driverFiscalCode: String! # Es. NO_PROFILE_DRIVER
+  driverName: String!
   driver: ProfileSummary
   estimatedTravelTime: String
   estimatedTravelLength: String
@@ -550,9 +552,9 @@ type Travel  @model(subscriptions: null)
   orders: [TravelsOrders] @connection(keyName:"travelsOrdersByTravel" fields:["id"])
   palletHandlings: [PalletHandling] @connection(keyName: "palletHandlingByTravelCreatedAt" fields: ["id"])
   # Details info
-  start: Waypoint # Da richiedere esportazione pianificatore
+  start: Waypoint
   waypoints: [Waypoint]
-  end: Waypoint # Da richiedere esportazione pianificatore
+  end: Waypoint
   plannedOrderIds: [ID] # Es. OrderStatus#OrderId : serve per escludere dall'elenco degli ordini da pianificare, quelli già pianificati
   travelType: TravelType
   # Tracking

@@ -1578,6 +1578,7 @@ export const getPalletHandling = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -1770,6 +1771,7 @@ export const listPalletHandlings = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -4728,6 +4730,7 @@ export const travelsOrdersByCustomer = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -4851,6 +4854,7 @@ export const travelsOrdersByCarrier = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -4996,6 +5000,7 @@ export const palletHandlingByStamp = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -5143,6 +5148,7 @@ export const palletHandlingByStatusOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -5290,6 +5296,7 @@ export const palletHandlingByStatusCarrierDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -5437,6 +5444,7 @@ export const palletHandlingByStatusCustomerDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -5584,6 +5592,7 @@ export const palletHandlingByStatusReversalDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -5731,6 +5740,7 @@ export const palletHandlingByStatusTravelDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -5878,6 +5888,7 @@ export const palletHandlingByStatusTypeDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -6025,6 +6036,7 @@ export const palletHandlingByCarrierOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -6172,6 +6184,7 @@ export const palletHandlingByCustomerOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -6319,6 +6332,7 @@ export const palletHandlingByReversalOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -6466,6 +6480,7 @@ export const palletHandlingByCarrierTypeOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -6613,6 +6628,7 @@ export const palletHandlingByCustomerTypeOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -6760,6 +6776,7 @@ export const palletHandlingByTravelCreatedAt = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -6907,6 +6924,7 @@ export const palletHandlingByCarrierTravelOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -7054,6 +7072,7 @@ export const palletHandlingByCustomerTravelOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -7201,6 +7220,7 @@ export const palletHandlingByCarrierCustomerOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -7348,6 +7368,7 @@ export const palletHandlingByCarrierReversalOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -7495,6 +7516,7 @@ export const palletHandlingByCustomerReversalOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -7642,6 +7664,7 @@ export const palletHandlingByCustomerCarrierOperationDate = /* GraphQL */ `
           updatedAt
           licensePlate
           vehicleName
+          driverFiscalCode
           driverName
           estimatedTravelTime
           estimatedTravelLength
@@ -16288,6 +16311,7 @@ export const getTravel = /* GraphQL */ `
       updatedAt
       licensePlate
       vehicleName
+      driverFiscalCode
       driverName
       driver {
         username
@@ -16497,6 +16521,7 @@ export const listTravels = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -16594,6 +16619,7 @@ export const travelByStampCreatedAt = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -16691,6 +16717,7 @@ export const travelByCarrierDepartureDate = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -16788,6 +16815,7 @@ export const travelByCarrierStatusDepartureDate = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -16885,6 +16913,7 @@ export const travelByCarrierStatusDriverDeparture = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -16982,6 +17011,105 @@ export const travelByCarrierStatusLicenseDeparture = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
+        driverName
+        driver {
+          username
+          companyId
+          name
+          email
+          phone
+          job
+          task
+          tenant
+        }
+        estimatedTravelTime
+        estimatedTravelLength
+        estimatedTransportCosts
+        palletHandlings {
+          nextToken
+        }
+        start {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        waypoints {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        end {
+          id
+          companyName
+          companyId
+          tenantCompany
+          estimatedLength
+          estimatedTime
+          completed
+        }
+        plannedOrderIds
+        travelType
+        lastPosition {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        note
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        orders {
+          nextToken
+        }
+      }
+      nextToken
+    }
+  }
+`;
+export const travelByCarrierDriverDepartureDate = /* GraphQL */ `
+  query TravelByCarrierDriverDepartureDate(
+    $carrierId: ID
+    $driverFiscalCodeDepartureDate: ModelTravelTravelByCarrierDriverDepartureDateCompositeKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelTravelFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    travelByCarrierDriverDepartureDate(
+      carrierId: $carrierId
+      driverFiscalCodeDepartureDate: $driverFiscalCodeDepartureDate
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        stamp
+        carrierId
+        tenant
+        status
+        createdAt
+        departureDate
+        updatedAt
+        licensePlate
+        vehicleName
+        driverFiscalCode
         driverName
         driver {
           username

@@ -12,20 +12,21 @@ const fieldsToUpdate = [
   "status",
   "createdAt",
   "departureDate",
+  "driverFiscalCode",
   "licensePlate",
   "vehicleName",
   "driverName",
 ]
 
-const travelsOrdersFieldsToUpdate = [
-  "id",
-  "departureDate",
-  "arrivalDate",
-  "tenantCarrier",
-  "tenantCustomer",
-  "orderId",
-  "travelId",
-]
+// const travelsOrdersFieldsToUpdate = [
+//   "id",
+//   "departureDate",
+//   "arrivalDate",
+//   "tenantCarrier",
+//   "tenantCustomer",
+//   "orderId",
+//   "travelId",
+// ]
 
 const dataFiltersGenerator = (filters) => {
   let dataFilters = [];
@@ -193,6 +194,7 @@ export function formatParamsCreateTravel(travel) {
     vehicleName,
     driverName: travel?.driver?.searchable.toUpperCase() || travel?.driver?.name,
     status: "STATIONARY",
+    driverFiscalCode: travel?.driver?.fiscalCode || "NO_PROFILE_DRIVER",
     driver: {
       username: travel?.driver?.id,
       companyId: travel?.driver?.jobId,
@@ -352,6 +354,7 @@ export function formatParamsUpdateTravel(params) {
     licensePlate,
     vehicleName,
     driverName: params?.driver?.searchable?.toUpperCase() || params?.driver?.name,
+    driverFiscalCode: params?.travel?.driver?.fiscalCode || "NO_PROFILE_DRIVER",
     driver: params.driver,
     estimatedTravelTime: params?.estimatedTravelTime.text,
     estimatedTravelLength: params?.estimatedTravelLength.text,

@@ -24,6 +24,8 @@ export default function TravelStatusDropdown({
   status
 }) {
   const [ updateTravelStatus, { data, isLoading, isSuccess, isError }] = useUpdateTravelStatusMutation();
+
+  console.log("vedi qui", travel);
   
   if(isLoading) return <InlineSpinner />;
   return (
@@ -56,7 +58,7 @@ export default function TravelStatusDropdown({
           <DropdownListItem key={travel_status} className="flex items-center vehicle-status-selector-item-1 text-left text-danger-200 dark:text-danger-300">
             <ActionButton
               styles={`btn-dropdown-item ${status === travel_status ? 'font-bold text-primary-200 dark:text-primary-300' : 'text-dark-50 dark:text-light-300'}`}
-              onClick={() => updateTravelStatus({...travel, status: travel_status})}
+              onClick={() => updateTravelStatus({...travel, status: travel_status })}
               text={TRAVEL_DESCRIPTOR[travel_status]}
             />
           </DropdownListItem>
