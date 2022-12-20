@@ -791,7 +791,6 @@ export const createTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -809,7 +808,6 @@ export const createTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -827,7 +825,6 @@ export const createTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -845,7 +842,6 @@ export const createTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -863,7 +859,6 @@ export const createTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1158,7 +1153,6 @@ export const updateTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1176,7 +1170,6 @@ export const updateTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1194,7 +1187,6 @@ export const updateTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1212,7 +1204,6 @@ export const updateTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1230,7 +1221,6 @@ export const updateTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1525,7 +1515,6 @@ export const deleteTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1543,7 +1532,6 @@ export const deleteTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1561,7 +1549,6 @@ export const deleteTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1579,7 +1566,6 @@ export const deleteTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1597,7 +1583,6 @@ export const deleteTravelsOrders = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode

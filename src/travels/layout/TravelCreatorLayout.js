@@ -1,13 +1,13 @@
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import SafeCol from "../../globals/components/layout/SafeCol";
 import OrdersPickerForTravelCreator from "../components/creator/OrdersPickerForTravelCreator";
 import TravelCreatorWaypoints from "../components/creator/TravelCreatorWaypoints";
 import InfoTravelCreatorCompiler from "../components/form/InfoTravelCreatorCompiler";
 import TravelMap from "../components/TravelMap";
-import { useEffect, useRef, useState } from "react";
 import OrdersListFiltersForTravel from "../components/form/OrdersListFiltersForTravel";
-import { FiCheck, FiTerminal } from "react-icons/fi";
 import Button from "../../globals/components/buttons_v2/Button";
+import { FiTerminal } from "react-icons/fi";
 import { BiReset } from "react-icons/bi";
 import { changeOrdersList, resetOrdersListFromTravel } from "../../orders/slices/ordersListSlice";
 import { resetTravelCreator } from "../slices/travelCreatorSlice";

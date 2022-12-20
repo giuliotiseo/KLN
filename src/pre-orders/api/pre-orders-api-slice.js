@@ -302,6 +302,8 @@ export const extendedPreOrdersApiSlice = graphqlApiSlice.injectEndpoints({
     preOrderById: builder.query({
       query: (args) => !args?.id ? null : ({ body: PREORDER_BY_ID, args }),
       transformResponse: response => {
+        console.log("Capisco response e capisco tutto", response);
+        
         if(!response) return null;
         return {
           ...response,

@@ -124,7 +124,6 @@ export const createTravelMutation = async (params) => {
 // Update --------------------------------------------------------------------------------------------------------------------------------
 // Aggiornamento tabella di marcia
 export const updateTravelByTenant = async (params) => {
-  console.log("Params... ancora...", params);
   const travelShape = formatParamsUpdateTravel(params);
   
   // Intercetta i TravelsOrders da aggiornare

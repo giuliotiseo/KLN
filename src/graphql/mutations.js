@@ -3169,6 +3169,7 @@ export const createPalletHandling = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -3382,6 +3383,7 @@ export const updatePalletHandling = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -3595,6 +3597,7 @@ export const deletePalletHandling = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -6776,6 +6779,7 @@ export const createTravel = /* GraphQL */ `
       updatedAt
       licensePlate
       vehicleName
+      driverFiscalCode
       driverName
       driver {
         username
@@ -6983,6 +6987,7 @@ export const updateTravel = /* GraphQL */ `
       updatedAt
       licensePlate
       vehicleName
+      driverFiscalCode
       driverName
       driver {
         username
@@ -7190,6 +7195,7 @@ export const deleteTravel = /* GraphQL */ `
       updatedAt
       licensePlate
       vehicleName
+      driverFiscalCode
       driverName
       driver {
         username
@@ -7686,6 +7692,7 @@ export const createTravelsOrders = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -8059,6 +8066,7 @@ export const updateTravelsOrders = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
@@ -8432,6 +8440,7 @@ export const deleteTravelsOrders = /* GraphQL */ `
         updatedAt
         licensePlate
         vehicleName
+        driverFiscalCode
         driverName
         driver {
           username
