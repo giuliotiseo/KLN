@@ -486,7 +486,7 @@ export const TRAVEL_BY_ID = /* GraphQL */ `
       }
       orders { 
         items {
-          id orderId travelId operation operationValue tenantCarrier tenantCustomer departureDate arrivalDate
+          id orderId travelId operation operationValue tenantCarrier tenantCustomer carrierId customerId departureDate arrivalDate
           waypoint { completed }
           order {
             id stamp name 

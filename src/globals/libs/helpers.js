@@ -930,10 +930,10 @@ export const generateLegacyLogList = async ({ list, action, subject }) => {
     author: JSON.stringify({
       name: user.attributes.name,
       email: user.attributes.email,
-      phone: user.attributes['custom:phone'],
+      phone: user.attributes['custom:companyPhone'],
       companyId: user.attributes["custom:companyId"],
       companyName: user.attributes["custom:companyName"],
-      role: user.attributes["custom:role"],
+      role: user.attributes["custom:profileRoleId"],
     }),
     description: `${action} ${subject} - Utente: ${user.attributes.name}`,
     timestamp: Date.now()
