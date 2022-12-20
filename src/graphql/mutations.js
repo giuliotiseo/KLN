@@ -3094,6 +3094,7 @@ export const createPalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3113,6 +3114,7 @@ export const createPalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3126,6 +3128,7 @@ export const createPalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3175,6 +3178,7 @@ export const createPalletHandling = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -3308,6 +3312,7 @@ export const updatePalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3327,6 +3332,7 @@ export const updatePalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3340,6 +3346,7 @@ export const updatePalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3389,6 +3396,7 @@ export const updatePalletHandling = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -3522,6 +3530,7 @@ export const deletePalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3541,6 +3550,7 @@ export const deletePalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3554,6 +3564,7 @@ export const deletePalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -3603,6 +3614,7 @@ export const deletePalletHandling = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6785,6 +6797,7 @@ export const createTravel = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -6993,6 +7006,7 @@ export const updateTravel = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -7201,6 +7215,7 @@ export const deleteTravel = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -7698,6 +7713,7 @@ export const createTravelsOrders = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -8072,6 +8088,7 @@ export const updateTravelsOrders = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -8446,6 +8463,7 @@ export const deleteTravelsOrders = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job

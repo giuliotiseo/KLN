@@ -1,54 +1,68 @@
 import { useState } from "react";
-import { TinyTitle } from "../../../globals/components/typography/titles";
+import { useDispatch, useSelector } from "react-redux";
+import { useGetAuthProfilesQuery } from "../../../auth-profile/api/auth-profile-api-slice";
 import useListContacts from "../../../contacts/hooks/useListContacts";
 import EmployeeFinder from "../../../globals/components/dataEntry/EmployeeFinder";
-import InlineSpinner from "../../../globals/components/spinners/InlineSpinner";
-import { useDispatch, useSelector } from "react-redux";
+import Select from "../../../globals/components/dataEntry_v2/Select";
+import { TinyTitle } from "../../../globals/components/typography/titles";
 import { changeTravelEditorDriver } from "../../slices/travelEditorSlice";
 import { selectCurrentCompany } from "../../../company/slices/companySlice";
+import { ROLES } from "../../../globals/libs/helpers";
 
 // Sub-components ------------------------------------------------------------------------------------------------------------------------
 function SearchDriverInput({
   driver,
   onChange,
 }) {
-  const [clear, setClear ] = useState(false);
+  const [ dataOrigin, setDataOrigin ] = useState('PROFILES'); // CONTACTS | PROFILES
+  const [ clear, setClear ] = useState(false);
   const [{
-    items: myDrivers,
+    items: driversContacts,
     isFetching: isLoadingDrivers,
     isFetching: isFetchingDrivers,
     refetch: refetch
   }, driversPaginations] = useListContacts("DRIVE");
 
-  return (
-    <EmployeeFinder
-      label={null}
-      dropdownLabel={"Autisti dipendenti"}
-      className={"mt-2"}
-      employees={myDrivers}
-      employee={clear ? null : driver}
-      pagination={driversPaginations}
-      isLoading={isFetchingDrivers || isLoadingDrivers}
-      refetch={refetch}
-      clear={() => setClear(true)}
-      changeEmployee={(value) => {
-        setClear(false);
-        onChange(value);
-      }}
-    />
+  const { data: profiles, isLoading: isLoadingProfiles } = useGetAuthProfilesQuery();
+  const driversProfiles = profiles.ids.map(profileId => profiles.entities[profileId]).filter(profile => profile.roleIds.includes(ROLES.DRIVE));
+  const driverFinder = { CONTACTS: driversContacts, PROFILES: driversProfiles, }
+  const drivers = driverFinder[dataOrigin];
 
-    // <EmployeeFinder
-    //   label={null}
-    //   dropdownLabel={"Autisti dipendenti"}
-    //   className={"mt-2"}
-    //   employees={myDrivers}
-    //   employee={clear ? null : driver}
-    //   clear={() => setClear(true)}
-    //   changeEmployee={(value) => {
-    //     onChange(value);
-    //     setClear(false);
-    //   }}
-    // />
+  return (
+    <>
+      { clear && (
+        <>
+          <p className="text-sm my-2">Per condividere il viaggio su KLN App seleziona <span className="text-cyan-500">`Profili aziendali`</span></p>
+          <Select
+            id={'select-origin'}
+            label={'Seleziona origine dati'}
+            value={dataOrigin}
+            selectClassName="input block w-full flex-1"
+            className='flex-1 text-sm'
+            callback={({ value }) => setDataOrigin(value)}
+          >
+            <option value="CONTACTS">Rubrica contatti</option>
+            <option value="PROFILES">Profili aziendali</option>
+          </Select>
+        </>
+      )}
+
+      <EmployeeFinder
+        label={null}
+        dropdownLabel={"Autisti dipendenti"}
+        className={"mt-2"}
+        employees={drivers}
+        employee={clear ? null : driver}
+        pagination={driversPaginations}
+        isLoading={isFetchingDrivers || isLoadingDrivers || isLoadingProfiles}
+        refetch={refetch}
+        clear={() => setClear(true)}
+        changeEmployee={(value) => {
+          setClear(false);
+          onChange(value);
+        }}
+      />
+    </>
   )
 }
 

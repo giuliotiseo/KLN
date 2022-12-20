@@ -396,7 +396,7 @@ export const TRAVEL_BY_ID = /* GraphQL */ `
       vehicleName
       driverName
       driverFiscalCode
-      driver { username name email phone task job tenant }
+      driver { username name fiscalCode email phone task job tenant }
       estimatedTravelTime
       estimatedTravelLength
       estimatedTransportCosts
@@ -651,7 +651,7 @@ export const TRAVELS_BY_TENANT_STATUS_DEPARTUREDATE = /* GraphQL */ `
         vehicleName
         driverName
         driverFiscalCode
-        driver { username name email phone task job jobId tenant }
+        driver { username name fiscalCode email phone task job jobId tenant }
         estimatedTravelTime
         estimatedTravelLength
         estimatedTransportCosts

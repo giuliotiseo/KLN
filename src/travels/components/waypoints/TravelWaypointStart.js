@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { useGetAuthProfilesQuery } from "../../../auth-profile/api/auth-profile-api-slice";
 import useListContacts from "../../../contacts/hooks/useListContacts";
+import useListWarehouses from "../../../warehouses/hooks/useListWarehouses";
+import useListVehicles from "../../../vehicles/hooks/useListVehicles";
 import HighlightedButtonOnSelect from "../../../globals/components/buttons/HighlightedButtonOnSelect";
 import EmployeeFinder from "../../../globals/components/dataEntry/EmployeeFinder";
 import PositionLocalizer from "../../../globals/components/dataEntry/PositionLocalizer";
 import VehicleFinder from "../../../globals/components/dataEntry/VehicleFinder";
 import { TinyTitle } from "../../../globals/components/typography/titles"
-import useListVehicles from "../../../vehicles/hooks/useListVehicles";
-import useListWarehouses from "../../../warehouses/hooks/useListWarehouses";
+import { ROLES } from "../../../globals/libs/helpers";
+import Select from "../../../globals/components/dataEntry_v2/Select";
 
 // Sub components ------------------------------------------------------------------------------------------------------------
 const WarehouseStartingPoint = ({
@@ -23,8 +26,6 @@ const WarehouseStartingPoint = ({
       isFetching, 
     }, pagination
   ] = useListWarehouses("ALL");
-
-  console.log('Editor', { inputWarehouses})
 
   return <>
     <HighlightedButtonOnSelect
@@ -56,12 +57,18 @@ const DriverStartingPoint = ({
   onChange,
   clear
 }) => {
+  const [ dataOrigin, setDataOrigin ] = useState('PROFILES'); // CONTACTS | PROFILES
   const [{
-    items: drivers,
+    items: driversContacts,
     isLoading: isLoadingDrivers,
     isFetching: isFetchingDrivers,
     refetch
   }, driversPaginations ] = useListContacts("DRIVE");
+
+  const { data: profiles, isLoading: isLoadingProfiles } = useGetAuthProfilesQuery();
+  const driversProfiles = profiles.ids.map(profileId => profiles.entities[profileId]).filter(profile => profile.roleIds.includes(ROLES.DRIVE));
+  const driverFinder = { CONTACTS: driversContacts, PROFILES: driversProfiles, }
+  const drivers = driverFinder[dataOrigin];
 
   return <>
     <HighlightedButtonOnSelect
@@ -72,18 +79,33 @@ const DriverStartingPoint = ({
     />
 
     { accordion === "DRIVER" && (
-      <EmployeeFinder
-        label={null}
-        dropdownLabel={"Autisti dipendenti"}
-        className={"mb-2 ml-4"}
-        employees={drivers}
-        employee={driver}
-        pagination={driversPaginations}
-        isLoading={isFetchingDrivers || isLoadingDrivers}
-        refetch={refetch}
-        clear={clear}
-        changeEmployee={onChange}
-      />
+      <>
+        <p className="text-sm px-4 my-2">Per condividere il viaggio su KLN App seleziona <span className="text-cyan-500">`Profili aziendali`</span></p>
+
+        <Select
+          id={'select-origin'}
+          label={'Seleziona origine dati'}
+          value={dataOrigin}
+          selectClassName="input block w-full flex-1"
+          className='flex-1 ml-4 text-sm'
+          callback={({ value }) => setDataOrigin(value)}
+        >
+          <option value="CONTACTS">Rubrica contatti</option>
+          <option value="PROFILES">Profili aziendali</option>
+        </Select>
+        <EmployeeFinder
+          label={null}
+          dropdownLabel={"Autisti dipendenti"}
+          className={"mb-2 ml-4"}
+          employees={drivers}
+          employee={driver}
+          pagination={dataOrigin !== 'CONTACTS' && driversPaginations}
+          isLoading={isFetchingDrivers || isLoadingDrivers}
+          refetch={refetch}
+          clear={clear}
+          changeEmployee={onChange}
+        />
+      </>
     )}
   </>
 }

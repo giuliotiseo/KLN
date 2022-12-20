@@ -255,6 +255,7 @@ export const travelEditorSlice = createSlice({
       } else {
         state.driver = {
           username: payload?.value?.id,
+          fiscalCode: payload?.value?.fiscalCode,
           companyId: payload?.value?.jobId,
           job: payload?.value?.jobName,
           name: payload?.value?.searchable?.toUpperCase(),

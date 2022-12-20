@@ -524,7 +524,7 @@ type Travel  @model(subscriptions: null)
 @key(name:"travelByStampCreatedAt", fields: ["stamp", "createdAt"], queryField: "travelByStampCreatedAt")
 @key(name:"travelByCarrierDepartureDate", fields: ["carrierId", "departureDate"], queryField: "travelByCarrierDepartureDate")
 @key(name:"travelByCarrierStatusDepartureDate", fields: ["carrierId", "status", "departureDate"], queryField: "travelByCarrierStatusDepartureDate")
-@key(name:"travelByCarrierStatusDriverDeparture", fields: ["carrierId", "status", "driverName", "departureDate"], queryField: "travelByCarrierStatusDriverDeparture")
+@key(name:"travelByCarrierStatusDriverDeparture", fields: ["carrierId", "status", "driverFiscalCode", "departureDate"], queryField: "travelByCarrierStatusDriverDeparture")
 @key(name:"travelByCarrierStatusLicenseDeparture", fields: ["carrierId", "status", "licensePlate", "departureDate"], queryField: "travelByCarrierStatusLicenseDeparture")
 @key(name:"travelByCarrierDriverDepartureDate", fields: ["carrierId", "driverFiscalCode", "departureDate"], queryField: "travelByCarrierDriverDepartureDate")
 @auth(rules: [
@@ -796,6 +796,7 @@ type ProfileSummary {
   username: ID
   companyId: String
   name: String
+  fiscalCode: String
   email: AWSEmail
   phone: String
   job: String
