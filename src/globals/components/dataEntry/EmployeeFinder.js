@@ -3,7 +3,7 @@ import { FiX } from "react-icons/fi";
 
 export default function EmployeeFinder({  
   label,
-  dropdownLabel = "Checkpoint registrati",
+  dropdownLabel = "Cerca dipendente",
   className,
   employees,
   employee,

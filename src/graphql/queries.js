@@ -1503,6 +1503,7 @@ export const getPalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -1522,6 +1523,7 @@ export const getPalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -1535,6 +1537,7 @@ export const getPalletHandling = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -1584,6 +1587,7 @@ export const getPalletHandling = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -1696,6 +1700,7 @@ export const listPalletHandlings = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -1715,6 +1720,7 @@ export const listPalletHandlings = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -1728,6 +1734,7 @@ export const listPalletHandlings = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -4925,6 +4932,7 @@ export const palletHandlingByStamp = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -4944,6 +4952,7 @@ export const palletHandlingByStamp = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -4957,6 +4966,7 @@ export const palletHandlingByStamp = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5073,6 +5083,7 @@ export const palletHandlingByStatusOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5092,6 +5103,7 @@ export const palletHandlingByStatusOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5105,6 +5117,7 @@ export const palletHandlingByStatusOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5221,6 +5234,7 @@ export const palletHandlingByStatusCarrierDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5240,6 +5254,7 @@ export const palletHandlingByStatusCarrierDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5253,6 +5268,7 @@ export const palletHandlingByStatusCarrierDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5369,6 +5385,7 @@ export const palletHandlingByStatusCustomerDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5388,6 +5405,7 @@ export const palletHandlingByStatusCustomerDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5401,6 +5419,7 @@ export const palletHandlingByStatusCustomerDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5517,6 +5536,7 @@ export const palletHandlingByStatusReversalDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5536,6 +5556,7 @@ export const palletHandlingByStatusReversalDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5549,6 +5570,7 @@ export const palletHandlingByStatusReversalDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5665,6 +5687,7 @@ export const palletHandlingByStatusTravelDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5684,6 +5707,7 @@ export const palletHandlingByStatusTravelDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5697,6 +5721,7 @@ export const palletHandlingByStatusTravelDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5813,6 +5838,7 @@ export const palletHandlingByStatusTypeDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5832,6 +5858,7 @@ export const palletHandlingByStatusTypeDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5845,6 +5872,7 @@ export const palletHandlingByStatusTypeDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5961,6 +5989,7 @@ export const palletHandlingByCarrierOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5980,6 +6009,7 @@ export const palletHandlingByCarrierOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -5993,6 +6023,7 @@ export const palletHandlingByCarrierOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6109,6 +6140,7 @@ export const palletHandlingByCustomerOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6128,6 +6160,7 @@ export const palletHandlingByCustomerOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6141,6 +6174,7 @@ export const palletHandlingByCustomerOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6257,6 +6291,7 @@ export const palletHandlingByReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6276,6 +6311,7 @@ export const palletHandlingByReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6289,6 +6325,7 @@ export const palletHandlingByReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6405,6 +6442,7 @@ export const palletHandlingByCarrierTypeOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6424,6 +6462,7 @@ export const palletHandlingByCarrierTypeOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6437,6 +6476,7 @@ export const palletHandlingByCarrierTypeOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6553,6 +6593,7 @@ export const palletHandlingByCustomerTypeOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6572,6 +6613,7 @@ export const palletHandlingByCustomerTypeOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6585,6 +6627,7 @@ export const palletHandlingByCustomerTypeOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6701,6 +6744,7 @@ export const palletHandlingByTravelCreatedAt = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6720,6 +6764,7 @@ export const palletHandlingByTravelCreatedAt = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6733,6 +6778,7 @@ export const palletHandlingByTravelCreatedAt = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6849,6 +6895,7 @@ export const palletHandlingByCarrierTravelOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6868,6 +6915,7 @@ export const palletHandlingByCarrierTravelOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6881,6 +6929,7 @@ export const palletHandlingByCarrierTravelOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -6997,6 +7046,7 @@ export const palletHandlingByCustomerTravelOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7016,6 +7066,7 @@ export const palletHandlingByCustomerTravelOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7029,6 +7080,7 @@ export const palletHandlingByCustomerTravelOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7145,6 +7197,7 @@ export const palletHandlingByCarrierCustomerOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7164,6 +7217,7 @@ export const palletHandlingByCarrierCustomerOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7177,6 +7231,7 @@ export const palletHandlingByCarrierCustomerOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7293,6 +7348,7 @@ export const palletHandlingByCarrierReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7312,6 +7368,7 @@ export const palletHandlingByCarrierReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7325,6 +7382,7 @@ export const palletHandlingByCarrierReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7441,6 +7499,7 @@ export const palletHandlingByCustomerReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7460,6 +7519,7 @@ export const palletHandlingByCustomerReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7473,6 +7533,7 @@ export const palletHandlingByCustomerReversalOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7589,6 +7650,7 @@ export const palletHandlingByCustomerCarrierOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7608,6 +7670,7 @@ export const palletHandlingByCustomerCarrierOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -7621,6 +7684,7 @@ export const palletHandlingByCustomerCarrierOperationDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -16317,6 +16381,7 @@ export const getTravel = /* GraphQL */ `
         username
         companyId
         name
+        fiscalCode
         email
         phone
         job
@@ -16527,6 +16592,7 @@ export const listTravels = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -16625,6 +16691,7 @@ export const travelByStampCreatedAt = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -16723,6 +16790,7 @@ export const travelByCarrierDepartureDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -16821,6 +16889,7 @@ export const travelByCarrierStatusDepartureDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -16888,7 +16957,7 @@ export const travelByCarrierStatusDepartureDate = /* GraphQL */ `
 export const travelByCarrierStatusDriverDeparture = /* GraphQL */ `
   query TravelByCarrierStatusDriverDeparture(
     $carrierId: ID
-    $statusDriverNameDepartureDate: ModelTravelTravelByCarrierStatusDriverDepartureCompositeKeyConditionInput
+    $statusDriverFiscalCodeDepartureDate: ModelTravelTravelByCarrierStatusDriverDepartureCompositeKeyConditionInput
     $sortDirection: ModelSortDirection
     $filter: ModelTravelFilterInput
     $limit: Int
@@ -16896,7 +16965,7 @@ export const travelByCarrierStatusDriverDeparture = /* GraphQL */ `
   ) {
     travelByCarrierStatusDriverDeparture(
       carrierId: $carrierId
-      statusDriverNameDepartureDate: $statusDriverNameDepartureDate
+      statusDriverFiscalCodeDepartureDate: $statusDriverFiscalCodeDepartureDate
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -16919,6 +16988,7 @@ export const travelByCarrierStatusDriverDeparture = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -17017,6 +17087,7 @@ export const travelByCarrierStatusLicenseDeparture = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job
@@ -17115,6 +17186,7 @@ export const travelByCarrierDriverDepartureDate = /* GraphQL */ `
           username
           companyId
           name
+          fiscalCode
           email
           phone
           job

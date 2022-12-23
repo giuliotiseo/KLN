@@ -31,7 +31,7 @@ export default function Select ({
         id={id}
         className={`input cursor-pointer p-[10px] ${selectClassName}`}
         // defaultValue={value}
-        value={value || ""}
+        value={(value || value === 0) ? value : ""}
         onChange={({ target: { value }}) => callback ? callback({ name: id, value, type: "select" }) : null}
       >
         { children }

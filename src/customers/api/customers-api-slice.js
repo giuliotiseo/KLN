@@ -1,6 +1,6 @@
 import { createSelector, createEntityAdapter } from "@reduxjs/toolkit";
 import { graphqlApiSlice } from "../../app/api/graphql-api-slice";
-import { createCustomerCaller, createCustomerCompanyCaller, deleteCustomerCaller, updateCustomerCaller } from "./customers-callers";
+import { createCustomerCaller, createCustomerCompanyCaller, deleteCustomerCaller, getCustomerByCompanyIdCaller, updateCustomerCaller } from "./customers-callers";
 import { CUSTOMERS_BY_CARRIER_RELATION, CUSTOMERS_BY_OWNERCOMPANY, CUSTOMERS_BY_RECEIVER_RELATION, CUSTOMERS_BY_SENDER_RELATION, CUSTOMER_BY_COMPANYID, CUSTOMER_BY_ID } from "./graphql/queries";
 import { toast } from "react-toastify";
 import { DEFAULT_CUSTOMERS_LIMIT } from "../slices/customersListSlice";
@@ -106,10 +106,11 @@ export const extendedCustomersApiSlice = graphqlApiSlice.injectEndpoints({
       }
     }),
     customerByCompanyId: builder.query({
-      query: (args) => ({ body: CUSTOMER_BY_COMPANYID, args, skipInCaseOfNullArgs: true }),
-      transformResponse: response => {
-        if(!response || response?.items?.length <= 0) return null;
-        return formatCustomerByIdResponse(response.items[0]);
+      async queryFn(args) {
+        if(!args?.companyId) return null;
+        const response = await getCustomerByCompanyIdCaller(args);
+        if(!response || response?.data?.items?.length <= 0) return {};
+        return formatCustomerByIdResponse(response?.data?.items[0]);
       },
       providesTags: (result) => {
         return result?.id 

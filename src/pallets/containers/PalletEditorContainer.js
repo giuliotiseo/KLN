@@ -24,7 +24,7 @@ export default function PalletEditorContainer({
   const { data: fetchedPalletHandling = {}, isFetching } = usePalletByIdForCustomerQuery({ id });
   const palletEditor = useSelector(selectPalletEditor);
   const [ updatePalletHandling, { data, isLoading: isUpdating, isSuccess, isError }] = useUpdatePalletHandlingMutation();
-  const { auth: cognitoUser } = useAuth();
+  const { auth: cognitoUser, profile } = useAuth();
   const { search: searchFromUrl } = useLocation();
 
   // Action
@@ -60,6 +60,7 @@ export default function PalletEditorContainer({
       fetchedPalletHandling,
       skipValidation,
       cognitoUser,
+      profile,
       queryFrom,
       updatePalletHandling,
       dispatch,

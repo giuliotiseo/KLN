@@ -1,6 +1,20 @@
 import { portableGraphqlQuery } from "../../app/api/graphql-api-slice";
 import { createCustomerCompanyFormatter, createCustomerFormatter, updateCustomerFormatter } from "./customers-params-formatters";
 import { CREATE_CUSTOMER, CREATE_CUSTOMER_COMPANY, DELETE_CUSTOMER, UPDATE_CUSTOMER } from "./graphql/mutations";
+import { CUSTOMER_BY_COMPANYID } from "./graphql/queries";
+
+// Get --------------------------------------------------------------------------------------------------------------------------------
+export const getCustomerByCompanyIdCaller =  async (args) => {
+  const result = await portableGraphqlQuery({
+    body: CUSTOMER_BY_COMPANYID,
+    args: { ownerCompanyId: args.companyId },
+    skipInCaseOfNullArgs: true 
+  });
+
+  console.log("Vedo result", result);
+  
+  return result;
+};
 
 // Create --------------------------------------------------------------------------------------------------------------------------------
 export const createCustomerCaller =  async (params) => {

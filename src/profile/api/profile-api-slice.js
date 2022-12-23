@@ -7,7 +7,7 @@ import { updateCustomerCaller } from "./profile-callers";
 export const extendedProfileApiSlice = graphqlApiSlice.injectEndpoints({
   endpoints: builder => ({
     getProfile: builder.query({
-      query: (id) => ({ body: GET_PROFILE_BY_ID, args: { id }}),
+      query: (id) => !id ? null : ({ body: GET_PROFILE_BY_ID, args: { id }}),
       transformResponse: response => {
         return response
       },

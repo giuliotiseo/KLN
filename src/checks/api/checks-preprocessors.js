@@ -68,6 +68,7 @@ export const handleUpdateCheck = async ({
   queryFrom,
   updateCheck,
   dispatch,
+  profile,
   setModal
 }) => {
   let error = "";
@@ -111,6 +112,7 @@ export const handleUpdateCheck = async ({
       action: "Aggiornamento",
       domain,
       cognitoUser,
+      profile,
       data: checkEditor,
       previousLogs,
       propsGlossary: CHECK_PROPS_GLOSSARY,

@@ -126,6 +126,7 @@ export const handleUpdatePallet = async ({
   fetchedPalletHandling,
   skipValidation,
   cognitoUser,
+  profile,
   updatePalletHandling,
   dispatch,
   setModal
@@ -170,6 +171,7 @@ export const handleUpdatePallet = async ({
       action: "Aggiornamento",
       domain,
       cognitoUser,
+      profile,
       data: palletEditor,
       previousLogs,
       propsGlossary: PALLET_PROPS_GLOSSARY,

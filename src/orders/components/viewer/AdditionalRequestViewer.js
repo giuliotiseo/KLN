@@ -23,7 +23,7 @@ export default function AdditionalRequestViewer({ collectChecks, checksAmount })
           : <p className="flex items-center"><FiSquare className="mr-2 text-zinc-500" />Ritiro dell'assegno non richiesto</p>
         }
         
-        { checksAmount && ( <p>Importo assegno/i: <b>{priceFormatter(checksAmount)}</b></p> )}
+        { checksAmount ? ( <p>Importo assegno/i: <b>{priceFormatter(checksAmount)}</b></p> ) : ""}
       </div>
     </CardDetails>
   )

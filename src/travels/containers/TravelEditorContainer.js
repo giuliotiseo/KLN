@@ -36,7 +36,7 @@ export default function TravelEditorContainer({
   const filter = useSelector(selectTravelEditorFilterOrders);
   const selectedOrder = useSelector(selectTravelEditorOrderDetails);
   const currentCompany = useSelector(selectCurrentCompany);
-  const { auth: cognitoUser } = useAuth();
+  const { auth: cognitoUser, profile } = useAuth();
   // Additional hooks
   const { search: searchFromUrl } = useLocation();
   const [ updateTravel, { data, isLoading: isUpdating, isSuccess, isError }] = useUpdateTravelMutation();
@@ -102,6 +102,7 @@ export default function TravelEditorContainer({
       fetchedTravel,
       skipValidation,
       cognitoUser,
+      profile,
       updateTravel,
       domain: currentCompany,
       dispatch,

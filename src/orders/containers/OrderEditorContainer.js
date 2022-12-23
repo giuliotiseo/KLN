@@ -59,9 +59,9 @@ function OrderEditorContainer({ order, currentCompanyRole }) {
   const { data: preOrderDetails } = usePreOrderByIdQuery(order?.preOrderId ? { id: order.preOrderId } : null);
   const ordersInPreOrderQuery = useOrderByPreOrderIdQuery(order?.preOrderId ? { preOrderId: order.preOrderId } : null);
   const orderEditor = useSelector(selectOrderEditor);
-  const senderDetailsQuery = useCustomerByCompanyIdQuery((orderEditor?.sender?.company?.id) ? { companyId: orderEditor.sender.company.id }  : null );
-  const carrierDetailsQuery = useCustomerByCompanyIdQuery((order?.carrier?.company?.id) ? { companyId: order.carrier.company.id }  : null );
-  const receiverDetailsQuery = useCustomerByCompanyIdQuery((orderEditor?.receiver?.company?.id) ? { companyId: orderEditor.receiver.company.id }  : null );
+  const senderDetailsQuery = useCustomerByCompanyIdQuery((orderEditor?.sender?.company?.id) ? { companyId: orderEditor.sender.company.id }  : {});
+  const carrierDetailsQuery = useCustomerByCompanyIdQuery((order?.carrier?.company?.id) ? { companyId: order.carrier.company.id }  : {});
+  const receiverDetailsQuery = useCustomerByCompanyIdQuery((orderEditor?.receiver?.company?.id) ? { companyId: orderEditor.receiver.company.id }  : {});
   const LDMFromOthers = useCalculateLDM(ordersInPreOrderQuery?.data);
   const estimatedLDM = round((parseFloat(order?.loadingMeter) + (parseFloat(LDMFromOthers) - parseFloat(order.originalLoadingMeter))), 10);
   const warehousesQuery  = useListWarehouses("ALL");

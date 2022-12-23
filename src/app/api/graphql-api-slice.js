@@ -5,9 +5,9 @@ import { API } from "aws-amplify";
 // Custom base query
 const graphqlBaseQuery = async (params) => {
   // console.log('vedo params', { params })
-  if(!params?.body || (!params?.args && params?.skipInCaseOfNullArgs)) return { data: null };
+  if(!params?.body || (!params?.args && params?.skipInCaseOfNullArgs)) return { data: {}};
   const { body, args } = params;
-  let results = null;
+  let results = {};
 
   try {
     results = await API.graphql(({
@@ -36,14 +36,15 @@ const graphqlBaseQuery = async (params) => {
     console.groupEnd();
     return { data: dataToReturn };
   } catch(e) {
-    console.error('Error:', { error: e, params });
-    return { error: e }
+    console.error('Nessun risultato:', { error: e, params });
+    console.groupEnd();
+    return {}
   }
 }
 
 // Custom query used for queryFn implementation
 export const portableGraphqlQuery = async ({ body, args }) => {
-  let results = null;
+  let results = {};
   try {
     results = await API.graphql(({
       query: body, 
@@ -70,8 +71,8 @@ export const portableGraphqlQuery = async ({ body, args }) => {
     console.groupEnd();
     return { data: dataToReturn };
   } catch(e) {
-    console.error('Error:', e);
-    return { error: e }
+    console.error('Nessun risultato:', e);
+    return {}
   }
 }
 
