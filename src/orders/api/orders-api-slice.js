@@ -855,7 +855,9 @@ export const extendedOrdersApiSlice = graphqlApiSlice.injectEndpoints({
       providesTags: [{ type: _TYPENAME, id: 'LIST_BY_RECEIVER_COLLECTCHECKS' }]
     }),
     orderByCarrierForTravel: builder.query({
-      query: (args) => ({ body: ORDER_BY_CARRIER_TRAVEL, args }),
+      query: (args) => {
+        return ({ body: ORDER_BY_CARRIER_TRAVEL, args })
+      },
       transformResponse: async (response) => {
         if(!response) return null;
         
@@ -869,12 +871,22 @@ export const extendedOrdersApiSlice = graphqlApiSlice.injectEndpoints({
 
         let ordersWithPlannedId = [];
         for(let order of response.items) {
-          const { plannedId } = await getOrderDataForWaypoint({...order, indexOp: 0 }, Date.now());
-          ordersWithPlannedId.push({ ...order, plannedId })
+          const response = await getOrderDataForWaypoint({...order, indexOp: 0 }, Date.now());
+          if(response?.plannedId) {
+            ordersWithPlannedId.push({ ...order, plannedId: response.plannedId })
+          }
         }
+
+        console.log("Confronto", {
+          plannedIds,
+          ordersWithPlannedId
+        })
 
         const allowedOrders = ordersWithPlannedId.filter(order => !plannedIds.includes(order.plannedId))
         allOrdersAdapter.setAll(initialState, allowedOrders);
+
+
+
         // Per avere next token in lista:
         return {
           ids: allowedOrders.length > 0 ? allowedOrders.map(item => item.id) : [],
