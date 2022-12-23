@@ -33,6 +33,8 @@ export default function OrdersPickerForTravelCreator({
     dispatch(changeTravelCreatorOrderDetails(order))
   }, [dispatch, showOrderDetailsDrawer]);
 
+  console.log("In uscita", orders);
+
   return (
     <section>
       {/* Title */}
