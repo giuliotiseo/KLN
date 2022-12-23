@@ -426,9 +426,6 @@ export function formatParamsCreatePalletHandling(pallet) {
 }
 
 export function formatParamsCreateReversal(pallet) {
-  console.log("ma perche", { pallet });
-
-
   const dataToSend = {
     id: pallet.id,
     stamp: pallet?.palletHandlingRef?.stamp

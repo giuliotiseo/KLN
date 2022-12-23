@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useGetAuthProfilesQuery } from "../../auth-profile/api/auth-profile-api-slice";
 import { useGetCompany } from "../../company/hooks/useGetCompany";
+import { useGetProfile } from "../../profile/hooks";
 // Components
 import PageSpinner from "../../globals/components/layout/PageSpinner";
 import LogoutOverlay from "../../auth-profile/components/LogoutOverlay";
@@ -12,7 +13,7 @@ import SignOutOverlay from "../components/SignOutOverlay";
 import PrivateAppRouter from "../router/PrivateAppRouter";
 // Helpers
 import { selectLogoutScreenMode } from "../slices/appSlice";
-import { profileLogOut } from "../../auth-profile/slices/authProfileSlice";
+import { profileLogOut, setPersistentProfile } from "../../auth-profile/slices/authProfileSlice";
 
 // Main component
 export default function PrivateAppContainer() {
@@ -21,6 +22,7 @@ export default function PrivateAppContainer() {
   const { company, isLoading: isLoadingCompany } = useGetCompany();
   const { data: profiles, isLoading: isLoadingProfiles } = useGetAuthProfilesQuery();
   const isLoggingOut = useSelector(selectLogoutScreenMode);
+  const { profile } = useGetProfile();
   const dispatch = useDispatch();
   
   // Restart from root on first load
@@ -29,6 +31,12 @@ export default function PrivateAppContainer() {
       setLoading(false);
     };
   }, [company, profiles]);
+
+  useEffect(() => {
+    if(profile?.id) {
+      dispatch(setPersistentProfile(profile));
+    }
+  }, [profile]);
 
   // Amplify auth events listener for cleanup store in case of logout
   const authListener = useCallback(async (data) => {

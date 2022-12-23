@@ -1,12 +1,12 @@
 import { useEffect, useState, useCallback } from "react";
 import { useSelector } from "react-redux";
 import BrowseProfilesPicker from "../components/browse-profiles/BrowseProfilesPicker";
-import { selectCurrentProfile } from "../slices/authProfileSlice";
+import { selectCurrentProfileId } from "../slices/authProfileSlice";
 
 export default function BrowseProfilesContainer({ company, profiles }) {
   const [ searchValue, setSearchValue ] = useState("");
   const [ visibleProfiles, setVisibileProfiles ] = useState(profiles);
-  const selectedProfile = useSelector(selectCurrentProfile);
+  const selectedProfile = useSelector(selectCurrentProfileId);
 
   const filterProfiles = useCallback((searchValue) => {
     if(profiles?.length > 0) {

@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLogoutProfileMutation } from "../api/auth-profile-api-slice";
-import { profileLogOut, selectCurrentProfile } from "../slices/authProfileSlice";
+import { profileLogOut, selectCurrentProfileId } from "../slices/authProfileSlice";
 
 export default function useLogoutProfile() {
-  const profileId = useSelector(selectCurrentProfile);
+  const profileId = useSelector(selectCurrentProfileId);
   const [ logout, { isLoading }] = useLogoutProfileMutation();
   const dispatch = useDispatch();
   const navigate = useNavigate();

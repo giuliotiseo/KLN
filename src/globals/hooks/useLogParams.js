@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectCurrentRoles } from "../../auth-profile/slices/authProfileSlice";
 import { selectCurrentCompany } from "../../company/slices/companySlice";
@@ -12,11 +11,12 @@ function useLogParams({
   previousLogs,
   enableDomain = false
 }) {
-  const { auth } = useAuth();
+  const { auth, profile } = useAuth();
   const { id, name } = useSelector(selectCurrentCompany);
   const roleIds = useSelector(selectCurrentRoles);
   const logParams = {
     cognitoUser: auth,
+    profile,
     domain: enableDomain ? { id, name } : null,
     roleIds,
     previousLogs,

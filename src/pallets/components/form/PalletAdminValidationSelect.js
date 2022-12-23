@@ -7,7 +7,7 @@ import { TinyTitle } from "../../../globals/components/typography/titles";
 import { statusOptions, STATUS_DESCRIPTIONS } from "../../libs/helpers";
 import { FiEdit } from "react-icons/fi";
 import { changePalletEditorValidation, changePalletEditorMessage } from "../../slices/palletEditorSlice";
-import { selectCurrentProfile } from "../../../auth-profile/slices/authProfileSlice";
+import { selectCurrentProfileId } from "../../../auth-profile/slices/authProfileSlice";
 import { useSelector } from "react-redux";
 import { useGetProfileQuery } from "../../../profile/api/profile-api-slice";
 import { selectCurrentCompany } from "../../../company/slices/companySlice";
@@ -20,7 +20,7 @@ export default function PalletAdminValidationSelect ({
   validation,
 }) {
   const { name: companyName, id: companyId } = useSelector(selectCurrentCompany);
-  const profileId = useSelector(selectCurrentProfile);
+  const profileId = useSelector(selectCurrentProfileId);
   const { data: profile, isLoading, isFetching } = useGetProfileQuery(profileId);
   const dispatch = useDispatch();
 

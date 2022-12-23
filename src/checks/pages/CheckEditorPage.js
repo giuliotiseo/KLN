@@ -16,7 +16,7 @@ import { resetCheckContentEditor, resetCheckEditor, selectCheckEditor } from "..
 
 // Main component -----------------------------------------------------------------------------------------------
 export default function CheckEditorPage() {
-  const { auth } = useAuth();
+  const { auth, profile } = useAuth();
   const [ modal, setModal ] = useState(false);
   const [ searchParams ] = useSearchParams();
   const id = searchParams.get('id');
@@ -55,6 +55,7 @@ export default function CheckEditorPage() {
       fetchedCheck,
       skipValidation,
       cognitoUser: auth,
+      profile,
       queryFrom,
       updateCheck,
       dispatch,

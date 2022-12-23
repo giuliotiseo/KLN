@@ -1,7 +1,7 @@
 import { createSelector, createEntityAdapter } from "@reduxjs/toolkit";
 import { graphqlApiSlice } from "../../app/api/graphql-api-slice";
 import { CONTACT_BY_ID, CONTACTS_BY_COMPANY, CONTACTS_BY_TYPE, EMPLOYEES_BY_TENANT, EMPLOYEES_BY_COMPANY_TYPE } from './graphql/queries';
-import { apiDataNormalizer, formatWindowsToApp, formatWindowsToDynamoDb, generateLegacyLogList, generateLogList } from '../../globals/libs/helpers';
+import { apiDataNormalizer, formatWindowsToApp, formatWindowsToDynamoDb, generateLegacyLogList } from '../../globals/libs/helpers';
 // Callers
 import { createContactCaller, deleteContactCaller, getContactsByTypeName, getEmployeesByType, updateContactCaller } from './contacts-callers';
 import { DEFAULT_CONTACTS_LIMIT } from "../slices/contactsListSlice";

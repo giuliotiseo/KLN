@@ -6,7 +6,7 @@ import TextEditor from "../../../globals/components/dataEntry/TextEditor";
 import Spinner from "../../../globals/components/layout/Spinner";
 import { TinyTitle } from "../../../globals/components/typography/titles";
 import { selectCurrentCompany } from "../../../company/slices/companySlice";
-import { selectCurrentProfile } from "../../../auth-profile/slices/authProfileSlice";
+import { selectCurrentProfileId } from "../../../auth-profile/slices/authProfileSlice";
 import { useGetProfileQuery } from "../../../profile/api/profile-api-slice";
 
 function PalletValidationInput ({
@@ -16,7 +16,7 @@ function PalletValidationInput ({
   adminValidation,
   callback
 }) {
-  const profileId = useSelector(selectCurrentProfile);
+  const profileId = useSelector(selectCurrentProfileId);
   const { data: profile, isLoading, isFetching } = useGetProfileQuery(profileId);
 
   if(isLoading || isFetching) return <Spinner className="w-5 h-5 text-primary-200 dark:text-primary-300" />

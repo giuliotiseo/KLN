@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
-import { selectCurrentProfile } from "../../auth-profile/slices/authProfileSlice";
+import { selectCurrentProfileId } from "../../auth-profile/slices/authProfileSlice";
 import { useAuth } from "../../globals/hooks/useAuth";
 import MainContent from "../components/MainContent";
 import MainSidebar from "../components/MainSidebar";
 
 export default function PrivateAppLayout({ children }) {
   const { auth } = useAuth();
-  const profileId = useSelector(selectCurrentProfile);
+  const profileId = useSelector(selectCurrentProfileId);
   return (
     <div className="flex">
       {/* Left navigation */}

@@ -86,7 +86,7 @@ export default function PalletCreatorContainer({ myCompany, companyId, travel_id
 
   // Modal callbacks
   const modalHandler = () => {
-    if(leaveModal === "waypoint")modalWaypointConfirm();
+    if(leaveModal === "waypoint") modalWaypointConfirm();
     if(leaveModal === "tab") modalTabConfirm();
   }
 

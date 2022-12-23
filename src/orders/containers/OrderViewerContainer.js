@@ -17,7 +17,6 @@ import { selectCurrentCompany } from '../../company/slices/companySlice';
 // Helpers
 import { toast } from 'react-toastify';
 import { companyRolePermissions } from '../libs/helpers';
-import OrderDocAttachmentsList from '../components/viewer/AttachmentsList';
 import AttachmentsList from '../components/viewer/AttachmentsList';
 
 function OrderViewerContainer() {

@@ -7,6 +7,8 @@ import { priceFormatter } from "../../../globals/libs/helpers";
 
 // Main component ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 export default ({ collectChecks, checksAmount, note }) => {
+  console.log({ collectChecks, checksAmount })
+
   return (
     <div>
       <SmallTitle styles="mb-2 flex items-center">

@@ -6,6 +6,8 @@ import InputCurrency from "../../../globals/components/dataEntry_v2/InputCurrenc
 
 // Sub component ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const AdditionalRequestModule = ({ updateForm, companiesNames, collectChecks, checksAmount }) => {
+  console.log("Valore...", collectChecks);
+
   return (
     <>
       <div className="text-lg">
@@ -51,6 +53,7 @@ const AdditionalRequestModule = ({ updateForm, companiesNames, collectChecks, ch
 export default function AdditionalRequestCompiler({ companiesNames, order, updateForm }) {
   const { collectChecks, checksAmount } = order;
 
+  console.log("Vedi", { collectChecks, checksAmount })
   return (
     <CardDetails
       header={<h3 className="title-3">Richieste aggiuntive</h3>}

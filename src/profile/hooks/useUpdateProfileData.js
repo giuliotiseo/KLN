@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { selectCurrentProfile } from "../../auth-profile/slices/authProfileSlice";
+import { selectCurrentProfileId } from "../../auth-profile/slices/authProfileSlice";
 import { capitalizeFullName } from "../../globals/libs/helpers";
 import { useUpdateProfileDataMutation } from "../api/profile-api-slice";
 
 export default function useUpdateProfileData() {
-  const profileId = useSelector(selectCurrentProfile);
+  const profileId = useSelector(selectCurrentProfileId);
   const [ updateProfileData, { isLoading }] = useUpdateProfileDataMutation();
 
   const handleUpdateProfile = async (profile) => {

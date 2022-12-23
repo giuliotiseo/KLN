@@ -846,6 +846,7 @@ export const generateLogList = ({
   subject = null,
   domain = null,
   cognitoUser = null,
+  profile,
   data = null,
   previousLogs = [],
   propsGlossary = {},
@@ -864,11 +865,13 @@ export const generateLogList = ({
   const author = {
     authorId: cognitoUser.attributes.email,
     author: JSON.stringify({
-      name: cognitoUser.attributes.name,
-      email: cognitoUser.attributes.email,
+      name: profile?.searchble || cognitoUser.attributes.name,
+      email: profile?.email || cognitoUser.attributes.email,
       companyId: domain?.id || "",
       companyName: domain?.name || "",
-      role: roleIds && roleIds?.length > 0 ? roleIds.join(',') : "",
+      role: profile?.roleIds 
+        ? profile?.roleIds.join(',')
+        : roleIds && roleIds?.length > 0 ? roleIds.join(',') : "",
     }),
   }
 
@@ -885,7 +888,7 @@ export const generateLogList = ({
     for(let i = 0; i < changes_ids.length; i++) {
       const result = {
         ...author,
-        description: `${action} ${propsGlossary[changes_ids[i]]}${domain ? `. Effettuato dal dominio di ${domain?.name}` : ""} - Utente: ${cognitoUser.attributes.name}`,
+        description: `${action} ${propsGlossary[changes_ids[i]]}${domain ? `. Effettuato dal dominio di ${domain?.name}` : ""} - Utente: ${profile?.searchable || cognitoUser.attributes.name}`,
         timestamp: Date.now()
       }
 
@@ -897,7 +900,7 @@ export const generateLogList = ({
   } else { // in case of creation op
     generatedLogs = [{
       ...author,
-      description: `${action} ${ subject && subject}${domain && `. Effettuato dal dominio di ${domain}`} - Utente: ${cognitoUser.attributes.name}`,
+      description: `${action} ${ subject && subject}${domain && `. Effettuato dal dominio di ${domain}`} - Utente: ${profile?.searchable || cognitoUser.attributes.name}`,
       timestamp: Date.now()
     }]
   }
