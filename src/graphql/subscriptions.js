@@ -2,7 +2,7 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateCustomer = /* GraphQL */ `
-  subscription OnCreateCustomer($owner: String!) {
+  subscription OnCreateCustomer($owner: String) {
     onCreateCustomer(owner: $owner) {
       id
       name
@@ -108,16 +108,10 @@ export const onCreateCustomer = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -135,13 +129,19 @@ export const onCreateCustomer = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       owner
     }
   }
 `;
 export const onUpdateCustomer = /* GraphQL */ `
-  subscription OnUpdateCustomer($owner: String!) {
+  subscription OnUpdateCustomer($owner: String) {
     onUpdateCustomer(owner: $owner) {
       id
       name
@@ -247,16 +247,10 @@ export const onUpdateCustomer = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -274,13 +268,19 @@ export const onUpdateCustomer = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       owner
     }
   }
 `;
 export const onDeleteCustomer = /* GraphQL */ `
-  subscription OnDeleteCustomer($owner: String!) {
+  subscription OnDeleteCustomer($owner: String) {
     onDeleteCustomer(owner: $owner) {
       id
       name
@@ -386,16 +386,10 @@ export const onDeleteCustomer = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -413,6 +407,12 @@ export const onDeleteCustomer = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       owner
     }
