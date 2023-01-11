@@ -11,6 +11,7 @@ type Company @model ( queries: { list: "listCompanies", get: "getCompany" }, sub
   { allow: public, operations: [ create, read ]},
   { allow: private, operations: [ create, read ]},
   { allow: owner, operations: [ create, read, update ]},
+  { allow: private, provider: iam }
   { allow: groups, groups: ["developers"]}
 ]){
   id: ID!
@@ -19,24 +20,28 @@ type Company @model ( queries: { list: "listCompanies", get: "getCompany" }, sub
       { allow: owner, operations: [create, read, delete] },
       { allow: private, operations: [ create, read ]},
       { allow: public, operations: [ create, read ]},
+      { allow: private, provider: iam }
     ])
   vatNumber: ID!
     @auth(rules: [
       { allow: owner, operations: [create, read, delete] },
       { allow: private, operations: [ create, read ]},
       { allow: public, operations: [ create, read ]},
+      { allow: private, provider: iam }
     ])
   name: String!
     @auth(rules: [
       { allow: owner, operations: [create, read, delete] },
       { allow: private, operations: [ create, read ]},
       { allow: public, operations: [ create, read ]},
+      { allow: private, provider: iam }
     ])
   fiscalCode: ID!
     @auth(rules: [
       { allow: owner, operations: [ create, read, delete ] },
       { allow: private, operations: [ create, read ]},
       { allow: public, operations: [ create, read ]},
+      { allow: private, provider: iam }
     ])
   city: String!
   address: String!
@@ -105,7 +110,10 @@ type Customer @model
 @key(name: "senderCustomerByCompany", fields: ["ownerCompanyId", "isSender", "searchable"], queryField:"senderCustomerByCompany")
 @key(name: "carrierCustomerByCompany", fields: ["ownerCompanyId", "isCarrier", "searchable"], queryField:"carrierCustomerByCompany")
 @key(name: "receiverCustomerByCompany", fields: ["ownerCompanyId", "isReceiver", "searchable"], queryField:"receiverCustomerByCompany")
-@auth(rules: [{ allow: owner }]) {
+@auth(rules: [
+  { allow: owner }
+  { allow: private, provider: iam }
+]) {
   id: ID!
   name: String!
   vatNumber: String!
@@ -243,6 +251,7 @@ type Vehicle @model(subscriptions: null)
 @key(name:"vehicleByCompanyStatusType", fields:["companyId", "status", "type"], queryField: "vehicleByCompanyStatusType")
 @auth(rules: [
   { allow: owner },
+  { allow: private, provider: iam }
 ]){
   id: ID!
   licensePlate: String!

@@ -1397,7 +1397,6 @@ export const CHECK_BY_ID = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1415,7 +1414,6 @@ export const CHECK_BY_ID = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1433,7 +1431,6 @@ export const CHECK_BY_ID = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1451,7 +1448,6 @@ export const CHECK_BY_ID = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode
@@ -1469,7 +1465,6 @@ export const CHECK_BY_ID = /* GraphQL */ `
           vatNumber
           name
           fiscalCode
-          tag
           city
           address
           uniqueCode

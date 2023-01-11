@@ -1,366 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const updateCompany = /* GraphQL */ `
-  mutation UpdateCompany(
-    $input: UpdateCompanyInput!
-    $condition: ModelCompanyConditionInput
-  ) {
-    updateCompany(input: $input, condition: $condition) {
-      id
-      city
-      address
-      location {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      uniqueCode
-      pec
-      emails {
-        name
-        value
-      }
-      phones {
-        name
-        value
-      }
-      logo {
-        filename
-        identityId
-        bucket
-        region
-        key
-        extension
-        timestamp
-      }
-      trades
-      profiles {
-        items {
-          id
-          username
-          companyId
-          fiscalCode
-          email
-          searchable
-          name
-          surname
-          phone
-          deviceId
-          owner
-          tenant
-          roleIds
-          psw
-          refreshTokens
-          note
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      customers {
-        items {
-          id
-          name
-          vatNumber
-          searchable
-          companyCode
-          ownerCompanyId
-          companyId
-          tenant
-          isSender
-          isCarrier
-          isReceiver
-          relationships
-          customPec
-          customUniqueCode
-          customTrades
-          invited
-          note
-          createdAt
-          updatedAt
-          owner
-        }
-        nextToken
-      }
-      contacts {
-        items {
-          id
-          companyId
-          tenant
-          name
-          surname
-          searchable
-          fiscalCode
-          phone
-          email
-          type
-          createdAt
-          updatedAt
-          employee
-          jobId
-          jobName
-          invited
-          note
-        }
-        nextToken
-      }
-      warehouses {
-        items {
-          id
-          extId
-          companyId
-          name
-          searchable
-          status
-          contactIds
-          owner
-          specialization
-          scope
-          maxLength
-          tools
-          automationLevel
-          type
-          isDeposit
-          isInter
-          isHub
-          cargoBay
-          trades
-          containerUnloading
-          tenant
-          isLinked
-          warehouseLinkId
-          note
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      vehicles {
-        items {
-          id
-          licensePlate
-          companyId
-          type
-          brand
-          model
-          createdAt
-          updatedAt
-          bulkhead
-          tailLift
-          fuel
-          spot
-          axle
-          maxWeight
-          kilometers
-          booking
-          status
-          indipendent
-          note
-        }
-        nextToken
-      }
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      type
-      authorCustomersRaw
-      createdAt
-      updatedAt
-      companyCode
-      vatNumber
-      name
-      fiscalCode
-      owner
-    }
-  }
-`;
-export const deleteCompany = /* GraphQL */ `
-  mutation DeleteCompany(
-    $input: DeleteCompanyInput!
-    $condition: ModelCompanyConditionInput
-  ) {
-    deleteCompany(input: $input, condition: $condition) {
-      id
-      city
-      address
-      location {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      uniqueCode
-      pec
-      emails {
-        name
-        value
-      }
-      phones {
-        name
-        value
-      }
-      logo {
-        filename
-        identityId
-        bucket
-        region
-        key
-        extension
-        timestamp
-      }
-      trades
-      profiles {
-        items {
-          id
-          username
-          companyId
-          fiscalCode
-          email
-          searchable
-          name
-          surname
-          phone
-          deviceId
-          owner
-          tenant
-          roleIds
-          psw
-          refreshTokens
-          note
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      customers {
-        items {
-          id
-          name
-          vatNumber
-          searchable
-          companyCode
-          ownerCompanyId
-          companyId
-          tenant
-          isSender
-          isCarrier
-          isReceiver
-          relationships
-          customPec
-          customUniqueCode
-          customTrades
-          invited
-          note
-          createdAt
-          updatedAt
-          owner
-        }
-        nextToken
-      }
-      contacts {
-        items {
-          id
-          companyId
-          tenant
-          name
-          surname
-          searchable
-          fiscalCode
-          phone
-          email
-          type
-          createdAt
-          updatedAt
-          employee
-          jobId
-          jobName
-          invited
-          note
-        }
-        nextToken
-      }
-      warehouses {
-        items {
-          id
-          extId
-          companyId
-          name
-          searchable
-          status
-          contactIds
-          owner
-          specialization
-          scope
-          maxLength
-          tools
-          automationLevel
-          type
-          isDeposit
-          isInter
-          isHub
-          cargoBay
-          trades
-          containerUnloading
-          tenant
-          isLinked
-          warehouseLinkId
-          note
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      vehicles {
-        items {
-          id
-          licensePlate
-          companyId
-          type
-          brand
-          model
-          createdAt
-          updatedAt
-          bulkhead
-          tailLift
-          fuel
-          spot
-          axle
-          maxWeight
-          kilometers
-          booking
-          status
-          indipendent
-          note
-        }
-        nextToken
-      }
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      type
-      authorCustomersRaw
-      createdAt
-      updatedAt
-      companyCode
-      vatNumber
-      name
-      fiscalCode
-      owner
-    }
-  }
-`;
 export const createProfile = /* GraphQL */ `
   mutation CreateProfile(
     $input: CreateProfileInput!
@@ -435,16 +75,10 @@ export const createProfile = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -462,6 +96,12 @@ export const createProfile = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
     }
   }
@@ -540,16 +180,10 @@ export const updateProfile = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -567,6 +201,12 @@ export const updateProfile = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
     }
   }
@@ -645,16 +285,10 @@ export const deleteProfile = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -672,433 +306,13 @@ export const deleteProfile = /* GraphQL */ `
         name
         fiscalCode
         owner
-      }
-    }
-  }
-`;
-export const createCustomer = /* GraphQL */ `
-  mutation CreateCustomer(
-    $input: CreateCustomerInput!
-    $condition: ModelCustomerConditionInput
-  ) {
-    createCustomer(input: $input, condition: $condition) {
-      id
-      name
-      vatNumber
-      searchable
-      companyCode
-      ownerCompanyId
-      companyId
-      tenant
-      isSender
-      isCarrier
-      isReceiver
-      relationships
-      customCheckpoints {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      customPec
-      customUniqueCode
-      customEmails {
-        name
-        value
-      }
-      customPhones {
-        name
-        value
-      }
-      customTrades
-      invited
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      note
-      createdAt
-      updatedAt
-      company {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
         customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
           nextToken
         }
         vehicles {
           nextToken
         }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
       }
-      owner
-    }
-  }
-`;
-export const updateCustomer = /* GraphQL */ `
-  mutation UpdateCustomer(
-    $input: UpdateCustomerInput!
-    $condition: ModelCustomerConditionInput
-  ) {
-    updateCustomer(input: $input, condition: $condition) {
-      id
-      name
-      vatNumber
-      searchable
-      companyCode
-      ownerCompanyId
-      companyId
-      tenant
-      isSender
-      isCarrier
-      isReceiver
-      relationships
-      customCheckpoints {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      customPec
-      customUniqueCode
-      customEmails {
-        name
-        value
-      }
-      customPhones {
-        name
-        value
-      }
-      customTrades
-      invited
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      note
-      createdAt
-      updatedAt
-      company {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      owner
-    }
-  }
-`;
-export const deleteCustomer = /* GraphQL */ `
-  mutation DeleteCustomer(
-    $input: DeleteCustomerInput!
-    $condition: ModelCustomerConditionInput
-  ) {
-    deleteCustomer(input: $input, condition: $condition) {
-      id
-      name
-      vatNumber
-      searchable
-      companyCode
-      ownerCompanyId
-      companyId
-      tenant
-      isSender
-      isCarrier
-      isReceiver
-      relationships
-      customCheckpoints {
-        warehouseId
-        extId
-        thirdCompanyId
-        thirdCompanyOwner
-        thirdCompanyName
-        thirdCompanyVat
-        name
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        contacts {
-          contactId
-          name
-          email
-          phone
-          job
-        }
-        windows {
-          start
-          end
-          days
-          type
-        }
-        maxLength
-        tools
-        cargoBay
-        trades
-        containerUnloading
-        note
-      }
-      customPec
-      customUniqueCode
-      customEmails {
-        name
-        value
-      }
-      customPhones {
-        name
-        value
-      }
-      customTrades
-      invited
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      note
-      createdAt
-      updatedAt
-      company {
-        id
-        city
-        address
-        location {
-          place_id
-          region
-          province
-          city
-          address
-          coordinate
-        }
-        uniqueCode
-        pec
-        emails {
-          name
-          value
-        }
-        phones {
-          name
-          value
-        }
-        logo {
-          filename
-          identityId
-          bucket
-          region
-          key
-          extension
-          timestamp
-        }
-        trades
-        profiles {
-          nextToken
-        }
-        customers {
-          nextToken
-        }
-        contacts {
-          nextToken
-        }
-        warehouses {
-          nextToken
-        }
-        vehicles {
-          nextToken
-        }
-        log {
-          authorId
-          author
-          description
-          timestamp
-        }
-        type
-        authorCustomersRaw
-        createdAt
-        updatedAt
-        companyCode
-        vatNumber
-        name
-        fiscalCode
-        owner
-      }
-      owner
     }
   }
 `;
@@ -1181,16 +395,10 @@ export const createContact = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -1208,6 +416,12 @@ export const createContact = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
     }
   }
@@ -1291,16 +505,10 @@ export const updateContact = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -1318,6 +526,12 @@ export const updateContact = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
     }
   }
@@ -1401,16 +615,10 @@ export const deleteContact = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -1428,6 +636,12 @@ export const deleteContact = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
     }
   }
@@ -1874,16 +1088,10 @@ export const createWarehouseLink = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -1901,6 +1109,12 @@ export const createWarehouseLink = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       companyOwner {
         id
@@ -1937,16 +1151,10 @@ export const createWarehouseLink = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -1964,6 +1172,12 @@ export const createWarehouseLink = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
     }
   }
@@ -2102,16 +1316,10 @@ export const updateWarehouseLink = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -2129,6 +1337,12 @@ export const updateWarehouseLink = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       companyOwner {
         id
@@ -2165,16 +1379,10 @@ export const updateWarehouseLink = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -2192,6 +1400,12 @@ export const updateWarehouseLink = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
     }
   }
@@ -2330,16 +1544,10 @@ export const deleteWarehouseLink = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -2357,6 +1565,12 @@ export const deleteWarehouseLink = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       companyOwner {
         id
@@ -2393,16 +1607,10 @@ export const deleteWarehouseLink = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -2420,148 +1628,13 @@ export const deleteWarehouseLink = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
-    }
-  }
-`;
-export const createVehicle = /* GraphQL */ `
-  mutation CreateVehicle(
-    $input: CreateVehicleInput!
-    $condition: ModelVehicleConditionInput
-  ) {
-    createVehicle(input: $input, condition: $condition) {
-      id
-      licensePlate
-      companyId
-      type
-      brand
-      model
-      dimensions {
-        x
-        y
-        z
-      }
-      createdAt
-      updatedAt
-      bulkhead
-      tailLift
-      fuel
-      spot
-      axle
-      maxWeight
-      kilometers
-      booking
-      status
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      indipendent
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      note
-    }
-  }
-`;
-export const updateVehicle = /* GraphQL */ `
-  mutation UpdateVehicle(
-    $input: UpdateVehicleInput!
-    $condition: ModelVehicleConditionInput
-  ) {
-    updateVehicle(input: $input, condition: $condition) {
-      id
-      licensePlate
-      companyId
-      type
-      brand
-      model
-      dimensions {
-        x
-        y
-        z
-      }
-      createdAt
-      updatedAt
-      bulkhead
-      tailLift
-      fuel
-      spot
-      axle
-      maxWeight
-      kilometers
-      booking
-      status
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      indipendent
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      note
-    }
-  }
-`;
-export const deleteVehicle = /* GraphQL */ `
-  mutation DeleteVehicle(
-    $input: DeleteVehicleInput!
-    $condition: ModelVehicleConditionInput
-  ) {
-    deleteVehicle(input: $input, condition: $condition) {
-      id
-      licensePlate
-      companyId
-      type
-      brand
-      model
-      dimensions {
-        x
-        y
-        z
-      }
-      createdAt
-      updatedAt
-      bulkhead
-      tailLift
-      fuel
-      spot
-      axle
-      maxWeight
-      kilometers
-      booking
-      status
-      lastPosition {
-        place_id
-        region
-        province
-        city
-        address
-        coordinate
-      }
-      indipendent
-      log {
-        authorId
-        author
-        description
-        timestamp
-      }
-      note
     }
   }
 `;
@@ -3678,6 +2751,366 @@ export const deletePalletHandling = /* GraphQL */ `
     }
   }
 `;
+export const updateCompany = /* GraphQL */ `
+  mutation UpdateCompany(
+    $input: UpdateCompanyInput!
+    $condition: ModelCompanyConditionInput
+  ) {
+    updateCompany(input: $input, condition: $condition) {
+      id
+      city
+      address
+      location {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      uniqueCode
+      pec
+      emails {
+        name
+        value
+      }
+      phones {
+        name
+        value
+      }
+      logo {
+        filename
+        identityId
+        bucket
+        region
+        key
+        extension
+        timestamp
+      }
+      trades
+      profiles {
+        items {
+          id
+          username
+          companyId
+          fiscalCode
+          email
+          searchable
+          name
+          surname
+          phone
+          deviceId
+          owner
+          tenant
+          roleIds
+          psw
+          refreshTokens
+          note
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      contacts {
+        items {
+          id
+          companyId
+          tenant
+          name
+          surname
+          searchable
+          fiscalCode
+          phone
+          email
+          type
+          createdAt
+          updatedAt
+          employee
+          jobId
+          jobName
+          invited
+          note
+        }
+        nextToken
+      }
+      warehouses {
+        items {
+          id
+          extId
+          companyId
+          name
+          searchable
+          status
+          contactIds
+          owner
+          specialization
+          scope
+          maxLength
+          tools
+          automationLevel
+          type
+          isDeposit
+          isInter
+          isHub
+          cargoBay
+          trades
+          containerUnloading
+          tenant
+          isLinked
+          warehouseLinkId
+          note
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      type
+      authorCustomersRaw
+      createdAt
+      updatedAt
+      companyCode
+      vatNumber
+      name
+      fiscalCode
+      owner
+      customers {
+        items {
+          id
+          name
+          vatNumber
+          searchable
+          companyCode
+          ownerCompanyId
+          companyId
+          tenant
+          isSender
+          isCarrier
+          isReceiver
+          relationships
+          customPec
+          customUniqueCode
+          customTrades
+          invited
+          note
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      vehicles {
+        items {
+          id
+          licensePlate
+          companyId
+          type
+          brand
+          model
+          createdAt
+          updatedAt
+          bulkhead
+          tailLift
+          fuel
+          spot
+          axle
+          maxWeight
+          kilometers
+          booking
+          status
+          indipendent
+          note
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const deleteCompany = /* GraphQL */ `
+  mutation DeleteCompany(
+    $input: DeleteCompanyInput!
+    $condition: ModelCompanyConditionInput
+  ) {
+    deleteCompany(input: $input, condition: $condition) {
+      id
+      city
+      address
+      location {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      uniqueCode
+      pec
+      emails {
+        name
+        value
+      }
+      phones {
+        name
+        value
+      }
+      logo {
+        filename
+        identityId
+        bucket
+        region
+        key
+        extension
+        timestamp
+      }
+      trades
+      profiles {
+        items {
+          id
+          username
+          companyId
+          fiscalCode
+          email
+          searchable
+          name
+          surname
+          phone
+          deviceId
+          owner
+          tenant
+          roleIds
+          psw
+          refreshTokens
+          note
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      contacts {
+        items {
+          id
+          companyId
+          tenant
+          name
+          surname
+          searchable
+          fiscalCode
+          phone
+          email
+          type
+          createdAt
+          updatedAt
+          employee
+          jobId
+          jobName
+          invited
+          note
+        }
+        nextToken
+      }
+      warehouses {
+        items {
+          id
+          extId
+          companyId
+          name
+          searchable
+          status
+          contactIds
+          owner
+          specialization
+          scope
+          maxLength
+          tools
+          automationLevel
+          type
+          isDeposit
+          isInter
+          isHub
+          cargoBay
+          trades
+          containerUnloading
+          tenant
+          isLinked
+          warehouseLinkId
+          note
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      type
+      authorCustomersRaw
+      createdAt
+      updatedAt
+      companyCode
+      vatNumber
+      name
+      fiscalCode
+      owner
+      customers {
+        items {
+          id
+          name
+          vatNumber
+          searchable
+          companyCode
+          ownerCompanyId
+          companyId
+          tenant
+          isSender
+          isCarrier
+          isReceiver
+          relationships
+          customPec
+          customUniqueCode
+          customTrades
+          invited
+          note
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      vehicles {
+        items {
+          id
+          licensePlate
+          companyId
+          type
+          brand
+          model
+          createdAt
+          updatedAt
+          bulkhead
+          tailLift
+          fuel
+          spot
+          axle
+          maxWeight
+          kilometers
+          booking
+          status
+          indipendent
+          note
+        }
+        nextToken
+      }
+    }
+  }
+`;
 export const createCompany = /* GraphQL */ `
   mutation CreateCompany(
     $input: CreateCompanyInput!
@@ -3738,31 +3171,6 @@ export const createCompany = /* GraphQL */ `
         }
         nextToken
       }
-      customers {
-        items {
-          id
-          name
-          vatNumber
-          searchable
-          companyCode
-          ownerCompanyId
-          companyId
-          tenant
-          isSender
-          isCarrier
-          isReceiver
-          relationships
-          customPec
-          customUniqueCode
-          customTrades
-          invited
-          note
-          createdAt
-          updatedAt
-          owner
-        }
-        nextToken
-      }
       contacts {
         items {
           id
@@ -3816,6 +3224,46 @@ export const createCompany = /* GraphQL */ `
         }
         nextToken
       }
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      type
+      authorCustomersRaw
+      createdAt
+      updatedAt
+      companyCode
+      vatNumber
+      name
+      fiscalCode
+      owner
+      customers {
+        items {
+          id
+          name
+          vatNumber
+          searchable
+          companyCode
+          ownerCompanyId
+          companyId
+          tenant
+          isSender
+          isCarrier
+          isReceiver
+          relationships
+          customPec
+          customUniqueCode
+          customTrades
+          invited
+          note
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
       vehicles {
         items {
           id
@@ -3840,20 +3288,431 @@ export const createCompany = /* GraphQL */ `
         }
         nextToken
       }
+    }
+  }
+`;
+export const createCustomer = /* GraphQL */ `
+  mutation CreateCustomer(
+    $input: CreateCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    createCustomer(input: $input, condition: $condition) {
+      id
+      name
+      vatNumber
+      searchable
+      companyCode
+      ownerCompanyId
+      companyId
+      tenant
+      isSender
+      isCarrier
+      isReceiver
+      relationships
+      customCheckpoints {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      customPec
+      customUniqueCode
+      customEmails {
+        name
+        value
+      }
+      customPhones {
+        name
+        value
+      }
+      customTrades
+      invited
       log {
         authorId
         author
         description
         timestamp
       }
-      type
-      authorCustomersRaw
+      note
       createdAt
       updatedAt
-      companyCode
-      vatNumber
+      company {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+      }
+      owner
+    }
+  }
+`;
+export const updateCustomer = /* GraphQL */ `
+  mutation UpdateCustomer(
+    $input: UpdateCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    updateCustomer(input: $input, condition: $condition) {
+      id
       name
-      fiscalCode
+      vatNumber
+      searchable
+      companyCode
+      ownerCompanyId
+      companyId
+      tenant
+      isSender
+      isCarrier
+      isReceiver
+      relationships
+      customCheckpoints {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      customPec
+      customUniqueCode
+      customEmails {
+        name
+        value
+      }
+      customPhones {
+        name
+        value
+      }
+      customTrades
+      invited
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      note
+      createdAt
+      updatedAt
+      company {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+      }
+      owner
+    }
+  }
+`;
+export const deleteCustomer = /* GraphQL */ `
+  mutation DeleteCustomer(
+    $input: DeleteCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    deleteCustomer(input: $input, condition: $condition) {
+      id
+      name
+      vatNumber
+      searchable
+      companyCode
+      ownerCompanyId
+      companyId
+      tenant
+      isSender
+      isCarrier
+      isReceiver
+      relationships
+      customCheckpoints {
+        warehouseId
+        extId
+        thirdCompanyId
+        thirdCompanyOwner
+        thirdCompanyName
+        thirdCompanyVat
+        name
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        contacts {
+          contactId
+          name
+          email
+          phone
+          job
+        }
+        windows {
+          start
+          end
+          days
+          type
+        }
+        maxLength
+        tools
+        cargoBay
+        trades
+        containerUnloading
+        note
+      }
+      customPec
+      customUniqueCode
+      customEmails {
+        name
+        value
+      }
+      customPhones {
+        name
+        value
+      }
+      customTrades
+      invited
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      note
+      createdAt
+      updatedAt
+      company {
+        id
+        city
+        address
+        location {
+          place_id
+          region
+          province
+          city
+          address
+          coordinate
+        }
+        uniqueCode
+        pec
+        emails {
+          name
+          value
+        }
+        phones {
+          name
+          value
+        }
+        logo {
+          filename
+          identityId
+          bucket
+          region
+          key
+          extension
+          timestamp
+        }
+        trades
+        profiles {
+          nextToken
+        }
+        contacts {
+          nextToken
+        }
+        warehouses {
+          nextToken
+        }
+        log {
+          authorId
+          author
+          description
+          timestamp
+        }
+        type
+        authorCustomersRaw
+        createdAt
+        updatedAt
+        companyCode
+        vatNumber
+        name
+        fiscalCode
+        owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
+      }
       owner
     }
   }
@@ -4009,6 +3868,147 @@ export const createWarehouse = /* GraphQL */ `
       note
       createdAt
       updatedAt
+    }
+  }
+`;
+export const createVehicle = /* GraphQL */ `
+  mutation CreateVehicle(
+    $input: CreateVehicleInput!
+    $condition: ModelVehicleConditionInput
+  ) {
+    createVehicle(input: $input, condition: $condition) {
+      id
+      licensePlate
+      companyId
+      type
+      brand
+      model
+      dimensions {
+        x
+        y
+        z
+      }
+      createdAt
+      updatedAt
+      bulkhead
+      tailLift
+      fuel
+      spot
+      axle
+      maxWeight
+      kilometers
+      booking
+      status
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      indipendent
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      note
+    }
+  }
+`;
+export const updateVehicle = /* GraphQL */ `
+  mutation UpdateVehicle(
+    $input: UpdateVehicleInput!
+    $condition: ModelVehicleConditionInput
+  ) {
+    updateVehicle(input: $input, condition: $condition) {
+      id
+      licensePlate
+      companyId
+      type
+      brand
+      model
+      dimensions {
+        x
+        y
+        z
+      }
+      createdAt
+      updatedAt
+      bulkhead
+      tailLift
+      fuel
+      spot
+      axle
+      maxWeight
+      kilometers
+      booking
+      status
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      indipendent
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      note
+    }
+  }
+`;
+export const deleteVehicle = /* GraphQL */ `
+  mutation DeleteVehicle(
+    $input: DeleteVehicleInput!
+    $condition: ModelVehicleConditionInput
+  ) {
+    deleteVehicle(input: $input, condition: $condition) {
+      id
+      licensePlate
+      companyId
+      type
+      brand
+      model
+      dimensions {
+        x
+        y
+        z
+      }
+      createdAt
+      updatedAt
+      bulkhead
+      tailLift
+      fuel
+      spot
+      axle
+      maxWeight
+      kilometers
+      booking
+      status
+      lastPosition {
+        place_id
+        region
+        province
+        city
+        address
+        coordinate
+      }
+      indipendent
+      log {
+        authorId
+        author
+        description
+        timestamp
+      }
+      note
     }
   }
 `;
@@ -4275,16 +4275,10 @@ export const createOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -4302,6 +4296,12 @@ export const createOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       carrier {
         id
@@ -4338,16 +4338,10 @@ export const createOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -4365,6 +4359,12 @@ export const createOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       receiver {
         id
@@ -4401,16 +4401,10 @@ export const createOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -4428,6 +4422,12 @@ export const createOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       pickupStorage {
         id
@@ -4464,16 +4464,10 @@ export const createOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -4491,6 +4485,12 @@ export const createOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       deliveryStorage {
         id
@@ -4527,16 +4527,10 @@ export const createOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -4554,6 +4548,12 @@ export const createOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       checks {
         items {
@@ -4875,16 +4875,10 @@ export const updateOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -4902,6 +4896,12 @@ export const updateOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       carrier {
         id
@@ -4938,16 +4938,10 @@ export const updateOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -4965,6 +4959,12 @@ export const updateOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       receiver {
         id
@@ -5001,16 +5001,10 @@ export const updateOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -5028,6 +5022,12 @@ export const updateOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       pickupStorage {
         id
@@ -5064,16 +5064,10 @@ export const updateOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -5091,6 +5085,12 @@ export const updateOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       deliveryStorage {
         id
@@ -5127,16 +5127,10 @@ export const updateOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -5154,6 +5148,12 @@ export const updateOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       checks {
         items {
@@ -5475,16 +5475,10 @@ export const deleteOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -5502,6 +5496,12 @@ export const deleteOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       carrier {
         id
@@ -5538,16 +5538,10 @@ export const deleteOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -5565,6 +5559,12 @@ export const deleteOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       receiver {
         id
@@ -5601,16 +5601,10 @@ export const deleteOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -5628,6 +5622,12 @@ export const deleteOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       pickupStorage {
         id
@@ -5664,16 +5664,10 @@ export const deleteOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -5691,6 +5685,12 @@ export const deleteOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       deliveryStorage {
         id
@@ -5727,16 +5727,10 @@ export const deleteOrder = /* GraphQL */ `
         profiles {
           nextToken
         }
-        customers {
-          nextToken
-        }
         contacts {
           nextToken
         }
         warehouses {
-          nextToken
-        }
-        vehicles {
           nextToken
         }
         log {
@@ -5754,6 +5748,12 @@ export const deleteOrder = /* GraphQL */ `
         name
         fiscalCode
         owner
+        customers {
+          nextToken
+        }
+        vehicles {
+          nextToken
+        }
       }
       checks {
         items {

@@ -33,7 +33,7 @@
         },
         "extConnector": {
           "deploymentBucketName": "amplify-kln-dev-151332-deployment",
-          "s3Key": "amplify-builds/extConnector-7848366f564247565741-build.zip"
+          "s3Key": "amplify-builds/extConnector-456265424e7045325551-build.zip"
         }
       }
     }
