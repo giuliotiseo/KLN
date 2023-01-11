@@ -70,7 +70,7 @@
         },
         "extConnector": {
           "deploymentBucketName": "amplify-kln-master-161510-deployment",
-          "s3Key": "amplify-builds/extConnector-7848366f564247565741-build.zip"
+          "s3Key": "amplify-builds/extConnector-2f797753554e55684663-build.zip"
         }
       }
     }
